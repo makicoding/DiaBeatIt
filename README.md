@@ -1,5 +1,10 @@
 # DiaBeatIt
 
+<<<<<<< HEAD
+An app that helps prevent diabetes.
+
+testing to make sure git push / merge is working
+=======
 [Click here to view deployed app]()
 <br>
 ***
@@ -22,3 +27,4 @@ This is a group project of an eight member team.
 INSERT DETAILS OF THE APP HERE
 
 
+>>>>>>> 3a0602dad668ae14d9ab37470851a9e90a37ddcb

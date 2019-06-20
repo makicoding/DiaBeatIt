@@ -9,16 +9,22 @@ import "../components/MainContentContainer/mainContentContainer.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../components/CustomReactDatepicker/customReactDatepicker.css";
+import API from "../utils/API";
 
 // Run "npm start" to start React app.
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
+
+// grabbing username from cookies
+localStorage.setItem("username", "Guest User");   // delete this line in production
+var userName = localStorage.getItem("username");
 
 class CalorieEntry extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-          startDate: new Date()
+          startDate: new Date(),
+          didSubmit: "No"
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -29,24 +35,13 @@ class CalorieEntry extends React.Component {
         startDate: date
     });
     }
-  
 
-    // Gathering logged in user's name
-    // localStorage.setItem("username", "Guest User");   // delete this line in production
-    // var userName = localStorage.getItem("username");
-
-    // Initialization section
-    // var dateInput;                                                        
-    // var mealCategory;
-    // var mealNameCaloriesPerSingleQuantity;
-    // var mealQuantity;
-    // var drinkNameCaloriesPerGlass;
-    // var drinkQuantity;
-    // var ingredientNameCaloriesPerGram;
-    // var ingredientGrams;
-    // var manualEntryName;
-    // var manualEntryCalories;
-    // var notesInput;
+    // this function will call the post route
+    handleInfoSave = event => {
+        API.saveInfo(event)
+          .then(res => this.setState({didSubmit:"Yes"}))
+          .catch(err => console.log(err));
+      }
 
     // Function to extract numeric-calorie-amount inside the parenthesis () from the name of the food
     parseCalorie = (foodName) => {
@@ -184,7 +179,7 @@ class CalorieEntry extends React.Component {
         }
 
         var data = {      
-            // username: userName,
+            username: userName,
             date: dateInput,
             mealtype: mealCategory,
             sectionno: sectionNumber,
@@ -193,49 +188,15 @@ class CalorieEntry extends React.Component {
             unitcal: parseFloat(strCal),
             comments: notesInput
         };
-        console.log(data);
 
-        return data
+        // calling the post method
+        this.handleInfoSave(data);
 
+        // Clear the form when submitting
+        document.getElementById("calorieEntryPage-errorMessage").innerText = "Save Successful!";
+        //return data
         }
     }
-
-    validateThenPost = () => {
-        // Execute function to validate form data
-        this.validateFormData();
-
-
-    
-    }
-
-    // When user clicks the submit button...
-    // document.getElementById("calorieEntryPageSubmitButton").onclick = (event) => {
-    //   event.preventDefault();
-
-    //   // Execute function to validate form data
-    //   var data = validateFormData();
-
-        
-    //   // Push user input data to Mongo DB
-    //   // $.post("/api/calorie", data,
-    //   //   function(res){      
-    //   //     // Clear the form when submitting
-    //   //     $("#calorieEntryPage-mealCategory").val("");
-    //   //     $("#calorieEntryPage-mealNameCaloriesPerSingleQuantity").val("");
-    //   //     $("#calorieEntryPage-mealQuantity").val("");
-    //   //     $("#calorieEntryPage-drinkNameCaloriesPerGlass").val("");
-    //   //     $("#calorieEntryPage-drinkQuantity").val("");
-    //   //     $("#calorieEntryPage-ingredientNameCaloriesPerGram").val("");
-    //   //     $("#calorieEntryPage-ingredientGrams").val("");
-    //   //     $("#calorieEntryPage-manualEntryName").val("");
-    //   //     $("#calorieEntryPage-manualEntryCalories").val("");
-    //   //     $("#calorieEntryPage-notes").val("");      
-            
-    //   //     $("#calorieEntryPage-errorMessage").text("Save Successful!");
-    //   //   }
-    //   // )
-    // };
-
 
     render() {
         return(
@@ -483,7 +444,7 @@ class CalorieEntry extends React.Component {
                                     <Col size="col-md-1"></Col>
 
                                     <Col size="col-md-10">
-                                        <button className="button1" id="calorieEntryPageSubmitButton" onClick={this.validateThenPost}>Submit</button>
+                                        <button className="button1" id="calorieEntryPageSubmitButton" onClick={this.validateFormData}>Submit</button>
                                         <Br />
                                         <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
                                     </Col>
