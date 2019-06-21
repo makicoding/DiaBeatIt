@@ -1,6 +1,6 @@
-.mainContentContainer {
+.pageWrapper {
     background-color: none;  /* Change color to see positioning on page */
 
     position: relative;
-    top: 50px;
+    top: 54px;
 }

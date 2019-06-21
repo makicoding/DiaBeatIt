@@ -5,17 +5,23 @@ import Br from "../components/CustomLineBreak";
 import Br2 from "../components/CustomLineBreak2";
 import "../components/Buttons/buttons.css";
 import "../components/Text/text.css";
+import HelloUserAndSignOut from "../components/HelloUserAndSignOut";
+import "../components/PageWrapper/pageWrapper.css";
 import "../components/MainContentContainer/mainContentContainer.css";
+import "../components/InputAndSelectField/inputAndSelectField.css";
 
 // Run "npm start" to start React app.
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
 
 class HealthCard extends React.Component {
-  
-    printHealthCard = () => {
-        console.log("Hello!");
+
+    saveHealthCard = () => {
+        console.log("Save!");
     }
 
+    printHealthCard = () => {
+        console.log("Print!");
+    }
     
     render() {
         return(
@@ -24,8 +30,14 @@ class HealthCard extends React.Component {
             {/* ---------------------------------------- */}
             {/* MAIN CONTENT OF PAGE */}
 
-            {/* Page header */}
-            <div className="pageHeader">Digital Health Card
+            {/* Page Wrapper */}
+            <div className="pageWrapper">
+
+                {/* Hello user first name text and sign out anchor */}
+                <HelloUserAndSignOut />
+
+                {/* Page header */}
+                <div className="pageHeader">Digital Health Card</div>
             
                 {/* Main content container */}
                 <div className="mainContentContainer">
@@ -185,18 +197,28 @@ class HealthCard extends React.Component {
                                 <Br />
 
                                 {/* ------------------------------ */}
-                                {/* Subrow (PRINT) */}
+                                {/* Subrow (SAVE) */}
                                 <Row>
                                     <Col size="col-md-12">
-                                        <button className="button1" id="calorieEntryPageSubmitButton" onClick={this.printHealthCard}>Print</button>
-                                        <Br />
+                                        <button className="button1" id="healthCardPage-save" onClick={this.saveHealthCard}>Save</button>
                                         <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
                                     </Col>
                                 </Row> 
 
                                 <Br />
-                                <Br />
 
+                                {/* ------------------------------ */}
+                                {/* Subrow (PRINT) */}
+                                <Row>
+                                    <Col size="col-md-12">
+                                        <button className="button1" id="healthCardPage-print" onClick={this.printHealthCard}>Print</button>
+                                    </Col>
+                                </Row> 
+
+                                <Br />
+                                <Br />
+                                <Br />
+                                
                             </Col>
 
                         </Row>

@@ -80,10 +80,11 @@ instead of #CECECE border)
     font-size: 16px;
     text-align: left;
 
+    text-decoration: underline;
+
     cursor: pointer;
 }
   
 .anchor1:hover {
     color: #2AC940;
-    text-decoration: none;
 }
