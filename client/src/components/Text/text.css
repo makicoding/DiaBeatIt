@@ -1,4 +1,6 @@
 .pageHeader {
+    background-color: none;  /* Change color to see positioning on page */
+
     color: #FFAB0A;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
@@ -7,7 +9,7 @@
     text-align: center;
 
     position: relative;
-    top: 90px;
+    top: 30px;
 }
 
 .sectionTitle {
@@ -30,6 +32,15 @@
 
 .mainContentTextRed {
     color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 16px;
+    text-align: left;
+}
+
+.mainContentTextBlue {
+    color: #4569FF;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
     font-style: normal;
