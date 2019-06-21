@@ -6,9 +6,9 @@ export default {
     return axios.post("/api/calorie", Data); 
   },
 
-  // Gets all books that matches the search
-  getBooks: function(query) {
-    return axios.get(`/api/calorie/${query || ''}`);
+  // Gets  calorie info that matches the search
+  getInfo: function(query) {
+    return axios.get("/api/calorie/" + query);
   },
   
   // Deletes the book with the given id
@@ -16,3 +16,5 @@ export default {
     return axios.delete("/api/calorie/" + id);
   },
 };
+
+// return axios.get(`/api/calorie/${query || ''}`);

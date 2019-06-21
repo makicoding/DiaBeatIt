@@ -8,7 +8,14 @@ import "../components/MainContentContainer/mainContentContainer.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../components/CustomReactDatepicker/customReactDatepicker.css";
+import EditBtn from "../components/EditBtn";
+import DeleteBtn from "../components/DeleteBtn";
+import API from "../utils/API";
+import { Link } from "react-router-dom";
 
+
+var userName = localStorage.getItem("username");
+var userData = {"userName": userName, "userDate": new Date()}
 // Run "npm start" to start React app.
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
 
@@ -17,7 +24,9 @@ class CalorieData extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          startDate: new Date()
+          startDate: new Date(),
+          userInfo: [],
+          totalCal: 0
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -27,9 +36,47 @@ class CalorieData extends React.Component {
     this.setState({
         startDate: date
     });
+    userData.userDate = date;
+    this.loadInfo(userData);
     }
 
-        
+    // loading user information as soon as the component is loaded
+    componentDidMount() {
+        this.loadInfo(userData);
+    }
+
+    loadInfo = (userData) => {
+      API.getInfo(userData)
+        .then(res => 
+          {
+            this.setState({ userInfo: res.data });
+            this.totalCalculator(this.state.userInfo);
+          }
+        )
+        .catch(err => console.log(err)
+      );
+    };
+
+    totalCalculator = (userInfo) => {
+      console.log(userInfo)
+      var newTot = 0;
+      for( let i=0; i<userInfo.length; i++){
+        newTot = newTot + (parseFloat(userInfo[i].qty) * parseFloat(userInfo[i].unitcal))
+      }
+      this.setState({totalCal: newTot})
+    }
+
+    // deleting records from MongoDB
+    handleInfoRemove = event => {
+      API.deleteBook(event)
+        .then(res => this.loadInfo(userData))
+        .catch(err => console.log(err));
+    }
+
+    // handling editing records in MongoDB
+    handleInfoEdit = event => {
+      console.log(event)
+    }
     render() {
         return(
         <div>
@@ -84,7 +131,28 @@ class CalorieData extends React.Component {
                                 {/* Subrow (Retrieved data populates here) */}
                                 <Row>
                                     <Col size="col-md-12">
-                                        <p id="calorieDataPage-retrievedData"></p>
+                                        <p id="calorieDataPage-retrievedData"></p>                                     
+                                          <ul className="list-group">
+                                            {this.state.userInfo.map(result => (
+                                              <li className="list-group-item" key={result._id}>
+                                                <Row>
+                                                  <Col size="md-12" className="text-justify">
+                                                    {result.mealtype}<br />
+                                                    {result.mealname}<br />
+                                                    Calorie: {result.unitcal * result.qty}<br />
+                                                    Comments: {result.comments}<br />
+                                                    <Link
+                                                      to="/CalorieEntry"
+                                                      className={window.location.pathname === "/CalorieEntry" ? "nav-link active" : "nav-link"}
+                                                    >
+                                                      <EditBtn onClick={() => this.handleInfoEdit(result)}/> 
+                                                    </Link>
+                                                    <DeleteBtn  onClick={() => this.handleInfoRemove(result._id)}/>
+                                                  </Col>   
+                                                </Row>
+                                              </li>
+                                            ))}
+                                          </ul>
                                     </Col>
                                 </Row> 
 
@@ -95,7 +163,7 @@ class CalorieData extends React.Component {
                                 <Row>
                                     <Col size="col-md-12">
                                         <p className="mainContentTextYellowMediumBold">Total:</p>
-                                        <p className="mainContentTextYellowMediumBold"><span className="mainContentTextYellowMediumBold" id="calorieDataPage-calorieGrandTotal"></span> Calories</p>
+                                        <p className="mainContentTextYellowMediumBold"><span className="mainContentTextYellowMediumBold" id="calorieDataPage-calorieGrandTotal">{this.state.totalCal}</span> Calories</p>
                                     </Col>
                                 </Row> 
 
