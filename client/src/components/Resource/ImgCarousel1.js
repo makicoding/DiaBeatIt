@@ -9,27 +9,27 @@ import {
 
 const items = [
   {
-    src:"../images/dia-image1.jpg" ,
+    src:"./assets/images/diaImg/dia-image1.jpg" ,
     altText: 'Slide 6',
   },
   {
-    src: "../images/dia1.jpg",
+    src: "./assets/images/diaImg/dia1.jpg",
     altText: 'Slide 1',
   },
   {
-    src: "../images/dia2.jpg",
+    src: "./assets/images/diaImg/dia2.jpg",
     altText: 'Slide 2',
   },
   {
-    src:"../images/dia3.jpg" ,
+    src:"./assets/images/diaImg/dia3.jpg" ,
     altText: 'Slide 3',
   },
   {
-    src:"../images/dia4.jpg" ,
+    src:"./assets/images/diaImg/dia4.jpg" ,
     altText: 'Slide 4',
   },
   {
-    src:"../images/dia5.jpg" ,
+    src:"./assets/images/diaImg/dia5.jpg" ,
     altText: 'Slide 5',
   }
 ];
