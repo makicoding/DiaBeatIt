@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
-import RecForm from './components/RecipeFinder/RecForm';
-import Recipes from './components/RecipeFinder/Recipes'
+import '../App.css';
+import RecForm from '../components/RecipeFinder/RecForm';
+import Recipes from '../components/RecipeFinder/Recipes'
 require('dotenv').config();
 
 const app_id =process.env.REACT_APP_FOOD_ID;
 const app_key =process.env.REACT_APP_FOOD_KEY;
 
-class App extends Component {
+class RecipeFinder extends Component {
   constructor(){
     super()
     this.state={
@@ -62,4 +62,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default RecipeFinder;
