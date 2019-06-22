@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import Resource from './components/Resource/Resources'
+import Resource from '../components/Resource/Resources'
 import  'bootstrap/dist/css/bootstrap.min.css'
 
 function Resources() {
