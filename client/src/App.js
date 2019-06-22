@@ -4,6 +4,7 @@ import MainMenu from "./pages/MainMenu";
 import CalorieEntry from "./pages/CalorieEntry";
 import CalorieData from "./pages/CalorieData";
 import HealthCard from "./pages/HealthCard";
+import HealthTimeline from "./pages/HealthTimeline";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route exact path="/CalorieData" component={CalorieData} />
           {/* <Route exact path="/StoreFinder" component={StoreFinder} /> */}
           {/* <Route exact path="/RecipesFinder" component={RecipesFinder} /> */}
-          {/* <Route exact path="/HealthTimeline" component={HealthTimeline} /> */}
+          <Route exact path="/HealthTimeline" component={HealthTimeline} />
           <Route exact path="/HealthCard" component={HealthCard} />
           {/* <Route exact path="/Resources" component={Resources} /> */}
           {/* <Route exact path="/Contact" component={Contact} /> */}
