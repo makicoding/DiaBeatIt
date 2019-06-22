@@ -31,8 +31,8 @@ function mainFunction(yelp_params, callback) {
            {
              headers: {
                Authorization: 
-               `Bearer `
-                + process.env.REACT_APP_YELP_KEY
+               `Bearer ${process.env.REACT_APP_YELP_KEY}`
+                
              }
              ,
              params: {
@@ -56,7 +56,7 @@ class Map extends Component{
  
   state = {
     stores:[],
-    title: 'Whole Foods',
+    title: 'bronx',
     openInfoWindowMarkerId: 1,
     value:"healthmarkets"
   };
@@ -162,6 +162,7 @@ class Map extends Component{
       ));
 
     render() {
+      console.log(this.state)
       this.state.stores.map((restaurant,i) => "do")
         return (
 
