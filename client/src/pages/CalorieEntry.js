@@ -5,6 +5,9 @@ import Br from "../components/CustomLineBreak";
 import Br2 from "../components/CustomLineBreak2";
 import "../components/Buttons/buttons.css";
 import "../components/Text/text.css";
+import HelloUserAndSignOut from "../components/HelloUserAndSignOut";
+import "../components/InputAndSelectField/inputAndSelectField.css";
+import "../components/PageWrapper/pageWrapper.css";
 import "../components/MainContentContainer/mainContentContainer.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -32,11 +35,16 @@ class CalorieEntry extends React.Component {
     // For React Datepicker
     handleChange(date) {
         this.setState({
-        startDate: date
+            startDate: date
         });
     }
 
-    // this function will call the post route
+    // Function to open Nutritionnix URL
+    openNutritionnixURL = () => {
+        window.open("https://www.nutritionix.com/uk/database/common-foods");
+    }
+
+    // This function will call the post route
     handleInfoSave = event => {
         API.saveInfo(event)
           .then(res => this.setState({didSubmit:"Yes"}))
@@ -189,12 +197,22 @@ class CalorieEntry extends React.Component {
             comments: notesInput
         };
 
-        // calling the post method
+        // Calling the post method
         this.handleInfoSave(data);
 
-        // Clear the form when submitting
-        document.getElementById("calorieEntryPage-errorMessage").innerText = "Save Successful!";
-        //return data
+        // Clear the form when submitting and show a success message
+        document.getElementById("calorieEntryPage-mealCategory").value = "0";
+        document.getElementById("calorieEntryPage-mealNameCaloriesPerSingleQuantity").value = "0";
+        document.getElementById("calorieEntryPage-mealQuantity").value = "";
+        document.getElementById("calorieEntryPage-drinkNameCaloriesPerGlass").value = "0";
+        document.getElementById("calorieEntryPage-drinkQuantity").value = "";
+        document.getElementById("calorieEntryPage-ingredientNameCaloriesPerGram").value = "0";
+        document.getElementById("calorieEntryPage-ingredientGrams").value = "";
+        document.getElementById("calorieEntryPage-manualEntryName").value = "";
+        document.getElementById("calorieEntryPage-manualEntryCalories").value = "";
+        document.getElementById("calorieEntryPage-notes").value = "";
+        document.getElementById("calorieEntryPage-successMessage").innerText = "Data submitted successfully!";
+        return data;
         }
     }
 
@@ -205,8 +223,14 @@ class CalorieEntry extends React.Component {
             {/* ---------------------------------------- */}
             {/* MAIN CONTENT OF PAGE */}
 
-            {/* Page header */}
-            <div className="pageHeader">Calorie Entry
+            {/* Page Wrapper */}
+            <div className="pageWrapper">
+
+                {/* Hello user first name text and sign out anchor */}
+                <HelloUserAndSignOut />
+
+                {/* Page header */}
+                <div className="pageHeader">Calorie Entry</div>
             
                 {/* Main content container */}
                 <div className="mainContentContainer">
@@ -395,12 +419,10 @@ class CalorieEntry extends React.Component {
 
                                     <Col size="col-md-10">
                                         <p className="mainContentTextBlack">Manual entry of meal / drink / ingredient:</p>
-                                        <p className="anchor1" href="https://www.nutritionix.com/uk/database/common-foods" target="_blank">Click here to look up calories</p>
+                                        <p className="anchor1" onClick={this.openNutritionnixURL}>Click here to look up calories</p>
                                         <Br2 />
                                     </Col>
                                 </Row>
-
-
                                 
                                 <Row>
                                     <Col size="col-md-1"></Col>
@@ -445,11 +467,12 @@ class CalorieEntry extends React.Component {
 
                                     <Col size="col-md-10">
                                         <button className="button1" id="calorieEntryPageSubmitButton" onClick={this.validateFormData}>Submit</button>
-                                        <Br />
                                         <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
+                                        <div className="mainContentTextBlue" id="calorieEntryPage-successMessage"></div>
                                     </Col>
                                 </Row> 
 
+                                <Br />
                                 <Br />
                                 <Br />
 
@@ -459,7 +482,7 @@ class CalorieEntry extends React.Component {
 
                     </Container>
 
-                </div>
+            </div>
 
             </div>
 

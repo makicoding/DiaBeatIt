@@ -4,6 +4,9 @@ import HamburgerMenu from "../components/HamburgerMenu";
 import Br from "../components/CustomLineBreak";
 import "../components/Buttons/buttons.css";
 import "../components/Text/text.css";
+import HelloUserAndSignOut from "../components/HelloUserAndSignOut";
+import "../components/InputAndSelectField/inputAndSelectField.css";
+import "../components/PageWrapper/pageWrapper.css";
 import "../components/MainContentContainer/mainContentContainer.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -84,8 +87,14 @@ class CalorieData extends React.Component {
             {/* ---------------------------------------- */}
             {/* MAIN CONTENT OF PAGE */}
 
-            {/* Page header */}
-            <div className="pageHeader">Calorie Data
+            {/* Page Wrapper */}
+            <div className="pageWrapper">
+
+                {/* Hello user first name text and sign out anchor */}
+                <HelloUserAndSignOut />
+
+                {/* Page header */}
+                <div className="pageHeader">Calorie Data</div>
             
                 {/* Main content container */}
                 <div className="mainContentContainer">
@@ -181,6 +190,7 @@ class CalorieData extends React.Component {
                                     </Col>
                                 </Row>
                                 
+                                <Br />
                                 <Br />
                                 <Br />
                                 

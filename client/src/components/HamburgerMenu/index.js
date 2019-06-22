@@ -50,7 +50,7 @@ class HamburgerMenu extends React.Component {
         {/* Top Bar and Branding Text */}
         <div className="topBar">
           {/* <span class="branding">Branding</span> */}
-          <a className="branding" href="https://www.google.com">DiaBeatIt</a>
+          <a className="branding" href="MainMenu">DiaBeatIt</a>
         </div>
 
         {/* Hamburger Menu */}

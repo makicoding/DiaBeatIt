@@ -1,0 +1,88 @@
+.backgroundColor {
+    width: 100%;
+    height: 100%;
+    background-color: #4569FF;
+    /* background-color: white; */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.mainMenuAnchor {
+    display: block;     /* By setting the anchor display to block, it stacks the anchors one on top of the other instead of inline */
+
+    width: 100%;
+
+    color: white;
+    /* color: #4569FF; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    /* font-size: 45px;    Original position */
+    font-size: 32px;
+    text-decoration: none;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.3s; /* Transition effects on hover (color) */
+
+    position: relative;
+    /* top: 19%; Percentage from the top  - Original position */
+    top: 13%; /* Percentage from the top */
+}
+
+.mainMenuAnchor:hover, .mainMenuAnchor:focus {
+    color: #FFAB0A;
+    /* color: rgb(238, 155, 0);    Slightly darker yellow to improve visibility */
+    /* color: rgb(222, 144, 0); */
+    font-size: 42px;
+    /* font-size: 32px; */
+
+    text-decoration: none;
+}
+
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+/* MEDIA QUERIES */
+
+/* When Screen Size Max-Width is 1030px */
+/* (1024px is viewport width of iPad Pro in vertical) */
+/* (1366px is viewport height of iPad Pro in vertical) */
+@media screen and (max-width: 1030px) {
+
+}
+
+/* -------------------- */
+
+/* When Screen Size Max-Width is 980px */
+/* (768px is viewport width of iPad in vertical) */
+/* (1024px is viewport height of iPad in vertical) */
+@media screen and (max-width: 980px) {
+
+    .mainMenuAnchor {
+        /* top: 24%;   Original postion */
+        top: 21%;
+    }
+
+}
+
+/* -------------------- */
+
+/* When Screen Size Max-Width is 750px */
+/* (375px is viewport width of iPhone X in vertical) */
+@media screen and (max-width: 750px) {
+
+    .mainMenuAnchor {
+        font-size: 30px;
+
+        /* top: 20%;   Original position */
+        top: 10%;
+    }
+
+    .mainMenuAnchor:hover, .mainMenuAnchor:focus {
+        font-size: 30px;
+    }
+
+}
