@@ -31,3 +31,87 @@
     transform: rotate(360deg);
   }
 }
+/* ***** */
+/* Resources pages */
+.firstCard{
+  box-shadow: 0 5px 2px rgb(166, 203, 216)
+}
+.cardTitle{
+  background-color: #4569FF;
+  border-radius: 0 0 50px 50px;
+  color:white;
+  box-shadow: 0 5px 2px rgb(166, 203, 216)
+}
+.cardTitle1{
+  background-color: rgb(250, 150, 0);
+  border-radius: 50px 0 50px 0;
+  color:black;
+  
+}
+.cardTitle2{
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 5vh;
+  border: 2px solid rgba(166, 203, 216, .5);
+  padding:5px 10px 5px 10px;
+  box-shadow: 0 5px 2px rgb(166, 203, 216)
+}
+
+.Types{
+  box-shadow: 0 5px 2px rgb(166, 203, 216);
+  border-radius: 15px;
+  margin-bottom: 5vh;
+}
+
+.rounded-circle{
+  box-shadow: 0 10px 2px rgb(166, 203, 216);
+  margin-bottom:2vh;
+}
+.carouselImg{
+  width: 100%;
+  height:50vh;
+}
+
+/* ****** */
+/* resources pages end */
+
+
+/* ******** */
+/* Recipe Finder */
+.tableBorder{
+  border:2px solid rgba(228, 228, 228, 0.5);
+  width: 100%;
+  background-color:#4569FF;
+  color:white;
+}
+.calories{
+color:#4569FF;
+}
+
+.card-link{
+  border: 2px solid rgba(166, 203, 216, .5);
+  padding:5px 10px 5px 10px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 2px rgb(166, 203, 216);
+  margin:5px;
+}
+#cardBg{
+  border-left: 2px solid rgba(166, 203, 216, .5) ;
+  border-top: 2px solid rgba(166, 203, 216, .5) ;
+  margin-left:0;
+  padding:5px;
+  border-radius: 10px;
+  margin-bottom: 5vh;
+  box-shadow: 5px 5px 2px rgb(166, 203, 216);
+}
+.recipeImg{
+  height:50%;
+  
+}
+@media only screen and (max-width: 990px) {
+  .recipeImg{
+    height:50vh
+  }
+}
+
+/* ******** */
+/* Recipe finder end */
