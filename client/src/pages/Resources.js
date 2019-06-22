@@ -12,7 +12,8 @@ import "../components/PageWrapper/pageWrapper.css";
 import "../components/MainContentContainer/mainContentContainer.css";
 import "../components/InputAndSelectField/inputAndSelectField.css";
 
-
+// Run "npm start" to start React app.
+// Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
 
 function Resources() {
   return (

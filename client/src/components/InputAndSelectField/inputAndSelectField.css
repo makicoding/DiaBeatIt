@@ -3,6 +3,7 @@
     height: 37px;
 
     border-color: #cbd3d9;      /* This is the same color as the default input box border color */
+
     background-color: white;
     color: black;
 
@@ -11,6 +12,8 @@
     font-style: normal;
     font-size: 16px;
     text-align: left;
+
+    outline-color: red;
 }
 
 .dropDownMenu1:focus {
