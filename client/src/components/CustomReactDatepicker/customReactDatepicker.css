@@ -1,9 +1,21 @@
 .customReactDatepicker {
     background-color: none;  /* Change color to see positioning on page */
 
-    width: 100%;
+    /* width: 100%; */
 
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-size: 24px;
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+    display: block;
+}
+
+.react-datepicker__input-container input {
+    width: 100%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
 }
