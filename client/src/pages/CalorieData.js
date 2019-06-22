@@ -60,8 +60,6 @@ class CalorieData extends React.Component {
     };
 
     totalCalculator = (userInfo) => {
-      console.log('state is ', this.state.userInfo)
-      console.log('userIngo', userInfo)
       var newTot = 0;
       for( let i=0; i<userInfo.length; i++){
         newTot = newTot + (parseFloat(userInfo[i].qty) * parseFloat(userInfo[i].unitcal))
