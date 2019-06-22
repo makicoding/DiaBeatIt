@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import RecForm from './components/RecipeFinder/RecForm';
 import Recipes from './components/RecipeFinder/Recipes'
 require('dotenv').config();

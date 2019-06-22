@@ -4,7 +4,9 @@ import MainMenu from "./pages/MainMenu";
 import CalorieEntry from "./pages/CalorieEntry";
 import CalorieData from "./pages/CalorieData";
 import StoreFinder from "./pages/StoreFinder";
+import RecipeFinder from "./pages/RecipeFinder";
 import HealthCard from "./pages/HealthCard";
+import Resources from "./pages/Resources";
 
 function App() {
   return (
@@ -16,10 +18,10 @@ function App() {
           <Route exact path="/CalorieEntry" component={CalorieEntry} />
           <Route exact path="/CalorieData" component={CalorieData} />
           <Route exact path="/StoreFinder" component={StoreFinder} />
-          {/* <Route exact path="/RecipesFinder" component={RecipesFinder} /> */}
+          <Route exact path="/RecipeFinder" component={RecipeFinder} />
           {/* <Route exact path="/HealthTimeline" component={HealthTimeline} /> */}
           <Route exact path="/HealthCard" component={HealthCard} />
-          {/* <Route exact path="/Resources" component={Resources} /> */}
+          <Route exact path="/Resources" component={Resources} />
           {/* <Route exact path="/Contact" component={Contact} /> */}
           {/* <Route exact path="/anotherpage/:id" component={AnotherPage} /> */}
         </Switch>
