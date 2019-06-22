@@ -14,6 +14,9 @@ import "../components/InputAndSelectField/inputAndSelectField.css";
 
 require('dotenv').config();
 
+// Run "npm start" to start React app.
+// Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
+
 const app_id =process.env.REACT_APP_FOOD_ID;
 const app_key =process.env.REACT_APP_FOOD_KEY;
 
