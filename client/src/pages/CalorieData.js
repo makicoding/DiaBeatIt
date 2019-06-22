@@ -16,11 +16,11 @@ import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 
+// Run "npm start" to start React app.
+// Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
 
 var userName = localStorage.getItem("username");
 var userData = {"userName": userName, "userDate": new Date()}
-// Run "npm start" to start React app.
-// Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
 
 class CalorieData extends React.Component {
   

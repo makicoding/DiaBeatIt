@@ -8,19 +8,19 @@ import {
 
 const items = [
   {
-    src: "../images/preIMg6.jpg",
+    src: "./assets/images/diaImg/preIMg6.jpg",
     altText: 'Slide 1',
   },
   {
-    src: "../images/preIMg5.jpg",
+    src: "./assets/images/diaImg/preIMg5.jpg",
     altText: 'Slide 2',
   },
   {
-    src:"../images/preIMg2.png" ,
+    src:"./assets/images/diaImg/preIMg2.png" ,
     altText: 'Slide 3',
   },
   {
-    src:"../images/preIMg9.jpg" ,
+    src:"./assets/images/diaImg/preIMg9.jpg" ,
     altText: 'Slide 4',
   
   }
