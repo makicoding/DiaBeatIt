@@ -15,54 +15,54 @@ export const preWay =[
     {
         "title":"Cut Sugar and Refined Carbs From Your Diet",
         "discription":" Eating foods high in refined carbs and sugar increases blood sugar and insulin levels, which may lead to diabetes over time. Avoiding these foods may help reduce your risk.",
-        "img":"../images/preIMg1.jpg"
+        "img":"..assets/images/diaImg/preIMg1.jpg"
     },
     {
         "title":"Work Out Regularly",
         "discription":"Performing physical activity on a regular basis can increase insulin secretion and sensitivity, which may help prevent the progression from prediabetes to diabetes.",
-        "img":"../images/preIMg2.png"
+        "img":"..assets/images/diaImg/preIMg2.png"
     },
     {
         "title":"Drink Water as Your Primary Beverage",
         "discription":" Drinking water instead of other beverages may help control blood sugar and insulin levels,thereby reducing the risk of diabetes.",
-        "img":"../images/preIMg3.jpg"
+        "img":"..assets/images/diaImg/preIMg3.jpg"
     },
 
     {
         "title":"Quit Smoking",
         "discription":"Smoking is strongly linked to the risk of diabetes, especially in heavy smokers. Quitting has been shown to reduce this risk over time.",
-        "img":"../images/preIMg5.jpg"
+        "img":"..assets/images/diaImg/preIMg5.jpg"
     },
     {
         "title":"Follow a Very-Low-Carb Diet",
         "discription":"Following a ketogenic or very-low-carb diet can help keep blood sugar and insulin levels under control, which may protect against diabetes.",
-        "img":"../images/preIMg6.jpg"
+        "img":"..assets/images/diaImg/preIMg6.jpg"
     },
     {
         "title":"Watch Portion Sizes",
         "discription":"Avoiding large portion sizes can help reduce insulin and blood sugar levels and decrease the risk of diabetes.",
-        "img":"../images/preIMg7.jpg"
+        "img":"..assets/images/diaImg/preIMg7.jpg"
     },
     {
         "title":"Avoid Sedentary Behaviors",
         "discription":"Avoiding sedentary behaviors like excessive sitting has been shown to reduce your risk of getting diabetes.",
-        "img":"../images/preIMg8.jpg"
+        "img":"..assets/images/diaImg/preIMg8.jpg"
     },
     {
         "title":"Optimize Vitamin D Levels",
         "discription":"Consuming foods high in vitamin D or taking supplements can help optimize vitamin D blood levels, which can reduce your risk of diabetes.",
-        "img":"../images/preIMg10.jpg"
+        "img":"..assets/images/diaImg/preIMg10.jpg"
     },
 
     {
         "title":"Eat a High-Fiber Diet",
         "discription":"Consuming a good fiber source at each meal can help prevent spikes in blood sugar and insulin levels, which may help reduce your risk of developing diabetes.",
-        "img":"../images/preIMg9.jpg"
+        "img":"..assets/images/diaImg/preIMg9.jpg"
     },
     {
         "title":"Lose Weight If You're Overweight or Obese",
         "discription":"Carrying excess weight, particularly in the abdominal area, increases the likelihood of developing diabetes. Losing weight may significantly reduce the risk of diabetes.",
-        "img":"../images/preIMg4.jpg"
+        "img":"..assets/images/diaImg/preIMg4.jpg"
     },
 
 
@@ -71,39 +71,39 @@ export const preWay =[
 export const Symptoms =[
     {
        "symptom": "Frequent urination",
-       "img":"../images/sym1.jpg"
+       "img":"..assets/images/diaImg/sym1.jpg"
     },
     {
         "symptom": "Excessive thirst",
-        "img":"../images/sym2.jpg"
+        "img":"..assets/images/diaImg/sym2.jpg"
      },
      {
         "symptom": "Unexplained weight loss",
-        "img":"../images/sym3.jpg"
+        "img":"..assets/images/diaImg/sym3.jpg"
      },
      {
         "symptom": "Extreme hunger",
-        "img":"../images/sym4.jpg"
+        "img":"..assets/images/diaImg/sym4.jpg"
      },
      {
         "symptom": "Sudden vision changes",
-        "img":"../images/sym5.jpg"
+        "img":"..assets/images/diaImg/sym5.jpg"
      },
      {
         "symptom": "Tingling or numbness in hands or feet",
-        "img":"../images/sym6.jpg"
+        "img":"..assets/images/diaImg/sym6.jpg"
      },
      {
         "symptom": "Feeling very tired much of the time",
-        "img":"../images/sym7.jpg"
+        "img":"..assets/images/diaImg/sym7.jpg"
      },
      {
         "symptom": "Very dry skin",
-        "img":"../images/sym8.jpg"
+        "img":"..assets/images/diaImg/sym8.jpg"
      },
      {
         "symptom": "More infections than usual",
-        "img":"../images/sym9.jpg"
+        "img":"..assets/images/diaImg/sym9.jpg"
      },
 
 ]
