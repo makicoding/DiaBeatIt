@@ -31,9 +31,9 @@ class CalorieEntry extends React.Component {
      
     // For React Datepicker
     handleChange(date) {
-    this.setState({
+        this.setState({
         startDate: date
-    });
+        });
     }
 
     // this function will call the post route

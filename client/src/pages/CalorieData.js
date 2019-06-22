@@ -146,7 +146,7 @@ class CalorieData extends React.Component {
                                                       className={window.location.pathname === "/CalorieEntry" ? "nav-link active" : "nav-link"}
                                                     >
                                                       <EditBtn onClick={() => this.handleInfoEdit(result)}/> 
-                                                    </Link>
+                                                    </Link> 
                                                     <DeleteBtn  onClick={() => this.handleInfoRemove(result._id)}/>
                                                   </Col>   
                                                 </Row>
