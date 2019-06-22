@@ -9,8 +9,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findMany: function(req, res) { 
+    const {userName, userDate } = req.query;
+    const userDateObj = new Date(userDate);
+    const [month, date, year] = [ userDateObj.getMonth(), userDateObj.getDate(), userDateObj.getFullYear()]; 
     db.Calorie
-      .find({username: "Guest User"})
+      .find({username: userName, date: {"$gte": new Date(year, month, date), "$lt": new Date(year, month, date+1)}})      //{$and: [{username:req.query.userName},{date:req.query.userDate}]}
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -22,7 +25,3 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   }
 };
-
-// {username:+query.userName},{date:query.userDate}
-// .find({ username: req.params.id })
-// .find({ username: new RegExp(req.params.id, 'i') })

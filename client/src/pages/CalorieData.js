@@ -39,19 +39,18 @@ class CalorieData extends React.Component {
     this.setState({
         startDate: date
     });
-    userData.userDate = date;
+    userData.userDate = new Date(date);
     this.loadInfo(userData);
     }
 
     // loading user information as soon as the component is loaded
     componentDidMount() {
-        this.loadInfo(userData);
+      this.loadInfo(userData);
     }
 
     loadInfo = (userData) => {
       API.getInfo(userData)
-        .then(res => 
-          {
+        .then(res => {
             this.setState({ userInfo: res.data });
             this.totalCalculator(this.state.userInfo);
           }
@@ -61,7 +60,8 @@ class CalorieData extends React.Component {
     };
 
     totalCalculator = (userInfo) => {
-      console.log(userInfo)
+      console.log('state is ', this.state.userInfo)
+      console.log('userIngo', userInfo)
       var newTot = 0;
       for( let i=0; i<userInfo.length; i++){
         newTot = newTot + (parseFloat(userInfo[i].qty) * parseFloat(userInfo[i].unitcal))

@@ -7,8 +7,10 @@ export default {
   },
 
   // Gets  calorie info that matches the search
-  getInfo: function(query) {
-    return axios.get("/api/calorie/" + query );
+  getInfo: function(userQuery) {
+    return axios.get("/api/calorie/", {
+      params: {...userQuery}      
+    } );
   },
   
   // Deletes the book with the given id
