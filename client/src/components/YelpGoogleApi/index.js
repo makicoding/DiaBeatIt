@@ -7,7 +7,7 @@ import {
     GoogleMap,
     Marker,InfoWindow
 } from "react-google-maps";
-import "./index.css"
+import "./yelpGoogleApi.css"
 import {ButtonContainer} from "./ButtonContainer"
 import 'bootstrap/dist/css/bootstrap.min.css' 
 import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
