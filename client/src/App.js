@@ -7,6 +7,7 @@ import StoreFinder from "./pages/StoreFinder";
 import RecipeFinder from "./pages/RecipeFinder";
 import HealthCard from "./pages/HealthCard";
 import Resources from "./pages/Resources";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           {/* <Route exact path="/HealthTimeline" component={HealthTimeline} /> */}
           <Route exact path="/HealthCard" component={HealthCard} />
           <Route exact path="/Resources" component={Resources} />
-          {/* <Route exact path="/Contact" component={Contact} /> */}
+          <Route exact path="/Contact" component={Contact} />
           {/* <Route exact path="/anotherpage/:id" component={AnotherPage} /> */}
         </Switch>
       </div>
