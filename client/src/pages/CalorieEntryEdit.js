@@ -283,7 +283,7 @@ class CalorieEntry extends React.Component {
 
                                     <Col size="col-md-10">                               
                                         {/* Datepicker */}
-                                        <div className="customReactDatepicker">
+                                        <div className="customReactDatepicker" id="calorieEntryPage-datepicker">
                                             <DatePicker
                                             dateFormat="yyyy/MM/dd"
                                             selected={this.state.startDate}

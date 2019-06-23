@@ -124,7 +124,7 @@ class CalorieData extends React.Component {
                                         <div className="mainContentTextBlack">Filter by date:</div>
                                         <Br />
                                         {/* Datepicker */}
-                                        <div className="customReactDatepicker">
+                                        <div className="customReactDatepicker" id="calorieDataPage-datepicker">
                                             <DatePicker
                                             dateFormat="yyyy/MM/dd"
                                             selected={this.state.startDate}

@@ -4,37 +4,29 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption
 } from 'reactstrap';
 
 const items = [
   {
-    src:"./assets/images/diaImg/dia-image1.jpg" ,
-    altText: 'Slide 6',
-  },
-  {
-    src: "./assets/images/diaImg/dia1.jpg",
+    src: "./assets/images/Resources_Images/diaImg/preIMg6.jpg",
     altText: 'Slide 1',
   },
   {
-    src: "./assets/images/diaImg/dia2.jpg",
+    src: "./assets/images/Resources_Images/diaImg/preIMg5.jpg",
     altText: 'Slide 2',
   },
   {
-    src:"./assets/images/diaImg/dia3.jpg" ,
+    src:"./assets/images/Resources_Images/diaImg/preIMg2.png" ,
     altText: 'Slide 3',
   },
   {
-    src:"./assets/images/diaImg/dia4.jpg" ,
+    src:"./assets/images/Resources_Images/diaImg/preIMg9.jpg" ,
     altText: 'Slide 4',
-  },
-  {
-    src:"./assets/images/diaImg/dia5.jpg" ,
-    altText: 'Slide 5',
+  
   }
 ];
 
-class ImgCarousel1 extends Component {
+class ImgCarousel extends Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0 };
@@ -80,8 +72,7 @@ class ImgCarousel1 extends Component {
           onExited={this.onExited}
           key={item.src}
         >
-          <img src={item.src} alt={item.altText} className="carouselImg" />
-          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+          <img src={item.src}  alt={item.altText} className="carouselImg" />
         </CarouselItem>
       );
     });
@@ -94,12 +85,12 @@ class ImgCarousel1 extends Component {
       >
         <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+        <CarouselControl className="arrowColor" direction="prev" directionText="Previous" onClickHandler={this.previous} />
+        <CarouselControl className="arrowColor" direction="next" directionText="Next" onClickHandler={this.next} />
       </Carousel>
     );
   }
 }
 
 
-export default ImgCarousel1;
+export default ImgCarousel;
