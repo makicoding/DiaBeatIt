@@ -15,6 +15,7 @@ import EditBtn from "../components/EditBtn";
 import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Run "npm start" to start React app.
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
@@ -69,15 +70,16 @@ class CalorieData extends React.Component {
 
     // deleting records from MongoDB
     handleInfoRemove = event => {
-      API.deleteBook(event)
+      API.deleteInfo(event)
         .then(res => this.loadInfo(userData))
         .catch(err => console.log(err));
     }
 
     // handling editing records in MongoDB
-    handleInfoEdit = event => {
-      console.log(event)
-    }
+    //handleInfoEdit = event => {
+      //console.log(event)
+    //}
+
     render() {
         return(
         <div>
@@ -149,10 +151,11 @@ class CalorieData extends React.Component {
                                                     Calorie: {result.unitcal * result.qty}<br />
                                                     Comments: {result.comments}<br />
                                                     <Link
-                                                      to="/CalorieEntry"
-                                                      className={window.location.pathname === "/CalorieEntry" ? "nav-link active" : "nav-link"}
+                                                      to="/CalorieEntryEdit"
+                                                      params={{ calorieData: result }}
+                                                      className={window.location.pathname === "/CalorieEntryEdit" ? "nav-link active" : "nav-link"}
                                                     >
-                                                      <EditBtn onClick={() => this.handleInfoEdit(result)}/> 
+                                                      <EditBtn /> 
                                                     </Link> 
                                                     <DeleteBtn  onClick={() => this.handleInfoRemove(result._id)}/>
                                                   </Col>   

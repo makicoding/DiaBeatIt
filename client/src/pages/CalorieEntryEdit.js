@@ -25,6 +25,7 @@ class CalorieEntry extends React.Component {
 
     constructor(props) {
         super(props);
+        console.log(this.props)
         this.state = {
           startDate: new Date(),
           didSubmit: "No"
@@ -39,14 +40,28 @@ class CalorieEntry extends React.Component {
         });
     }
 
+    // populating the form with default values
+    componentDidMount() {
+        document.getElementById("calorieEntryPage-mealCategory").value = "Breakfast";
+        document.getElementById("calorieEntryPage-mealNameCaloriesPerSingleQuantity").value = "Hamburger (540 cal)";
+        document.getElementById("calorieEntryPage-mealQuantity").value = 1;
+        document.getElementById("calorieEntryPage-drinkNameCaloriesPerGlass").value = "0";
+        document.getElementById("calorieEntryPage-drinkQuantity").value = "";
+        document.getElementById("calorieEntryPage-ingredientNameCaloriesPerGram").value = "0";
+        document.getElementById("calorieEntryPage-ingredientGrams").value = "";
+        document.getElementById("calorieEntryPage-manualEntryName").value = "";
+        document.getElementById("calorieEntryPage-manualEntryCalories").value = "";
+        document.getElementById("calorieEntryPage-notes").value = "eat like a king";
+    }
+
     // Function to open Nutritionnix URL
     openNutritionnixURL = () => {
         window.open("https://www.nutritionix.com/uk/database/common-foods");
     }
 
     // This function will call the post route
-    handleInfoSave = event => {
-        API.saveInfo(event)
+    handleInfoEdit = event => {
+        API.editInfo(event)
           .then(res => this.setState({didSubmit:"Yes"}))
           .catch(err => console.log(err));
       }
@@ -187,6 +202,7 @@ class CalorieEntry extends React.Component {
         }
 
         var data = {      
+            id: "5d0e514e0810c51ea0caae9b",
             username: userName,
             date: dateInput,
             mealtype: mealCategory,
@@ -198,7 +214,7 @@ class CalorieEntry extends React.Component {
         };
 
         // Calling the post method
-        this.handleInfoSave(data);
+        this.handleInfoEdit(data);
 
         // Clear the form when submitting and show a success message
         document.getElementById("calorieEntryPage-mealCategory").value = "0";
@@ -211,7 +227,11 @@ class CalorieEntry extends React.Component {
         document.getElementById("calorieEntryPage-manualEntryName").value = "";
         document.getElementById("calorieEntryPage-manualEntryCalories").value = "";
         document.getElementById("calorieEntryPage-notes").value = "";
-        document.getElementById("calorieEntryPage-successMessage").innerText = "Data submitted successfully!";
+        document.getElementById("calorieEntryPage-successMessage").innerText = "Data updated successfully!";
+
+        // go back to previous page
+        window.history.back()
+
         return data;
         }
     }

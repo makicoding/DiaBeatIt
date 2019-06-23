@@ -9,6 +9,7 @@ router.route("/")
 // Matches with "/api/books/:id"
 router
 .route("/:id")
-.delete(calorieController.remove);
+.delete(calorieController.remove)
+.put(calorieController.update);
 
 module.exports = router;

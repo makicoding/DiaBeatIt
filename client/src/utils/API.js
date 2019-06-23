@@ -13,11 +13,13 @@ export default {
     } );
   },
   
+  // Edits the book with the given id
+  editInfo: function(userQuery) {
+    return axios.put("/api/calorie/" + userQuery.id, userQuery);
+  },
+
   // Deletes the book with the given id
-  deleteBook: function(id) {
+  deleteInfo: function(id) {
     return axios.delete("/api/calorie/" + id);
   },
 };
-
-// return axios.get(`/api/calorie/${query || ''}`);
-//   console.log("/api/calorie/" + "{username: " + query.userName + "},{date:" + query.userDate + "}")
