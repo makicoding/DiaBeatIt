@@ -36,10 +36,6 @@ function Resources() {
           
             <div className="App">    
               <Resource/>
-
-              <Br />
-              <Br />
-              <Br />
             </div>
 
           </div>
