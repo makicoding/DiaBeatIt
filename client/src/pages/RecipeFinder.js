@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../components/RecipeFinder/RecipeFinder.css';
 import RecForm from '../components/RecipeFinder/RecForm';
 import Recipes from '../components/RecipeFinder/Recipes'
 import HamburgerMenu from "../components/HamburgerMenu";

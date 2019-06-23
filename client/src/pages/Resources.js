@@ -1,6 +1,6 @@
 import React from 'react';
-import '../App.css';
-import Resource from '../components/Resource/Resources'
+import '../components/Resources/Resources.css';
+import Resource from '../components/Resources/Resources'
 import  'bootstrap/dist/css/bootstrap.min.css'
 import HamburgerMenu from "../components/HamburgerMenu";
 import Br from "../components/CustomLineBreak";
