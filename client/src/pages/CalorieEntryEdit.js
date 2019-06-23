@@ -227,7 +227,7 @@ class CalorieEntry extends React.Component {
         document.getElementById("calorieEntryPage-manualEntryName").value = "";
         document.getElementById("calorieEntryPage-manualEntryCalories").value = "";
         document.getElementById("calorieEntryPage-notes").value = "";
-        document.getElementById("calorieEntryPage-successMessage").innerText = "Data Updated Successfully!";
+        document.getElementById("calorieEntryPage-successMessage").innerText = "Data updated successfully!";
 
         // go back to previous page
         window.history.back()
