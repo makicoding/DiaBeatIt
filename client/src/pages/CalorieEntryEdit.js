@@ -17,18 +17,14 @@ import API from "../utils/API";
 // Run "npm start" to start React app.
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
 
-// grabbing username from cookies
-localStorage.setItem("username", "Guest User");   // delete this line in production
-var userName = localStorage.getItem("username");
-
-class CalorieEntry extends React.Component {
+class CalorieEntryEdit extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
+          result: props.location.calorieInfo,
           startDate: new Date(),
-          didSubmit: "No",
-          result: props.location.calorieInfo
+          didSubmit: "No"
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -42,18 +38,27 @@ class CalorieEntry extends React.Component {
 
     // populating the form with default values
     componentDidMount() {
-        console.log("component did mount")
-        console.log(this.state.result)
-        document.getElementById("calorieEntryPage-mealCategory").value = "Breakfast";
-        document.getElementById("calorieEntryPage-mealNameCaloriesPerSingleQuantity").value = "Hamburger (540 cal)";
-        document.getElementById("calorieEntryPage-mealQuantity").value = 1;
-        document.getElementById("calorieEntryPage-drinkNameCaloriesPerGlass").value = "0";
-        document.getElementById("calorieEntryPage-drinkQuantity").value = "";
-        document.getElementById("calorieEntryPage-ingredientNameCaloriesPerGram").value = "0";
-        document.getElementById("calorieEntryPage-ingredientGrams").value = "";
-        document.getElementById("calorieEntryPage-manualEntryName").value = "";
-        document.getElementById("calorieEntryPage-manualEntryCalories").value = "";
-        document.getElementById("calorieEntryPage-notes").value = "eat like a king";
+        const userDateObj = new Date(this.state.result.date);
+        const [month, date, year] = [ userDateObj.getMonth(), userDateObj.getDate(), userDateObj.getFullYear()]; 
+        this.setState({
+            startDate: new Date(year, month, date)
+        })
+        document.getElementById("calorieEntryPage-datepicker").value = this.state.startDate;
+        document.getElementById("calorieEntryPage-mealCategory").value = this.state.result.mealtype;
+        document.getElementById("calorieEntryPage-notes").value = this.state.result.comments;
+        if (this.state.result.sectionno === "A") {
+            document.getElementById("calorieEntryPage-mealNameCaloriesPerSingleQuantity").value = this.state.result.mealname;
+            document.getElementById("calorieEntryPage-mealQuantity").value = this.state.result.qty;
+        } else if (this.state.result.sectionno === "B") {
+            document.getElementById("calorieEntryPage-drinkNameCaloriesPerGlass").value = this.state.result.mealname;
+            document.getElementById("calorieEntryPage-drinkQuantity").value = this.state.result.qty;
+        } else if (this.state.result.sectionno === "C") {
+            document.getElementById("calorieEntryPage-ingredientNameCaloriesPerGram").value = this.state.result.mealname;
+            document.getElementById("calorieEntryPage-ingredientGrams").value = this.state.result.qty;
+        } else {
+            document.getElementById("calorieEntryPage-manualEntryName").value = this.state.result.mealname;
+            document.getElementById("calorieEntryPage-manualEntryCalories").value = this.state.result.unitcal;
+        }
     }
 
     // Function to open Nutritionnix URL
@@ -204,8 +209,8 @@ class CalorieEntry extends React.Component {
         }
 
         var data = {      
-            id: "5d0e514e0810c51ea0caae9b",
-            username: userName,
+            id: this.state.result._id,
+            username: this.state.result.username,
             date: dateInput,
             mealtype: mealCategory,
             sectionno: sectionNumber,
@@ -232,9 +237,7 @@ class CalorieEntry extends React.Component {
         document.getElementById("calorieEntryPage-successMessage").innerText = "Data updated successfully!";
 
         // go back to previous page
-        window.history.back()
-
-        return data;
+        //window.history.back()
         }
     }
 
@@ -519,4 +522,4 @@ class CalorieEntry extends React.Component {
     }
 }
 
-export default CalorieEntry;
+export default CalorieEntryEdit;
