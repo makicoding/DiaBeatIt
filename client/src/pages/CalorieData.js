@@ -150,11 +150,16 @@ class CalorieData extends React.Component {
                                                     {result.mealname}<br />
                                                     Calorie: {result.unitcal * result.qty}<br />
                                                     Comments: {result.comments}<br />
-                                                    <Link
+                                                    {/* <Link
                                                       to="/CalorieEntryEdit"
                                                       params={{ calorieData: result }}
                                                       className={window.location.pathname === "/CalorieEntryEdit" ? "nav-link active" : "nav-link"}
-                                                    >
+                                                    > */}
+                                                    <Link
+                                                      to={{
+                                                      pathname:"/CalorieEntryEdit",
+                                                      calorieInfo: result
+                                                    }} >                                                    
                                                       <EditBtn /> 
                                                     </Link> 
                                                     <DeleteBtn  onClick={() => this.handleInfoRemove(result._id)}/>

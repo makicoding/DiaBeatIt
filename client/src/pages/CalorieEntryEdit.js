@@ -25,10 +25,10 @@ class CalorieEntry extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props)
         this.state = {
           startDate: new Date(),
-          didSubmit: "No"
+          didSubmit: "No",
+          result: props.location.calorieInfo
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -42,6 +42,8 @@ class CalorieEntry extends React.Component {
 
     // populating the form with default values
     componentDidMount() {
+        console.log("component did mount")
+        console.log(this.state.result)
         document.getElementById("calorieEntryPage-mealCategory").value = "Breakfast";
         document.getElementById("calorieEntryPage-mealNameCaloriesPerSingleQuantity").value = "Hamburger (540 cal)";
         document.getElementById("calorieEntryPage-mealQuantity").value = 1;
