@@ -2,9 +2,9 @@ import React from 'react'
 import {
     Card, CardText, CardBody, Container, CardTitle,
 } from 'reactstrap';
-import ImgCarousel from '../Resource/ImgCarousel';
-import ImgCarousel1 from '../Resource/ImgCarousel1';
-import { diaTypes, preWay, Symptoms } from '../../diabitiesData';
+import ImgCarousel from './ImgCarousel';
+import ImgCarousel1 from './ImgCarousel1';
+import { diaTypes, preWay, Symptoms } from './diabitiesData';
 // import { types } from '@babel/core';
 
 const Resource = (props) => {
