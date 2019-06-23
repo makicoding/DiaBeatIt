@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Splash from "./pages/Splash";
 import MainMenu from "./pages/MainMenu";
 import CalorieEntry from "./pages/CalorieEntry";
 import CalorieEntryEdit from "./pages/CalorieEntryEdit";
@@ -15,7 +16,7 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={MainMenu} />
+          <Route exact path="/" component={Splash} />
           <Route exact path="/MainMenu" component={MainMenu} />
           <Route exact path="/CalorieEntry" component={CalorieEntry} />
           <Route exact path="/CalorieEntryEdit" component={CalorieEntryEdit} />

@@ -8,7 +8,6 @@ import HelloUserAndSignOut from "../components/HelloUserAndSignOut";
 import "../components/InputAndSelectField/inputAndSelectField.css";
 import "../components/PageWrapper/pageWrapper.css";
 import "../components/MainContentContainer/mainContentContainer.css";
-import { Link } from "react-router-dom";
 
 // Run "npm start" to start React app.
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
