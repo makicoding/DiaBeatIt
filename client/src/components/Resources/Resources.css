@@ -56,6 +56,8 @@
 .rounded-circle{
   width: 85%;
 
+  border: 1px solid #cecece;
+
   box-shadow: 0 10px 2px #cecece;
   margin-bottom:2vh;
 
