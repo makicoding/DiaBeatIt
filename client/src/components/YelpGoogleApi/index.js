@@ -15,42 +15,34 @@ import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from
 
 
 
-
-// sets default markers by passing yelp_params into the yelp api query string
-//var storetypes default is healthmarkets; when a user chooses a different storetype from the dropdown menu, state is updated to that value
 var storetype="healthmarkets"
 function mainFunction(yelp_params, callback) {
      
-        const axios =require ("axios")
-       var str= axios
-         .get(
-           //this api requires cors-anywhere to work 
-           `
-           ${"https://cors-anywhere.herokuapp.com/"}
-           https://api.yelp.com/v3/businesses/search?&location=`+yelp_params,
-           {
-             headers: {
-               Authorization: 
-               `Bearer ${process.env.REACT_APP_YELP_KEY}`
-                
-             }
-             ,
-             params: {
-               categories:storetype ,
-             }
-           }
-         )
-         .then( res => {
-            callback(res.data)
-            return (res.data.businesses[0].id)
-            
-         })
-         .catch(err => {
-           console.log(err);
-        //    alert("please enter a city name or zip code")
-         })
+  const axios =require ("axios")
+ var str= axios
+   .get(
+     `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3/businesses/search?&location=`+yelp_params,
+     {
+       headers: {
+         Authorization: `Bearer ` + process.env.REACT_APP_YELP_KEY
+       }
+       ,
+       params: {
+         categories: storetype,
+       }
+     }
+   )
+   .then( res => {
+      callback(res.data)
+      return (res.data.businesses[0].id)
+      
+   })
+   .catch(err => {
+     console.log(err);
+  //    alert("please enter a city name or zip code")
+   })
 
-          }
+    }
          
 class Map extends Component{
  
