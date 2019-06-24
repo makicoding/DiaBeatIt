@@ -2,11 +2,11 @@
 export const diaTypes = 
 [{
 "header": "Type 1",
-"description": " Type 1 diabetes, previously called insulin-dependent diabetes mellitus (IDDM) or juvenileonset diabetes, may account for 5 percent to 10 percent of all diagnosed cases of diabetes. Risk factors are less well defined for Type 1 diabetes than for Type 2 diabetes, but autoimmune, genetic, and environmental factors are involved in the development of this type of diabetes.",
+"description": " Type 1 diabetes, previously called insulin-dependent diabetes mellitus (IDDM) or juvenileonset diabetes, may account for 5 to 10 percent of all diagnosed cases of diabetes. Risk factors are less well defined for Type 1 diabetes than for Type 2 diabetes, but autoimmune, genetic and environmental factors are involved in the development of this type of diabetes.",
 },
 {
 "header": "Type 2",
-"description": "Type 2 diabetes was previously called non-insulin-dependent diabetes mellitus (NIDDM) or adult-onset diabetes. Type 2 diabetes may account for about 90 percent to 95 percent of all diagnosed cases of diabetes. Risk factors for Type 2 diabetes include older age, obesity, family history of diabetes, prior history of gestational diabetes, impaired glucose tolerance, physical inactivity, and race/ethnicity. African Americans, Hispanic/Latino Americans, American Indians, and some Asian Americans and Pacific Islanders are at particularly high risk for type 2 diabetes.",
+"description": "Type 2 diabetes, previously called non-insulin-dependent diabetes mellitus (NIDDM) or adult-onset diabetes, may account for 90 to 95 percent of all diagnosed cases of diabetes. Risk factors for Type 2 diabetes include older age, obesity, family history of diabetes, prior history of gestational diabetes, impaired glucose tolerance, physical inactivity, and race/ethnicity. African Americans, Hispanic/Latino Americans, American Indians, some Asian Americans and Pacific Islanders are at particularly high risk for Type 2 diabetes.",
 
 }
 ]
@@ -14,54 +14,54 @@ export const diaTypes =
 
 export const preWay =[
     {
-        "title":"Cut Sugar and Refined Carbs From Your Diet",
+        "title":"Cut sugar and refined carbs from your diet",
         "description":" Eating foods high in refined carbs and sugar increases blood sugar and insulin levels, which may lead to diabetes over time. Avoiding these foods may help reduce your risk.",
         "img":"./assets/images/Resources_Images/diaImg/preIMg1.jpg"
     },
     {
-        "title":"Work Out Regularly",
+        "title":"Work out regularly",
         "description":"Performing physical activity on a regular basis can increase insulin secretion and sensitivity, which may help prevent the progression from prediabetes to diabetes.",
         "img":"./assets/images/Resources_Images/diaImg/preIMg2.png"
     },
     {
-        "title":"Drink Water as Your Primary Beverage",
-        "description":" Drinking water instead of other beverages may help control blood sugar and insulin levels,thereby reducing the risk of diabetes.",
+        "title":"Drink water as your primary beverage",
+        "description":" Drinking water instead of other beverages may help control blood sugar and insulin levels, thereby reducing the risk of diabetes.",
         "img":"./assets/images/Resources_Images/diaImg/preIMg3.jpg"
     },
 
     {
-        "title":"Quit Smoking",
+        "title":"Quit smoking",
         "description":"Smoking is strongly linked to the risk of diabetes, especially in heavy smokers. Quitting has been shown to reduce this risk over time.",
         "img":"./assets/images/Resources_Images/diaImg/preIMg5.jpg"
     },
     {
-        "title":"Follow a Very-Low-Carb Diet",
-        "description":"Following a ketogenic or very-low-carb diet can help keep blood sugar and insulin levels under control, which may protect against diabetes.",
+        "title":"Follow a very low-carb diet",
+        "description":"Following a ketogenic or very low-carb diet can help keep blood sugar and insulin levels under control, which may protect against diabetes.",
         "img":"./assets/images/Resources_Images/diaImg/preIMg6.jpg"
     },
     {
-        "title":"Watch Portion Sizes",
+        "title":"Watch portion sizes",
         "description":"Avoiding large portion sizes can help reduce insulin and blood sugar levels and decrease the risk of diabetes.",
         "img":"./assets/images/Resources_Images/diaImg/preIMg7.jpg"
     },
     {
-        "title":"Avoid Sedentary Behaviors",
+        "title":"Avoid sedentary behaviors",
         "description":"Avoiding sedentary behaviors like excessive sitting has been shown to reduce your risk of getting diabetes.",
         "img":"./assets/images/Resources_Images/diaImg/preIMg8.jpg"
     },
     {
-        "title":"Optimize Vitamin D Levels",
+        "title":"Optimize vitamin D levels",
         "description":"Consuming foods high in vitamin D or taking supplements can help optimize vitamin D blood levels, which can reduce your risk of diabetes.",
         "img":"./assets/images/Resources_Images/diaImg/preIMg10.jpg"
     },
 
     {
-        "title":"Eat a High-Fiber Diet",
+        "title":"Eat a high-fiber diet",
         "description":"Consuming a good fiber source at each meal can help prevent spikes in blood sugar and insulin levels, which may help reduce your risk of developing diabetes.",
         "img":"./assets/images/Resources_Images/diaImg/preIMg9.jpg"
     },
     {
-        "title":"Lose Weight If You're Overweight or Obese",
+        "title":"Lose weight if you are overweight or obese",
         "description":"Carrying excess weight, particularly in the abdominal area, increases the likelihood of developing diabetes. Losing weight may significantly reduce the risk of diabetes.",
         "img":"./assets/images/Resources_Images/diaImg/preIMg4.jpg"
     },

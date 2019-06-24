@@ -6,6 +6,7 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
+import "./Resources.css";
 
 const items = [
   {
@@ -79,6 +80,7 @@ class ImgCarousel1 extends Component {
           onExiting={this.onExiting}
           onExited={this.onExited}
           key={item.src}
+          className="carouselZIndex"
         >
           <img src={item.src} alt={item.altText} className="carouselImg" />
           <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
@@ -91,6 +93,7 @@ class ImgCarousel1 extends Component {
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
+        className="carouselZIndex"
       >
         <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
