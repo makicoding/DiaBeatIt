@@ -22,4 +22,11 @@ export default {
   deleteInfo: function(id) {
     return axios.delete("/api/calorie/" + id);
   },
+
+  // Saves the medical ID 
+  saveMedId: function(data) {
+    // console.log(axios.post(data));
+    return axios.post("/api/healthcard", data)
+    }
+    
 };

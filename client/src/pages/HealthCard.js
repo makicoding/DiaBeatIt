@@ -9,21 +9,58 @@ import HelloUserAndSignOut from "../components/HelloUserAndSignOut";
 import "../components/PageWrapper/pageWrapper.css";
 import "../components/MainContentContainer/mainContentContainer.css";
 import "../components/InputAndSelectField/inputAndSelectField.css";
+import API from "../utils/API";
+
 
 // Run "npm start" to start React app.
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
 
+var userName= localStorage.getItem("username");
+
 class HealthCard extends React.Component {
+constructor(props) {
+super(props);
+this.state = {
+didSubmit: "No"
+};
+}
+// This function will call the post route
+handleMedIdSave = event => {
+    API.saveMedId(event)
+    .then(res => this.setState({didSubmit:"Yes"}))
+.catch(err => console.log(err));
+}
+
+prepareData = () => {
+        var data = {
+            username: userName,
+            patientname: "bill",
+            contactname: "james bond",
+            contactphone: "007",
+            insurancecompany: "healthnet",
+            policyno: "String",
+            primarycarephysician: "dr. no",
+            medicalconditions: "killer",
+            medication: "diamonds",
+            allergies: "bad guys",
+            bloodtype: "gold",
+            resuscitate: 0,
+            organdonor: 0
+        }
+        console.log(data);
+        this.handleMedIdSave(data);
+}
+
+
 
     saveHealthCard = () => {
-        console.log("Save!");
-    }
+console.log("Save!");
+}
+printHealthCard = () => {
+console.log("Print!");
+}
+render() {
 
-    printHealthCard = () => {
-        console.log("Print!");
-    }
-    
-    render() {
         return(
         <div>
 
@@ -211,7 +248,7 @@ class HealthCard extends React.Component {
                                 {/* Subrow (PRINT) */}
                                 <Row>
                                     <Col size="col-md-12">
-                                        <button className="button1" id="healthCardPage-print" onClick={this.printHealthCard}>Print</button>
+                                    <button className="button1" id="healthCardPage-print" onClick={this.prepareData}>Print</button>
                                     </Col>
                                 </Row> 
 
