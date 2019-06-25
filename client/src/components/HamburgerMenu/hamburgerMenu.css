@@ -53,6 +53,7 @@
 /* Style the hamburger menu */
 .topnav a.icon {
     background: #FFAB0A;
+    text-decoration: none;
     position: fixed;
     right: 0px;
     top: 0px;
@@ -62,6 +63,7 @@
 .topnav a:hover {
     background-color: #2AC940;
     color: white;
+    text-decoration: none;
 }
 
 /* ---------------------------------------- */
