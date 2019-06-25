@@ -7,6 +7,7 @@ import CalorieEntryEdit from "./pages/CalorieEntryEdit";
 import CalorieData from "./pages/CalorieData";
 import StoreFinder from "./pages/StoreFinder";
 import RecipeFinder from "./pages/RecipeFinder";
+import HealthTimeline from "./pages/HealthTimeline";
 import HealthCard from "./pages/HealthCard";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
@@ -23,7 +24,7 @@ function App() {
           <Route exact path="/CalorieData" component={CalorieData} />
           <Route exact path="/StoreFinder" component={StoreFinder} />
           <Route exact path="/RecipeFinder" component={RecipeFinder} />
-          {/* <Route exact path="/HealthTimeline" component={HealthTimeline} /> */}
+          <Route exact path="/HealthTimeline" component={HealthTimeline} />
           <Route exact path="/HealthCard" component={HealthCard} />
           <Route exact path="/Resources" component={Resources} />
           <Route exact path="/Contact" component={Contact} />
