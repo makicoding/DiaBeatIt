@@ -1,0 +1,6 @@
+.mainContentContainer {
+    background-color: none;  /* Change color to see positioning on page */
+
+    position: relative;
+    top: 50px;
+}

@@ -1,0 +1,39 @@
+.helloUserTxt {
+    /* color: #a1a1a1; */
+    color: black;
+    text-align: right;
+
+    position: relative;
+    top: 10px;
+    right: 15px; 
+}
+
+.userFirstName {
+    /* color: #a1a1a1; */
+    color: black;
+}
+
+.signOutContainer {
+    background-color: none;  /* Change color to see positioning on page */
+
+    width: 100%;
+    text-align: right;
+
+    position: relative;
+    top: 10px;
+}
+
+.signOutAnchor {
+    color: #4569FF;
+    text-align: right;
+    text-decoration: underline;
+
+    cursor: pointer;
+
+    position: relative;
+    right: 15px;
+}
+
+.signOutAnchor:hover {
+    color: #2AC940;
+}
