@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link, Route } from "react-router-dom";
+import HealthCardPreview from "./HealthCardPreview";
 import { Container, Row, Col } from "../components/Grid";
 import HamburgerMenu from "../components/HamburgerMenu";
 import Br from "../components/CustomLineBreak";
@@ -15,15 +17,75 @@ import "../components/InputAndSelectField/inputAndSelectField.css";
 
 class HealthCard extends React.Component {
 
+    state = {
+        name: "",
+        showPreview: false,
+    //     DOB: "",
+    //     address: "",
+        emergencyContact: ""
+    //     emergencyContactPhone: "",
+    //     insuranceProvider: "",
+    //     policyNo: "",
+    //     primaryCarePhysician: "",
+    //     primaryCarePhysicianPhone: "",
+    //     knownConditions: "",
+    //     knownAllergens: "",
+    //     medications: "",
+    //     bloodType: "",
+    //     organDonor: "",
+    //     doNotResuscitate: ""
+    };
+
     saveHealthCard = () => {
         console.log("Save!");
     }
 
-    printHealthCard = () => {
-        console.log("Print!");
+    previewHealthCard = () => {
+        // console.log("Print!");
+        let name = document.getElementById("healthCardPage-fullName").value;
+        let emergencyContact = document.getElementById("healthCardPage-emergencyContactName").value;
+        // let emergencyContactPhone = document.getElementById("healthCardPage-EmergencyContactPhone").value;
+        // let primaryCarePhysician = document.getElementById("healthCardPage-primaryCarePhysician").value;
+        // let primaryCarePhysicianPhone = document.getElementById("healthCardPage-primaryCarePhysicianPhoneNumber").value;
+        // let knownAllergens = document.getElementById("healthCardPage-knownAllergens").value;
+        // let medications = document.getElementById("healthCardPage-medications").value;
+        // let knownConditions = document.getElementById("healthCardPage-medicalConditions").value;
+        // let bloodType= document.getElementById("healthCardPage-bloodType").value;
+        let organDonor = document.getElementById("healthCardPage-organDonor").value;
+        // let doNotResuscitate = document.getElementById("healthCardPage-doNotResuscitate").value;
+        // // Updating the input's state
+        this.setState({
+            name: name,
+            emergencyContact: emergencyContact,
+            organDonor: organDonor,
+            showPreview: true
+        });
+
     }
     
     render() {
+        if (this.state.showPreview) {
+            return (
+                <div style={{height: '100vh', width:'100vw'}}>
+            
+            <HamburgerMenu />
+                    <HealthCardPreview name={this.state.name} emergencyContact={this.state.emergencyContact}
+                    organDonor={this.state.organDonor}/>
+                    <Container> 
+                        <Row>
+                            <Col>
+                                <Row>
+                                    <Col size="col-md-12">
+                                        <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: false})}>Close Preview</button>
+                                        <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+            )
+        }
         return(
         <div>
 
@@ -32,7 +94,7 @@ class HealthCard extends React.Component {
 
             {/* Page Wrapper */}
             <div className="pageWrapper">
-
+                
                 {/* Hello user first name text and sign out anchor */}
                 <HelloUserAndSignOut />
 
@@ -134,7 +196,7 @@ class HealthCard extends React.Component {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <textarea className="form-control" id="healthCardPage-knownAllergies" placeholder="" rows="4" autoComplete="off"></textarea>    
+                                        <textarea className="form-control" id="healthCardPage-knownAllergens" placeholder="" rows="4" autoComplete="off"></textarea>    
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -210,9 +272,21 @@ class HealthCard extends React.Component {
                                 {/* ------------------------------ */}
                                 {/* Subrow (PRINT) */}
                                 <Row>
-                                    <Col size="col-md-12">
-                                        <button className="button1" id="healthCardPage-print" onClick={this.printHealthCard}>Print</button>
+                                <Col size="col-md-12">
+                                <button className="button1" id="healthCardPage-save" onClick={this.previewHealthCard}>Preview</button>
+                                        
+                                        {/* <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: true})}>Preview</button> */}
+                                        <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
                                     </Col>
+                                {/* <Link to="/Preview" role="button" className="button1">
+                                Preview
+                                </Link>{" "}
+ 
+                                <Route exact path="/Preview" component={HealthCardPreview} />
+                                    <Col size="col-md-12">
+                                        <button className="button1" id="healthCardPage-print" onClick={this.previewHealthCard}>Preview</button>
+                                        <Route exact path="Preview" component={HealthCardPreview} />
+                                    </Col> */}
                                 </Row> 
 
                                 <Br />

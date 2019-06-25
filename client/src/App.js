@@ -5,6 +5,7 @@ import CalorieEntry from "./pages/CalorieEntry";
 import CalorieData from "./pages/CalorieData";
 import HealthCard from "./pages/HealthCard";
 import HealthTimeline from "./pages/HealthTimeline";
+import HealthCardPreview from "./pages/HealthCardPreview";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           {/* <Route exact path="/StoreFinder" component={StoreFinder} /> */}
           {/* <Route exact path="/RecipesFinder" component={RecipesFinder} /> */}
           <Route exact path="/HealthTimeline" component={HealthTimeline} />
-          <Route exact path="/HealthCard" component={HealthCard} />
+          <Route path="/HealthCard" component={HealthCard} />                
+          <Route exact path="/Preview" component={HealthCardPreview} />
           {/* <Route exact path="/Resources" component={Resources} /> */}
           {/* <Route exact path="/Contact" component={Contact} /> */}
           {/* <Route exact path="/anotherpage/:id" component={AnotherPage} /> */}

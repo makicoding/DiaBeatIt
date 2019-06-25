@@ -1,0 +1,14 @@
+@media only screen and (max-width: 600px) {
+    .card {
+      transform: scale(.25) rotate(90deg);
+      /* width: 100%; */
+    }
+}
+
+.card {
+    width: 75%;
+    margin: 0 auto;
+    transform: scale(.75);
+}
+
+

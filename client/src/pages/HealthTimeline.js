@@ -22,8 +22,14 @@ class HealthTimeline extends React.Component {
         currentHeight: "",
         currentDiet: "",
         currentExerciseFrequency: "",
-        userBMI: ""
+        userBMI: "",
+        messageBMI: "",
+        lifeExpectancy: "80"
     };
+    
+    componentDidMount() {
+        document.getElementById("bmi").style.display = "none";
+    }
 
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
@@ -40,61 +46,52 @@ class HealthTimeline extends React.Component {
     };
 
     calculateBMI = (height, weight) => {
+        let {userBMI, messageBMI} = this.state;
 
-        // if (weight > 0 && height > 0) {
-            var finalBmi = (weight / (height / 100 * height / 100)).toFixed(2);
-            // document.bmiForm.bmi.value = finalBmi
-            // if (finalBmi < 18.5) {
-            //     document.bmiForm.meaning.value = "That you are too thin."
-            // }
-            // if (finalBmi > 18.5 && finalBmi < 25) {
-            //     document.bmiForm.meaning.value = "That you are healthy."
-            // }
-            // if (finalBmi > 25) {
-            //     document.bmiForm.meaning.value = "That you have overweight."
-            // }
-        // }
-        // else {
-        //     alert("Please Fill in everything correctly")
-        // }
-        // console.log(finalBmi)
-        // return finalBmi
+        if (weight > 0 && height > 0) {
+            userBMI = (weight / (height / 100 * height / 100)).toFixed(2);
+
+            if (userBMI < 18.5) {
+                messageBMI = "Too thin"
+            }
+            if (userBMI > 18.5 && userBMI < 25) {
+                messageBMI = "Healthy"
+            }
+            if (userBMI > 25) {
+                messageBMI = "Overweight"
+            } 
+            
+        // console.log(userBMI)
+        // return userBMI
+        }
         this.setState({
-            userBMI: finalBmi
+            userBMI: userBMI,
+            messageBMI: messageBMI
         })
-        document.getElementById("bmi").innerHTML = `Your BMI: ${this.state.userBMI}`
     }
 
     handleFormSubmit = event => {
+
         const userHeight = this.state.currentHeight * 2.54;
         const userWeight = this.state.currentWeight / 2.2;
         this.calculateBMI(userHeight, userWeight);
-        
-        // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
-        if (!this.state.firstName || !this.state.lastName) {
-            // alert("Fill out your first and last name please!");
-        } else if (this.state.password.length < 6) {
-            // alert(
-            //     `Choose a more secure password ${this.state.firstName} ${this.state
-            //         .lastName}`
-            // );
-        } else {
-            // alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+
+        let {currentHeight, currentWeight, currentAge, currentExerciseFrequency, currentDiet, userBMI, lifeExpectancy} = this.state;
+
+        if (userBMI > 21 && currentExerciseFrequency === "1-2 Times a Week") {
+            lifeExpectancy--;
         }
 
         this.setState({
-            firstName: "",
-            lastName: "",
-            password: ""
+            lifeExpectancy: lifeExpectancy
         });
+        document.getElementById("bmi").style.display = "block";
+
     };
 
     render() {
         return (
-            // <div>
-            //     <h1>hi</h1>
-            // </div>
             <div className="pageWrapper">
 
                 {/* Hello user first name text and sign out anchor */}
@@ -113,14 +110,14 @@ class HealthTimeline extends React.Component {
                                 name="currentAge"
                                 onChange={this.handleInputChange}
                                 type="number"
-                                placeholder="Current Age"
+                                placeholder="Current Age (years)"
                             />
                             <input
                                 value={this.state.currentWeight}
                                 name="currentWeight"
                                 onChange={this.handleInputChange}
                                 type="number"
-                                placeholder="Current Weight"
+                                placeholder="Current Weight (lbs)"
                             />
                             <label>
                                 {/* Current Dietary Habit: */}
@@ -129,7 +126,7 @@ class HealthTimeline extends React.Component {
                                     name="currentHeight"
                                     onChange={this.handleInputChange}
                                     type="number"
-                                    placeholder="Current Height"
+                                    placeholder="Current Height (in)"
                                 />
                             </label>
                             <label>
@@ -163,7 +160,7 @@ class HealthTimeline extends React.Component {
                             Current Exercise Frequency {this.state.currentExerciseFrequency}
                         </p>
                         <button onClick={this.handleFormSubmit}>Submit</button>
-                        <span id="bmi"></span> 
+                        <span id="bmi">Your BMI : {this.state.userBMI} ({this.state.messageBMI}) Life Expectancy: {this.state.lifeExpectancy}</span> 
                     </Container>
                 </div>
             </div>
