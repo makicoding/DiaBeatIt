@@ -8,7 +8,7 @@ import {
     Marker,InfoWindow
 } from "react-google-maps";
 import "./yelpGoogleApi.css"
-import {ButtonContainer} from "./ButtonContainer"
+// import {ButtonContainer} from "./ButtonContainer"
 import 'bootstrap/dist/css/bootstrap.min.css' 
 import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
 
@@ -48,9 +48,9 @@ class Map extends Component{
  
   state = {
     stores:[],
-    title: 'bronx',
+    title: "Manhattan",
     openInfoWindowMarkerId: 1,
-    value:"healthmarkets"
+    value:""
   };
 
 
@@ -171,7 +171,7 @@ class Map extends Component{
   <label >
     <br/>
     Enter a Location:
-    <input type="text" name="name"   
+    <input type="text" name="name" autoComplete="off"   
                  
   onChange={this.handleInputChange}
 />
@@ -200,9 +200,9 @@ class Map extends Component{
             
           </MDBDropdownMenu>
         </MDBDropdown>
-        <ButtonContainer  onClick={this.handleFormSubmit}>
+        <button  onClick={this.handleFormSubmit}>
         <span className="mr-2"><i className="fas fa-carrot">Search</i></span>
-      </ButtonContainer>
+      </button>
     </div>
   </div>
 </div>
