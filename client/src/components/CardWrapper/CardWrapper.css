@@ -1,0 +1,15 @@
+.cardWrapper { 
+    transform: scale(.75);
+    width: 70%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+} 
+
+@media only screen and (max-width: 960px) {
+    .cardWrapper {
+      /* transform: rotate(90deg); */
+      width: 100vw;
+      height: 100vh;
+      transform: scale(.45) rotate(90deg);
+    }
+}
