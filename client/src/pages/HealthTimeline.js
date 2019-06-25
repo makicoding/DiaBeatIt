@@ -24,7 +24,7 @@ class HealthTimeline extends React.Component {
         currentExerciseFrequency: "",
         userBMI: "",
         messageBMI: "",
-        lifeExpectancy: "80"
+        lifeExpectancy: "50"
     };
     
     componentDidMount() {
@@ -36,12 +36,9 @@ class HealthTimeline extends React.Component {
         let value = event.target.value;
         const name = event.target.name;
 
-        if (name === "password") {
-            value = value.substring(0, 15);
-        }
         // Updating the input's state
         this.setState({
-            [name]: value
+            [name]: value,
         });
     };
 
@@ -84,7 +81,7 @@ class HealthTimeline extends React.Component {
         // }
 
         this.setState({
-            lifeExpectancy: lifeExpectancy
+            lifeExpectancy: "80"
         });
 
         document.getElementById("bmi").style.display = "block";
@@ -123,7 +120,7 @@ class HealthTimeline extends React.Component {
                                 {/* Subrow (FORM) */}
                                 <Row>
                                     <Col size="col-md-12">
-                                        <p>Current Age: </p>
+                                        <p>Current age: </p>
                                         <input 
                                             className="form-control"
                                             value={this.state.currentAge}
@@ -134,7 +131,7 @@ class HealthTimeline extends React.Component {
                                         >
                                         </input>
                                     <Br />
-                                        <p>Current Weight: </p>
+                                        <p>Current weight: </p>
                                         <input
                                             className="form-control"
                                             value={this.state.currentWeight}
@@ -145,7 +142,7 @@ class HealthTimeline extends React.Component {
                                         >
                                         </input>
                                     <Br />
-                                        <p>Current Height: </p>
+                                        <p>Current height: </p>
                                         <input
                                             className="form-control"
                                             value={this.state.currentHeight}
@@ -157,8 +154,8 @@ class HealthTimeline extends React.Component {
                                         </input>
                                     <Br />
                                         <label>
-                                        <p>Current Dietary Habit </p>
-                                            <select style={{ 'max-width' : '100%'}} className="form-control" name='currentDiet' onChange={this.handleInputChange}>
+                                        <p>Current dietary habit </p>
+                                            <select style={{ width : '100%'}} className="form-control" name='currentDiet' onChange={this.handleInputChange}>
                                                 <option value="null">-</option>
                                                 <option value="Poor">Poor</option>
                                                 <option value="Average">Average</option>
@@ -168,7 +165,7 @@ class HealthTimeline extends React.Component {
                                         </label>
                                     <Br />
                                         <label>
-                                        <p>Current Exercise Frequency </p>
+                                        <p>Current exercise frequency </p>
                                             <select className="form-control" name="currentExerciseFrequency" onChange={this.handleInputChange}>
                                                 <option value="null">-</option>
                                                 <option value="Never">Never</option>
@@ -235,13 +232,21 @@ class HealthTimeline extends React.Component {
                                 <Col size="col-md-6 offset-md-3">
                                     <Row>
                                         <Col size="col-md-12">
+                                        <button className="button1" onClick={this.handleFormSubmit}>Submit</button>
+                                            <span id="bmi">Your BMI: {this.state.userBMI} ({this.state.messageBMI}) Life Expectancy: {this.state.lifeExpectancy}</span> 
+                                            <div className="barWrapper" style={{ position: 'relative' , height: '200px' }}>
+                                               <div  className="bar" style={{ position: 'absolute' , bottom: '0', height: "5px", width: `${this.state.lifeExpectancy}%` , display: "block", background: "red" }}>
+                                                <p style={{ position: 'absolute', bottom: '0', left: '0'}}>0</p>
+                                                <p style={{ position: 'absolute', bottom: '0', right: '0'}}>{this.state.lifeExpectancy}</p>  
+                                                </div>
+                                            </div>
+                                            <Br />
                                             <p>
-                                                Your Stats: <br />
+                                                Your stats: <br />
                                                     Age: {this.state.currentAge} years old, Weight: {this.state.currentWeight} lbs, Height: {this.state.currentHeight} in, 
-                                                    Current Dietary Habit: {this.state.currentDiet}, Current Exercise Frequency: {this.state.currentExerciseFrequency}
+                                                    Current dietary habit: {this.state.currentDiet}, Current exercise frequency: {this.state.currentExerciseFrequency}
                                             </p>
-                                            <button className="button1" onClick={this.handleFormSubmit}>Submit</button>
-                                            <span id="bmi">Your BMI : {this.state.userBMI} ({this.state.messageBMI}) Life Expectancy: {this.state.lifeExpectancy}</span> 
+
                                         </Col>
                                     </Row>
 
