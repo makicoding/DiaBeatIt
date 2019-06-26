@@ -39,8 +39,8 @@ const NuTable = ({ recipe }) => {
                     <tr>
                         <td className="recipeFinderTd">Fiber</td>
                         {recipe.totalNutrients.FIBTG === undefined ?
-                            null :
-                            // <td className="recipeFinderTd">No data</td>: 
+                            // null :
+                            <td className="recipeFinderTd">No data</td>: 
                             <td className="recipeFinderTd">{recipe.totalNutrients.FIBTG.quantity.toFixed(2)}g</td>
                         }
                     </tr>
