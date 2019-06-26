@@ -22,7 +22,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Run "npm start" to start React app.
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
 
-var userName = localStorage.getItem("username");
+var userName = localStorage.getItem("username");       // delete this line in production
 var userData = {"userName": userName, "userDate": new Date()}
 
 class CalorieData extends React.Component {
@@ -150,7 +150,7 @@ class CalorieData extends React.Component {
                                                   <Col size="md-12" className="text-justify">
                                                     {result.mealtype}<br />
                                                     {result.mealname}<br />
-                                                    Calorie: {result.unitcal * result.qty}<br />
+                                                    Calories: {result.unitcal * result.qty}<br />
                                                     Comments: {result.comments}<br />
                                                     {/* <Link
                                                       to="/CalorieEntryEdit"

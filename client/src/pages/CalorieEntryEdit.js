@@ -294,6 +294,8 @@ class CalorieEntryEdit extends React.Component {
 
             // Go back to previous page
             this.props.history.push("/CalorieData");
+            // Scroll back to top of page (of /CalorieData)
+            window.scrollTo(0, 0);
             }
     }
 

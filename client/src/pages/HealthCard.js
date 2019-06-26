@@ -173,11 +173,11 @@ class HealthCard extends React.Component {
                                         <Br />
                                         <Br />
 
-                                        <p className="mainContentTextBlack">DOB:</p>
+                                        <p className="mainContentTextBlack">Date of birth:</p>
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-DOB" placeholder="" autoComplete="off" maxlength="10"></input>   
+                                        <input type="text" className="form-control" id="healthCardPage-DOB" placeholder="MM/DD/YYYY" autoComplete="off" maxlength="10"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -209,7 +209,7 @@ class HealthCard extends React.Component {
                                         <Br />
                                         <Br />
 
-                                        <p className="mainContentTextBlack">Health Insurance Provider:</p>
+                                        <p className="mainContentTextBlack">Health insurance provider:</p>
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
@@ -218,7 +218,7 @@ class HealthCard extends React.Component {
                                         <Br />
                                         <Br />
 
-                                        <p className="mainContentTextBlack">Policy No:</p>
+                                        <p className="mainContentTextBlack">Policy number:</p>
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
