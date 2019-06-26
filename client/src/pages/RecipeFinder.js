@@ -21,18 +21,17 @@ const app_id =process.env.REACT_APP_FOOD_ID;
 const app_key =process.env.REACT_APP_FOOD_KEY;
 
 class RecipeFinder extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state={
       recipeName:'',
       calorie:'',
-      recipes:[]
+      recipes:[],
+      message:''
     }
-    // this.handleChange=this.handleChange.bind(this)
   }
   handleChange =(event)=>{
     const {name, value} = event.target
-    
     this.setState({ [name]: value.trim() })
 }
    getRecipe = async(e) =>{
@@ -40,24 +39,38 @@ class RecipeFinder extends Component {
        const api_call= await fetch(`https://api.edamam.com/search?q=${this.state.recipeName}&app_id=${app_id}&app_key=${app_key}&from=0&to=10&calories=${this.state.calorie}`)
        const data=await api_call.json()
 
-      this.setState({
-        recipeName:'',
-        calorie:'',
-        recipes:data.hits.map(ele=>ele.recipe)
-      })
-       console.log(data.hits.map(ele=>ele.recipe))
-   }
-  //  componentDidMount = () => {
-  //   const json = localStorage.getItem("recipes");
-  //   const recipes = JSON.parse(json);
-  //   this.setState({ recipes });
-  // }
+       {!data.hits.length?
+        (this.setState({
+          message: "No matching recipes found.",
+          recipeName:'',
+          calorie: '',
+          recipes: [],
+        })) :
+        (this.setState({
+          recipeName: '',
+          calorie: '',
+          message: '',
+          recipes: data.hits.map(ele => ele.recipe)
+        }))
+        console.log(this.state.recipes)    
+    }
+
+  }
+   componentDidMount = () => {
+    const json = localStorage.getItem("recipes");
+    const recipes = JSON.parse(json);
+    this.setState({ recipes });
+    // this.setState({
+    //   recipeName:'',
+    //   calorie:30
+    // })
+  }
   componentDidUpdate = () => {
     const recipes = JSON.stringify(this.state.recipes);
     localStorage.setItem("recipes", recipes);
   }
   render() {
-    const {recipeName,calorie,recipes}=this.state
+    const {recipeName,calorie,recipes, message }=this.state
     return (
       <div>
 
@@ -86,10 +99,11 @@ class RecipeFinder extends Component {
                     getRecipe={this.getRecipe} 
                     calorie={calorie}/>
 
-              <Recipes className="container" recipes={recipes}/>
-
+              {!this.state.recipes.length ?
+                ( <h1 className='text-center mainContentTextRed'>{message}</h1>) :
+                (<Recipes className="container" recipes={recipes} />)
+              }
             </div>
-
         </div>
 
 
