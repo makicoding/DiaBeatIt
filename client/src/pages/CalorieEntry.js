@@ -65,6 +65,7 @@ class CalorieEntry extends React.Component {
 
     // Function to validate form data
     validateFormData = () => {
+        
         var dateInput = this.state.startDate;                                                        
         var mealCategory = document.getElementById("calorieEntryPage-mealCategory").value;
         var mealNameCaloriesPerSingleQuantity = document.getElementById("calorieEntryPage-mealNameCaloriesPerSingleQuantity").value;
@@ -82,6 +83,7 @@ class CalorieEntry extends React.Component {
         document.getElementById("calorieEntryPage-errorMessage").innerText = "Please select meal category.";
         return;
         }
+        // --------------------
         // Validation - Section 3
         // Section 3 - checking to see that question 1 for Part A, B, C, D are not all empty
         else if ((mealNameCaloriesPerSingleQuantity === "0") && (drinkNameCaloriesPerGlass === "0") && (ingredientNameCaloriesPerGram === "0") && (manualEntryName === "")) {
@@ -115,6 +117,7 @@ class CalorieEntry extends React.Component {
         document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
             return;
         }
+        // --------------------
         // Validation - Section 3  
         // Section 3 - checking to see if Part A question 2 is a number
         else if ( 
@@ -122,7 +125,7 @@ class CalorieEntry extends React.Component {
                 (drinkNameCaloriesPerGlass === "0") && (ingredientNameCaloriesPerGram === "0") && (manualEntryName === "") &&
                 (isNaN(mealQuantity))
                 ) {
-                document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out quantity for section 3 part A. Check you have entered numbers.";
+                document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out quantity for section 3 part A.";
                 return;
         }
         // Section 3 - checking to see if Part B question 2 is a number
@@ -131,7 +134,7 @@ class CalorieEntry extends React.Component {
                 (mealNameCaloriesPerSingleQuantity === "0") && (ingredientNameCaloriesPerGram === "0") && (manualEntryName === "") &&
                 (isNaN(drinkQuantity))
                 ) {
-                document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out quantity for section 3 part B. Check you have entered numbers.";
+                document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out quantity for section 3 part B.";
                 return;
         }
         // Section 3 - checking to see if Part C question 2 is a number
@@ -140,7 +143,7 @@ class CalorieEntry extends React.Component {
                 (mealNameCaloriesPerSingleQuantity === "0") && (drinkNameCaloriesPerGlass === "0") && (manualEntryName === "") &&
                 (isNaN(ingredientGrams))
                 ) {
-                document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out number of grams for section 3 part C. Check you have entered numbers.";
+                document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out number of grams for section 3 part C.";
                 return;
         }
         // Section 3 - checking to see if Part D question 2 is a number
@@ -149,70 +152,126 @@ class CalorieEntry extends React.Component {
                 (mealNameCaloriesPerSingleQuantity === "0") && (drinkNameCaloriesPerGlass === "0") && (ingredientNameCaloriesPerGram === "0") &&
                 (isNaN(manualEntryCalories))
                 ) {
-                document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out number of calories for section 3 part D. Check you have entered numbers.";
+                document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out number of calories for section 3 part D.";
                 return;
+        }
+        // --------------------
+        // Validation - Section 3  
+        // Section 3 - checking to see if question 2 has been filled out for other parts besides Part A
+        else if (((mealNameCaloriesPerSingleQuantity !== "0") && (mealQuantity > 0)) && drinkQuantity > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
+        }
+        else if (((mealNameCaloriesPerSingleQuantity !== "0") && (mealQuantity > 0)) && ingredientGrams > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
+        }
+        else if (((mealNameCaloriesPerSingleQuantity !== "0") && (mealQuantity > 0)) && manualEntryCalories > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
+        }
+        // Section 3 - checking to see if question 2 has been filled out for other parts besides Part B
+        else if (((drinkNameCaloriesPerGlass !== "0") && (drinkQuantity > 0)) && mealQuantity > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
+        }
+        else if (((drinkNameCaloriesPerGlass !== "0") && (drinkQuantity > 0)) && ingredientGrams > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
+        }
+        else if (((drinkNameCaloriesPerGlass !== "0") && (drinkQuantity > 0)) && manualEntryCalories > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
+        }
+        // Section 3 - checking to see if question 2 has been filled out for other parts besides Part C
+        else if (((ingredientNameCaloriesPerGram !== "0") && (ingredientGrams > 0)) && mealQuantity > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
+        }
+        else if (((ingredientNameCaloriesPerGram !== "0") && (ingredientGrams > 0)) && drinkQuantity > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
+        }
+        else if (((ingredientNameCaloriesPerGram !== "0") && (ingredientGrams > 0)) && manualEntryCalories > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
+        }
+        // Section 3 - checking to see if question 2 has been filled out for other parts besides Part D
+        else if (((manualEntryName !== "0") && (manualEntryCalories > 0)) && mealQuantity > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
+        }
+        else if (((manualEntryName !== "0") && (manualEntryCalories > 0)) && drinkQuantity > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
+        }
+        else if (((manualEntryName !== "0") && (manualEntryCalories > 0)) && ingredientGrams > 0) {
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "Please fill out only ONE part of section 3. Fill out either part A, B, C or D only.";
+            return;
         }
         // The following else statement is creating a data object and empties the error-message field once it passes all validation
         else {
-        //section #, mealname, qty, cal
-        document.getElementById("calorieEntryPage-errorMessage").innerText = "";
-        var strMealName;
-        var strQty;
-        var strCal;
+            //section #, mealname, qty, cal
+            document.getElementById("calorieEntryPage-errorMessage").innerText = "";
+            var strMealName;
+            var strQty;
+            var strCal;
 
-        // Section A information
-        if (mealNameCaloriesPerSingleQuantity.trim()!="" && mealNameCaloriesPerSingleQuantity.trim()!=0){
-            var sectionNumber = "A";
-            strMealName = mealNameCaloriesPerSingleQuantity;
-            strQty = mealQuantity;
-            strCal = this.parseCalorie(strMealName);
-        // Section B information
-        } else if (drinkNameCaloriesPerGlass.trim()!="" && drinkNameCaloriesPerGlass.trim()!=0){
-            var sectionNumber = "B";
-            strMealName = drinkNameCaloriesPerGlass;
-            strQty = drinkQuantity;
-            strCal = this.parseCalorie(strMealName);
-        // Section C information
-        } else if (ingredientNameCaloriesPerGram.trim()!="" && ingredientNameCaloriesPerGram.trim()!=0){
-            var sectionNumber = "C";
-            strMealName = ingredientNameCaloriesPerGram;
-            strQty = ingredientGrams;
-            strCal = this.parseCalorie(strMealName);
-        // Section D information
-        } else if (manualEntryName.trim()!=""){
-            var sectionNumber = "D";
-            strMealName = manualEntryName;
-            strQty = 1;
-            strCal = manualEntryCalories;
-        }
+            // Section A information
+            if (mealNameCaloriesPerSingleQuantity.trim()!="" && mealNameCaloriesPerSingleQuantity.trim()!=0){
+                var sectionNumber = "A";
+                strMealName = mealNameCaloriesPerSingleQuantity;
+                strQty = mealQuantity;
+                strCal = this.parseCalorie(strMealName);
+            // Section B information
+            } else if (drinkNameCaloriesPerGlass.trim()!="" && drinkNameCaloriesPerGlass.trim()!=0){
+                var sectionNumber = "B";
+                strMealName = drinkNameCaloriesPerGlass;
+                strQty = drinkQuantity;
+                strCal = this.parseCalorie(strMealName);
+            // Section C information
+            } else if (ingredientNameCaloriesPerGram.trim()!="" && ingredientNameCaloriesPerGram.trim()!=0){
+                var sectionNumber = "C";
+                strMealName = ingredientNameCaloriesPerGram;
+                strQty = ingredientGrams;
+                strCal = this.parseCalorie(strMealName);
+            // Section D information
+            } else if (manualEntryName.trim()!=""){
+                var sectionNumber = "D";
+                strMealName = manualEntryName;
+                strQty = 1;
+                strCal = manualEntryCalories;
+            }
 
-        var data = {      
-            username: userName,
-            date: dateInput,
-            mealtype: mealCategory,
-            sectionno: sectionNumber,
-            mealname: strMealName,
-            qty:parseFloat(strQty),
-            unitcal: parseFloat(strCal),
-            comments: notesInput
-        };
+            var data = {      
+                username: userName,
+                date: dateInput,
+                mealtype: mealCategory,
+                sectionno: sectionNumber,
+                mealname: strMealName,
+                qty:parseFloat(strQty),
+                unitcal: parseFloat(strCal),
+                comments: notesInput
+            };
 
-        // Calling the post method
-        this.handleInfoSave(data);
+            // Calling the post method
+            this.handleInfoSave(data);
 
-        // Clear the form when submitting and show a success message
-        document.getElementById("calorieEntryPage-mealCategory").value = "0";
-        document.getElementById("calorieEntryPage-mealNameCaloriesPerSingleQuantity").value = "0";
-        document.getElementById("calorieEntryPage-mealQuantity").value = "";
-        document.getElementById("calorieEntryPage-drinkNameCaloriesPerGlass").value = "0";
-        document.getElementById("calorieEntryPage-drinkQuantity").value = "";
-        document.getElementById("calorieEntryPage-ingredientNameCaloriesPerGram").value = "0";
-        document.getElementById("calorieEntryPage-ingredientGrams").value = "";
-        document.getElementById("calorieEntryPage-manualEntryName").value = "";
-        document.getElementById("calorieEntryPage-manualEntryCalories").value = "";
-        document.getElementById("calorieEntryPage-notes").value = "";
-        document.getElementById("calorieEntryPage-successMessage").innerText = "Data submitted successfully!";
-        }
+            // Clear the form when submitting and show a success message
+            document.getElementById("calorieEntryPage-mealCategory").value = "0";
+            document.getElementById("calorieEntryPage-mealNameCaloriesPerSingleQuantity").value = "0";
+            document.getElementById("calorieEntryPage-mealQuantity").value = "";
+            document.getElementById("calorieEntryPage-drinkNameCaloriesPerGlass").value = "0";
+            document.getElementById("calorieEntryPage-drinkQuantity").value = "";
+            document.getElementById("calorieEntryPage-ingredientNameCaloriesPerGram").value = "0";
+            document.getElementById("calorieEntryPage-ingredientGrams").value = "";
+            document.getElementById("calorieEntryPage-manualEntryName").value = "";
+            document.getElementById("calorieEntryPage-manualEntryCalories").value = "";
+            document.getElementById("calorieEntryPage-notes").value = "";
+
+            // Scroll back to top of page
+            window.scrollTo(0, 0);
+            }
     }
 
     render() {
@@ -340,7 +399,10 @@ class CalorieEntry extends React.Component {
                                             <option value="Steak - tuna (184 cal)">Steak - tuna (184 cal)</option>
                                         </select>
                                         <Br />
-                                        <input type="text" className="form-control" id="calorieEntryPage-mealQuantity" placeholder="Quantity" autoComplete="off"></input>  
+                                        <input type="number" className="form-control" id="calorieEntryPage-mealQuantity" placeholder="Quantity" autoComplete="off"></input>  
+                                        {/* In the above line, set input type to be "number" instead of "text". This will force the user
+                                            to only be able to enter numbers into the input field on the front end. Note, that the numbers
+                                            will still capture as a string, so this string still has to be parseFloat on the backend */}
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                     </Col>
                                 </Row>
@@ -371,7 +433,10 @@ class CalorieEntry extends React.Component {
                                             <option value="Soda - Cola, can (140 cal)">Soda - Cola, can (140 cal)</option>
                                         </select>
                                         <Br />
-                                        <input type="text" className="form-control" id="calorieEntryPage-drinkQuantity" placeholder="Quantity" autoComplete="off"></input>   
+                                        <input type="number" className="form-control" id="calorieEntryPage-drinkQuantity" placeholder="Quantity" autoComplete="off"></input>   
+                                        {/* In the above line, set input type to be "number" instead of "text". This will force the user
+                                            to only be able to enter numbers into the input field on the front end. Note, that the numbers
+                                            will still capture as a string, so this string still has to be parseFloat on the backend */}
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                     </Col>
                                 </Row> 
@@ -401,7 +466,10 @@ class CalorieEntry extends React.Component {
                                             <option value="Spinach (0.2 cal/g)">Spinach (0.2 cal/g)</option>
                                         </select>
                                         <Br />
-                                        <input type="text" className="form-control" id="calorieEntryPage-ingredientGrams" placeholder="Grams" autoComplete="off"></input>    
+                                        <input type="number" className="form-control" id="calorieEntryPage-ingredientGrams" placeholder="Grams" autoComplete="off"></input>    
+                                        {/* In the above line, set input type to be "number" instead of "text". This will force the user
+                                            to only be able to enter numbers into the input field on the front end. Note, that the numbers
+                                            will still capture as a string, so this string still has to be parseFloat on the backend */}
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                     </Col>
                                 </Row> 
@@ -430,7 +498,10 @@ class CalorieEntry extends React.Component {
                                         <input type="text" className="form-control" id="calorieEntryPage-manualEntryName" placeholder="Name of meal / drink / ingredient" autcomplete="off"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
-                                        <input type="text" className="form-control" id="calorieEntryPage-manualEntryCalories" placeholder="Calories" autoComplete="off"></input>     
+                                        <input type="number" className="form-control" id="calorieEntryPage-manualEntryCalories" placeholder="Calories" autoComplete="off"></input>     
+                                        {/* In the above line, set input type to be "number" instead of "text". This will force the user
+                                            to only be able to enter numbers into the input field on the front end. Note, that the numbers
+                                            will still capture as a string, so this string still has to be parseFloat on the backend */}
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                     </Col>
                                 </Row> 

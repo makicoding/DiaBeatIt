@@ -8,57 +8,49 @@ import {
     Marker,InfoWindow
 } from "react-google-maps";
 import "./yelpGoogleApi.css"
-import {ButtonContainer} from "./ButtonContainer"
+// import {ButtonContainer} from "./ButtonContainer"
 import 'bootstrap/dist/css/bootstrap.min.css' 
 import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
 
 
 
 
-
-// sets default markers by passing yelp_params into the yelp api query string
-//var storetypes default is healthmarkets; when a user chooses a different storetype from the dropdown menu, state is updated to that value
 var storetype="healthmarkets"
 function mainFunction(yelp_params, callback) {
      
-        const axios =require ("axios")
-       var str= axios
-         .get(
-           //this api requires cors-anywhere to work 
-           `
-           ${"https://cors-anywhere.herokuapp.com/"}
-           https://api.yelp.com/v3/businesses/search?&location=`+yelp_params,
-           {
-             headers: {
-               Authorization: 
-               `Bearer ${process.env.REACT_APP_YELP_KEY}`
-                
-             }
-             ,
-             params: {
-               categories:storetype ,
-             }
-           }
-         )
-         .then( res => {
-            callback(res.data)
-            return (res.data.businesses[0].id)
-            
-         })
-         .catch(err => {
-           console.log(err);
-        //    alert("please enter a city name or zip code")
-         })
+  const axios =require ("axios")
+ var str= axios
+   .get(
+     `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3/businesses/search?&location=`+yelp_params,
+     {
+       headers: {
+         Authorization: `Bearer ` + process.env.REACT_APP_YELP_KEY
+       }
+       ,
+       params: {
+         categories: storetype,
+       }
+     }
+   )
+   .then( res => {
+      callback(res.data)
+      return (res.data.businesses[0].id)
+      
+   })
+   .catch(err => {
+     console.log(err);
+  //    alert("please enter a city name or zip code")
+   })
 
-          }
+    }
          
 class Map extends Component{
  
   state = {
     stores:[],
-    title: 'bronx',
+    title: "Manhattan",
     openInfoWindowMarkerId: 1,
-    value:"healthmarkets"
+    value:""
   };
 
 
@@ -179,7 +171,7 @@ class Map extends Component{
   <label >
     <br/>
     Enter a Location:
-    <input type="text" name="name"   
+    <input type="text" name="name" autoComplete="off"   
                  
   onChange={this.handleInputChange}
 />
@@ -208,9 +200,9 @@ class Map extends Component{
             
           </MDBDropdownMenu>
         </MDBDropdown>
-        <ButtonContainer  onClick={this.handleFormSubmit}>
+        <button  onClick={this.handleFormSubmit}>
         <span className="mr-2"><i className="fas fa-carrot">Search</i></span>
-      </ButtonContainer>
+      </button>
     </div>
   </div>
 </div>
