@@ -4,8 +4,9 @@ import HamburgerMenu from "../components/HamburgerMenu";
 import Br from "../components/CustomLineBreak";
 import Br2 from "../components/CustomLineBreak2";
 import "../components/Buttons/buttons.css";
-import "../components/Table/table.css";
 import "../components/Text/text.css";
+import "../components/CalorieDataListGroupItem/calorieDataListGroupItem.css";
+import "../components/Table/table.css";
 import HelloUserAndSignOut from "../components/HelloUserAndSignOut";
 import "../components/InputAndSelectField/inputAndSelectField.css";
 import "../components/PageWrapper/pageWrapper.css";
@@ -13,8 +14,6 @@ import "../components/MainContentContainer/mainContentContainer.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../components/CustomReactDatepicker/customReactDatepicker.css";
-import EditBtn from "../components/EditBtn";
-import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -118,6 +117,8 @@ class CalorieData extends React.Component {
                                     </Col>
                                 </Row> 
 
+                                <Br />
+
                                 {/* ------------------------------ */}
                                 {/* Subrow */}
                                 <Row>
@@ -145,9 +146,9 @@ class CalorieData extends React.Component {
                                         <p id="calorieDataPage-retrievedData"></p>                                     
                                           <ul className="list-group">
                                             {this.state.userInfo.map(result => (
-                                              <li className="list-group-item" key={result._id}>
+                                              <li className="list-group-item mainContentTextBlack calorieDataListGroupItem" key={result._id}>
                                                 <Row>
-                                                  <Col size="md-12" className="text-justify">
+                                                  <Col size="col-md-12" className="text-justify">
                                                     {result.mealtype}<br />
                                                     {result.mealname}<br />
                                                     Calories: {result.unitcal * result.qty}<br />
@@ -157,14 +158,16 @@ class CalorieData extends React.Component {
                                                       params={{ calorieData: result }}
                                                       className={window.location.pathname === "/CalorieEntryEdit" ? "nav-link active" : "nav-link"}
                                                     > */}
+                                                    <Br />
                                                     <Link
                                                       to={{
                                                       pathname:"/CalorieEntryEdit",
                                                       calorieInfo: result
-                                                    }} >                                                    
-                                                      <EditBtn /> 
+                                                    }} >                                                  
+                                                      <button id="calorieDataEdit">Edit</button>
                                                     </Link> 
-                                                    <DeleteBtn  onClick={() => this.handleInfoRemove(result._id)}/>
+                                                    {/* <Br /> */}
+                                                    <button id="calorieDataDelete"  onClick={() => this.handleInfoRemove(result._id)}>Delete</button>
                                                   </Col>   
                                                 </Row>
                                               </li>
@@ -174,13 +177,15 @@ class CalorieData extends React.Component {
                                 </Row> 
 
                                 <Br />
+                                <Br />
+                                <Br2 />
+                                <Br2 />
 
                                 {/* ------------------------------ */}
                                 {/* Subrow (Calories grand total goes here) */}
                                 <Row>
                                     <Col size="col-md-12">
-                                        <p className="mainContentTextYellowMediumBold">Total:</p>
-                                        <p className="mainContentTextYellowMediumBold"><span className="mainContentTextYellowMediumBold" id="calorieDataPage-calorieGrandTotal">{this.state.totalCal}</span> Calories</p>
+                                        <p className="mainContentTextBlueMediumBold">Total: <span className="mainContentTextBlueMediumBold" id="calorieDataPage-calorieGrandTotal">{this.state.totalCal}</span> Calories</p>
                                     </Col>
                                 </Row> 
 
