@@ -13,7 +13,7 @@ module.exports = {
     const userDateObj = new Date(userDate);
     const [month, date, year] = [ userDateObj.getMonth(), userDateObj.getDate(), userDateObj.getFullYear()]; 
     db.Calorie
-      .find({username: userName, date: {"$gte": new Date(year, month, date), "$lt": new Date(year, month, date+1)}})      //{$and: [{username:req.query.userName},{date:req.query.userDate}]}
+      .find({username: userName, date: {"$gte": new Date(year, month, date), "$lt": new Date(year, month, date+1)}}).sort({mealtype: 1})      //{$and: [{username:req.query.userName},{date:req.query.userDate}]}
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
