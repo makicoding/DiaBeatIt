@@ -131,7 +131,7 @@ class HealthTimeline extends React.Component {
                                         <Row>
                                             <Col size="col-md-12">
                                                 <label style={{ width: '100%' }}>
-                                                    <select className="form-control" name="gender" onChange={this.handleInputChange}>
+                                                    <select className="chosen-select dropDownMenu1" name="gender" onChange={this.handleInputChange}>
                                                         <option value="null"></option>
                                                         <option value="F">Female</option>
                                                         <option value="M">Male</option>
@@ -237,7 +237,7 @@ class HealthTimeline extends React.Component {
                                         <Row>
                                             <Col size="col-md-12">
                                                 <label style={{ width: '100%' }}>
-                                                    <select className="form-control" name='currentDiet' onChange={this.handleInputChange}>
+                                                    <select className="chosen-select dropDownMenu1" name='currentDiet' onChange={this.handleInputChange}>
                                                         <option value="null"></option>
                                                         <option value="Poor">Poor</option>
                                                         <option value="Average">Average</option>
@@ -259,7 +259,7 @@ class HealthTimeline extends React.Component {
                                         <Row>
                                             <Col size="col-md-12">
                                                 <label style={{ width: '100%' }}>
-                                                    <select className="form-control" name="currentExerciseFrequency" onChange={this.handleInputChange}>
+                                                    <select className="chosen-select dropDownMenu1" name="currentExerciseFrequency" onChange={this.handleInputChange}>
                                                         <option value="null"></option>
                                                         <option value="Never">Never</option>
                                                         <option value="1-2 Times a Week">1-2 Times a Week</option>

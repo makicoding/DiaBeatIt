@@ -347,7 +347,7 @@ class CalorieEntryEdit extends React.Component {
                                     <Col size="col-md-10">
                                         <p className="mainContentTextBlack">Please select date:</p>                                   
                                         {/* Datepicker */}
-                                        <div className="customReactDatepicker" id="calorieEntryPage-datepicker">
+                                        <div id="calorieEntryPage-datepicker">
                                             <DatePicker
                                             dateFormat="yyyy/MM/dd"
                                             selected={this.state.startDate}
@@ -374,12 +374,12 @@ class CalorieEntryEdit extends React.Component {
                                         <p className="mainContentTextBlack">Please select meal category:</p>
                                         <select className="chosen-select dropDownMenu1" id="calorieEntryPage-mealCategory">
                                             <option value="0"></option>
-                                            <option value="Breakfast">Breakfast</option>
-                                            <option value="Morning snack">Morning snack</option>
-                                            <option value="Lunch">Lunch</option>
-                                            <option value="Afternoon snack">Afternoon snack</option>
-                                            <option value="Dinner">Dinner</option>
-                                            <option value="Other snack">Other snack</option>
+                                            <option value="01 Breakfast">Breakfast</option>
+                                            <option value="02 Morning snack">Morning snack</option>
+                                            <option value="03 Lunch">Lunch</option>
+                                            <option value="04 Afternoon snack">Afternoon snack</option>
+                                            <option value="05 Dinner">Dinner</option>
+                                            <option value="06 Other snack">Other snack</option>
                                         </select>
                                     </Col>
                                 </Row> 

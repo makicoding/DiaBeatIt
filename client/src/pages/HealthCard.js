@@ -108,7 +108,7 @@ class HealthCard extends React.Component {
                                 <Row>
                                     <Col size="col-md-3"></Col>
                                     <Col size="col-md-6">
-                                        <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: false})}>Close Preview</button>
+                                        <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: false})}>Close</button>
                                         <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
                                     </Col>
                                     <Col size="col-md-3"></Col>
@@ -218,7 +218,7 @@ class HealthCard extends React.Component {
                                         <Br />
                                         <Br />
 
-                                        <p className="mainContentTextBlack">Policy number:</p>
+                                        <p className="mainContentTextBlack">Health insurance policy number:</p>
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
@@ -344,7 +344,7 @@ class HealthCard extends React.Component {
                                 {/* Subrow (PRINT) */}
                                 <Row>
                                 <Col size="col-md-12">
-                                <button className="button1" id="healthCardPage-save" onClick={this.previewHealthCard}>Preview</button>
+                                <button className="button1" id="healthCardPage-save" onClick={this.previewHealthCard}>Print</button>
                                         
                                         {/* <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: true})}>Preview</button> */}
                                         <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
