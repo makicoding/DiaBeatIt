@@ -8,8 +8,8 @@ const RecForm =(props)=>{
         }
     return(
         <form  className="container" onSubmit={props.getRecipe}>
-            <div className="form-group form-inline">
-                    <input  className= "form-control col-lg-4 col-md-12 col-sm-12 mr-4 mb-4"
+            <div className="form-group form-inline justify-content-between">
+                    <input  className= "form-control col-lg-4 col-md-12 col-sm-12 mb-4"
                             type="text"
                             name= "recipeName"
                             placeholder="Ingredients e.g. onion, beef"
@@ -18,7 +18,7 @@ const RecForm =(props)=>{
                             required autoFocus
                             autoComplete="off"
                             />
-                <input  className="form-control col-lg-4 col-md-12 col-sm-12 mb-4 mr-4"
+                <input  className="form-control col-lg-4 col-md-12 col-sm-12 mb-4"
                             type="text"
                             name= "calorie"
                             placeholder="Target calories"
@@ -29,7 +29,8 @@ const RecForm =(props)=>{
                             required autoFocus
                             autoComplete="off"
                             />
-                <button className="col-lg-2 col-md-12 col-sm-12 text-center mb-4  search-button"> Search</button>
+                
+                <button className="col-lg-3 col-md-12 col-sm-12 text-center mb-4  search-button"> Search</button>
             </div>  
         </form>
     )
