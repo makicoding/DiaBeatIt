@@ -91,10 +91,10 @@ class HealthTimeline extends React.Component {
 
         const userHeight = (parseInt(this.state.currentHeightFt * 12) + parseInt(this.state.currentHeightIn)) * 2.54;
         const userWeight = this.state.currentWeight / 2.2;
-        // const userDiet = this.state.currentDiet;
-        // const userExercise = this.state.currentExerciseFrequency
+        const userDiet = this.state.currentDiet;
+        const userExercise = this.state.currentExerciseFrequency
 
-        if (isNaN(userHeight && userWeight)) {
+        if (isNaN(userHeight && userWeight) || (!userDiet || !userExercise)) {
             document.getElementById("bmi").style.display = "none";
             alert("Form improperly filled out");
             return
@@ -262,9 +262,9 @@ class HealthTimeline extends React.Component {
                                             <Col size="col-md-12">
                                                 <label style={{ width: '100%' }}>
                                                     <select className="chosen-select dropDownMenu1" name='currentDiet' onChange={this.handleInputChange}>
-                                                        <option value="null"></option>
+                                                        <option value="0"></option>
                                                         <option value="-2">Poor</option>
-                                                        <option value="0">Average</option>
+                                                        <option value="1">Average</option>
                                                         <option value="2">Above Average</option>
                                                         <option value="4">Ideal</option>
                                                     </select>
@@ -284,7 +284,7 @@ class HealthTimeline extends React.Component {
                                             <Col size="col-md-12">
                                                 <label style={{ width: '100%' }}>
                                                     <select className="chosen-select dropDownMenu1" name="currentExerciseFrequency" onChange={this.handleInputChange}>
-                                                        <option value="null"></option>
+                                                        <option value="0"></option>
                                                         <option value="-2">Never</option>
                                                         <option value="0">1-2 Times a Week</option>
                                                         <option value="2">2-3 Times a week</option>
@@ -314,7 +314,7 @@ class HealthTimeline extends React.Component {
                                         <Br />
                                         <span id="bmi">
                                             <p> Your stats: <br />
-                                                <div className="barWrapper" style={{ position: 'relative', height: '200px' }}>
+                                                <div className="barWrapper" style={{ position: 'relative', height: '200px', background: 'lightgray'}}>
                                                     <div className="bar" style={{ position: 'absolute', bottom: '0', height: "5px", width: `${this.state.lifeExpectancy}%`, display: "block", background: "red" }}>
                                                         <p style={{ position: 'absolute', bottom: '0', left: '0' }}>0</p>
                                                         <p style={{ position: 'absolute', bottom: '0', right: '0' }}>{this.state.lifeExpectancy}</p>
