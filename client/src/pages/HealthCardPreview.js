@@ -32,6 +32,7 @@ import HealthCardFooter from "../components/HealthCardFooter";
                             <p>Phone: {props.emergencyContactPhone}</p>
                             <Br/>
                             <p>Insurance Provider: {props.healthInsuranceProvider}</p>
+                            <p>Phone: {props.healthInsuranceProviderPhone}</p>
                             <p>Policy #: {props.policyNo}</p>
                             <p>Primary Care Physician: {props.primaryCarePhysician}</p>
                             <p>Phone: {props.primaryCarePhysicianPhone}</p>
