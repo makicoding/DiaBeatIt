@@ -42,7 +42,7 @@ class HamburgerMenu extends React.Component {
             <a href="HealthCard">Digital Health Card</a>
             <a href="Resources">Resources</a>
             <a href="Contact">Contact</a>
-            <a href="SignOut">Sign Out</a>
+            <a href="/">Back To Home</a>
           </div>
 
         </div>

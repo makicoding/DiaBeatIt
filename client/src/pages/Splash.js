@@ -24,8 +24,9 @@ class Splash extends React.Component {
             <SplashBanner />
 
             <div class="splashButtonsContainer">
-                <a href="MainMenu"><button class="button2">Sign up</button></a>
-                <a href="MainMenu"><button class="button2">Login</button></a>
+                {/* <a href="MainMenu"><button class="button2">Sign up</button></a>
+                <a href="MainMenu"><button class="button2">Login</button></a> */}
+                <a href="MainMenu"><button class="button2">Get started</button></a>
             </div>
             
             
