@@ -18,7 +18,6 @@ class HealthTimeline extends React.Component {
     state = {
         currentAge: "",
         currentWeight: "",
-        // simple formula to conver this to inches 
         currentHeight: "",
         currentDiet: "",
         currentExerciseFrequency: "",
@@ -26,7 +25,7 @@ class HealthTimeline extends React.Component {
         messageBMI: "",
         lifeExpectancy: "50"
     };
-    
+
     componentDidMount() {
         document.getElementById("bmi").style.display = "none";
     }
@@ -43,7 +42,7 @@ class HealthTimeline extends React.Component {
     };
 
     calculateBMI = (height, weight) => {
-        let {userBMI, messageBMI} = this.state;
+        let { userBMI, messageBMI } = this.state;
 
         if (weight > 0 && height > 0) {
             userBMI = (weight / (height / 100 * height / 100)).toFixed(2);
@@ -56,10 +55,10 @@ class HealthTimeline extends React.Component {
             }
             if (userBMI > 25) {
                 messageBMI = "Overweight"
-            } 
-            
-        // console.log(userBMI)
-        // return userBMI
+            }
+
+            // console.log(userBMI)
+            // return userBMI
         }
         this.setState({
             userBMI: userBMI,
@@ -74,7 +73,7 @@ class HealthTimeline extends React.Component {
         this.calculateBMI(userHeight, userWeight);
         event.preventDefault();
 
-        let {currentHeight, currentWeight, currentAge, currentExerciseFrequency, currentDiet, userBMI, lifeExpectancy} = this.state;
+        let { currentHeight, currentWeight, currentAge, currentExerciseFrequency, currentDiet, userBMI, lifeExpectancy } = this.state;
 
         // if (userBMI > 21 && currentExerciseFrequency === "1-2 Times a Week") {
         //     lifeExpectancy--;
@@ -106,56 +105,65 @@ class HealthTimeline extends React.Component {
                     <Container>
                         <Row>
 
-                            <Col size="col-md-6 offset-md-3">           
+                            <Col size="col-md-6 offset-md-3">
 
                                 <Br2 />
 
-                                    {/* Subrow */}
-                                    <Row>
-                                        <Col size="col-md-12">
-                                            <p className="mainContentTextBlack">Please fill out all the fields for a life expectancy estimation: </p>
-                                        </Col>
-                                    </Row> 
-                                    <Br />
+                                {/* Subrow */}
+                                <Row>
+                                    <Col size="col-md-12">
+                                        <p className="mainContentTextBlack">Please fill out all the fields for a life expectancy estimation: </p>
+                                    </Col>
+                                </Row>
+                                <Br />
                                 {/* Subrow (FORM) */}
                                 <Row>
                                     <Col size="col-md-12">
                                         <p>Current age: </p>
-                                        <input 
+                                        <input
                                             className="form-control"
                                             value={this.state.currentAge}
                                             name="currentAge"
                                             onChange={this.handleInputChange}
-                                            type="number"
+                                            type="text"
+                                            pattern="/d"
+                                            maxlength="2"
                                             placeholder=""
+                                            autocomplete="off"
                                         >
                                         </input>
-                                    <Br />
+                                        <Br />
                                         <p>Current weight: </p>
                                         <input
                                             className="form-control"
                                             value={this.state.currentWeight}
                                             name="currentWeight"
                                             onChange={this.handleInputChange}
-                                            type="number"
+                                            type="text"
+                                            pattern="/d"
+                                            maxlength="3"
                                             placeholder="(lb)"
+                                            autocomplete="off"
                                         >
                                         </input>
-                                    <Br />
+                                        <Br />
                                         <p>Current height: </p>
                                         <input
                                             className="form-control"
                                             value={this.state.currentHeight}
                                             name="currentHeight"
                                             onChange={this.handleInputChange}
-                                            type="number"
+                                            type="text"
+                                            pattern="/d"
+                                            maxlength="2"
                                             placeholder="(in)"
+                                            autocomplete="off"
                                         >
                                         </input>
-                                    <Br />
+                                        <Br />
                                         <label>
-                                        <p>Current dietary habit </p>
-                                            <select style={{ width : '100%'}} className="form-control" name='currentDiet' onChange={this.handleInputChange}>
+                                            <p>Current dietary habit </p>
+                                            <select style={{ width: '100%' }} className="form-control" name='currentDiet' onChange={this.handleInputChange}>
                                                 <option value="null">-</option>
                                                 <option value="Poor">Poor</option>
                                                 <option value="Average">Average</option>
@@ -163,9 +171,9 @@ class HealthTimeline extends React.Component {
                                                 <option value="Ideal">Ideal</option>
                                             </select>
                                         </label>
-                                    <Br />
+                                        <Br />
                                         <label>
-                                        <p>Current exercise frequency </p>
+                                            <p>Current exercise frequency </p>
                                             <select className="form-control" name="currentExerciseFrequency" onChange={this.handleInputChange}>
                                                 <option value="null">-</option>
                                                 <option value="Never">Never</option>
@@ -177,83 +185,35 @@ class HealthTimeline extends React.Component {
                                     </Col>
                                 </Row>
                             </Col>
-                        </Row>         
-                        {/* <form className="form">
-                            <input
-                                value={this.state.currentAge}
-                                name="currentAge"
-                                onChange={this.handleInputChange}
-                                type="number"
-                                placeholder="Current Age (years)"
-                            />
-                            <input
-                                value={this.state.currentWeight}
-                                name="currentWeight"
-                                onChange={this.handleInputChange}
-                                type="number"
-                                placeholder="Current Weight (lbs)"
-                            />
-                            <label>
-                                <input
-                                    value={this.state.currentHeight}
-                                    name="currentHeight"
-                                    onChange={this.handleInputChange}
-                                    type="number"
-                                    placeholder="Current Height (in)"
-                                />
-                            </label>
-                            <label>
-                                Current Dietary Habit:
-                                <select name='currentDiet' onChange={this.handleInputChange}>
-                                    <option value="null">-</option>
-                                    <option value="Poor  ">Poor</option>
-                                    <option value="Average  ">Average</option>
-                                    <option value="Above Average  ">Above Average</option>
-                                    <option value="Ideal  ">Ideal</option>
-                                </select>
-                            </label>
-                            <br />
-                            <label>
-                                Current Exercise Frequency:
-                                <select name="currentExerciseFrequency" onChange={this.handleInputChange}>
-                                    <option value="null">-</option>
-                                    <option value="Never">Never</option>
-                                    <option value="1-2 Times a Week">1-2 Times a Week</option>
-                                    <option value="2-3 Times a week">2-3 Times a week</option>
-                                    <option value="5+ Times a Week">5+ Times a Week</option>
-                                </select>
-                            </label>
-
-                            <br />
-        </form> */}
-                        </Container> 
-                        <Container>   
-                            <Row>
-                                <Col size="col-md-6 offset-md-3">
-                                    <Row>
-                                        <Col size="col-md-12">
+                        </Row>
+                    </Container>
+                    <Container>
+                        <Row>
+                            <Col size="col-md-6 offset-md-3">
+                                <Row>
+                                    <Col size="col-md-12">
                                         <button className="button1" onClick={this.handleFormSubmit}>Submit</button>
-                                            <span id="bmi">Your BMI: {this.state.userBMI} ({this.state.messageBMI}) Life Expectancy: {this.state.lifeExpectancy}</span> 
-                                            <div className="barWrapper" style={{ position: 'relative' , height: '200px' }}>
-                                               <div  className="bar" style={{ position: 'absolute' , bottom: '0', height: "5px", width: `${this.state.lifeExpectancy}%` , display: "block", background: "red" }}>
-                                                <p style={{ position: 'absolute', bottom: '0', left: '0'}}>0</p>
-                                                <p style={{ position: 'absolute', bottom: '0', right: '0'}}>{this.state.lifeExpectancy}</p>  
-                                                </div>
+                                        <span id="bmi">Your BMI: {this.state.userBMI} ({this.state.messageBMI}) Life Expectancy: {this.state.lifeExpectancy}</span>
+                                        <div className="barWrapper" style={{ position: 'relative', height: '200px' }}>
+                                            <div className="bar" style={{ position: 'absolute', bottom: '0', height: "5px", width: `${this.state.lifeExpectancy}%`, display: "block", background: "red" }}>
+                                                <p style={{ position: 'absolute', bottom: '0', left: '0' }}>0</p>
+                                                <p style={{ position: 'absolute', bottom: '0', right: '0' }}>{this.state.lifeExpectancy}</p>
                                             </div>
-                                            <Br />
-                                            <p>
-                                                Your stats: <br />
-                                                    Age: {this.state.currentAge} years old, Weight: {this.state.currentWeight} lbs, Height: {this.state.currentHeight} in, 
+                                        </div>
+                                        <Br />
+                                        <p>
+                                            Your stats: <br />
+                                            Age: {this.state.currentAge} years old, Weight: {this.state.currentWeight} lbs, Height: {this.state.currentHeight} in,
                                                     Current dietary habit: {this.state.currentDiet}, Current exercise frequency: {this.state.currentExerciseFrequency}
-                                            </p>
+                                        </p>
 
-                                        </Col>
-                                    </Row>
+                                    </Col>
+                                </Row>
 
-                                </Col>
-                            </Row>                    
+                            </Col>
+                        </Row>
 
-                        </Container> 
+                    </Container>
 
                 </div>
                 <HamburgerMenu />
