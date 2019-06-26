@@ -19,8 +19,8 @@ const Recipe = ({ recipe }) => {
                 </div>
                 <div className="col-lg-7 col-md-12 ml-0 mr-0" id="text-content">
                     <div className="card-body">
-                        <h3 className="card-title" >{recipe.label}</h3>
-                        <h4 className="text-right calories">Calories: {calCalories.toFixed(2)}{recipe.totalNutrients.ENERC_KCAL.unit}/per </h4>
+                        <h3 className="cardTitle" >{recipe.label}</h3>
+                        <h3 className="text-right calories">Calories: {calCalories.toFixed(2)}{recipe.totalNutrients.ENERC_KCAL.unit}/per </h3>
                         <h5 className="card-text">Ingredients: Serving for {yeild} person</h5> 
                         {recipe.ingredientLines.map((ingredient,i)=>{
                             return(

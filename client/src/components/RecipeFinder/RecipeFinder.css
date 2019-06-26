@@ -1,38 +1,127 @@
 /* ******** */
 /* Recipe Finder */
-.tableBorder{
-  border:2px solid rgba(228, 228, 228, 0.5);
-  width: 100%;
-  background-color:#4569FF;
-  color:white;
-}
+
 .calories{
 color:#4569FF;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 100;
+font-style: normal;
+font-size: 24px;
+}
+
+
+/* nutration title */
+h3, h5{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 24px;
+  text-align: left;
+}
+
+/* ingredients title */
+p{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 18px;
+  text-align: left;
+}
+
+.nuTable{
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  background-color:#4569FF;
+}
+td{
+  width:50%;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.cardTitle{
+  padding: 10px 10px 10px 10px;
+  color: white;
+  background-color: #4569FF;
+  border-radius: 0 0 50px 50px;
+  box-shadow: 0 5px 2px #FFAB0A;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 24px;
 }
 
 .card-link{
   border: 2px solid rgba(166, 203, 216, .5);
   padding:5px 10px 5px 10px;
-  border-radius: 15px;
-  box-shadow: 5px 5px 2px rgb(166, 203, 216);
+  border-radius: 5px;
   margin:5px;
+  background-color: #4569FF;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  border: 1px solid #CECECE;
+}
+.card-link:hover {
+  background-color: #2AC940;
+  color: white;
+}
+
+.search-button{
+  border: 2px solid rgba(166, 203, 216, .5);
+  border-radius: 5px;
+  background-color: #4569FF;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  border: 1px solid #CECECE;
+}
+.search-button:hover {
+  background-color: #2AC940;
+  color: white;
 }
 #cardBg{
-  border-left: 2px solid rgba(166, 203, 216, .5) ;
-  border-top: 2px solid rgba(166, 203, 216, .5) ;
-  margin-left:0;
+  border: 1px solid #cecece;
   padding:5px;
   border-radius: 10px;
   margin-bottom: 5vh;
-  box-shadow: 5px 5px 2px rgb(166, 203, 216);
 }
 .recipeImg{
   height:50%;
   
 }
+
+.sectionTitle {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 24px;
+  text-align: left;
+}
+
+.mainContentTextRed {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 16px;
+  text-align: left;
+}
+
 @media only screen and (max-width: 990px) {
   .recipeImg{
-    height:50vh
+    width: 100%;
   }
 }
 
