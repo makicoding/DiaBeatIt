@@ -46,11 +46,15 @@ class Contact extends React.Component {
                                 {/* Subrow */}
                                 <Row>
                                     <Col size="col-md-12">
-                                        <p className="mainContentTextBlack">Enter contact information here</p>
+                                        <br></br>
+                                        <p className="contactTextBlackCentered">To get in touch with Team DiaBeatIt, please email:
+                                        <br></br>
+                                        <br></br>
+                                        <a className="contactAnchor" href="mailto:team.diabeatit@gmail.com">team.diabeatit@gmail.com</a>
+                                        </p>
                                     </Col>
                                 </Row> 
 
-                                <Br />
                                 <Br />
                                 <Br />
 
@@ -59,7 +63,8 @@ class Contact extends React.Component {
                                 <Row>
                                     <Col size="col-md-12">                               
                                         {/* Datepicker */}
-                                        <div className="mainContentTextBlack">Enter disclaimer here</div>
+                                        <p className="mainContentTextBlack">Please note that whilte this app aims to HELP prevent diabetes, the app itself does not prevent diabetes.
+                                        </p>
                                     </Col>
                                 </Row> 
 
