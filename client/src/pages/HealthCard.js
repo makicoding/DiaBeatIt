@@ -50,6 +50,7 @@ class HealthCard extends React.Component {
         let primaryCarePhysician = document.getElementById("healthCardPage-primaryCarePhysician").value;
         let primaryCarePhysicianPhone = document.getElementById("healthCardPage-primaryCarePhysicianPhoneNumber").value;
         let healthInsuranceProvider = document.getElementById("healthCardPage-healthInsuranceProvider").value;
+        let healthInsuranceProviderPhone = document.getElementById("healthCardPage-healthInsuranceProviderPhone").value;
         let policyNo = document.getElementById("healthCardPage-policyNo").value;
         let knownAllergens = document.getElementById("healthCardPage-knownAllergens").value;
         let medications = document.getElementById("healthCardPage-medication").value;
@@ -67,6 +68,7 @@ class HealthCard extends React.Component {
             primaryCarePhysician: primaryCarePhysician,
             primaryCarePhysicianPhone: primaryCarePhysicianPhone,
             healthInsuranceProvider: healthInsuranceProvider,
+            healthInsuranceProviderPhone: healthInsuranceProviderPhone,
             policyNo: policyNo,
             knownAllergens: knownAllergens,
             medications: medications,
@@ -94,6 +96,7 @@ class HealthCard extends React.Component {
                     primaryCarePhysician={this.state.primaryCarePhysician}
                     primaryCarePhysicianPhone={this.state.primaryCarePhysicianPhone}
                     healthInsuranceProvider={this.state.healthInsuranceProvider}
+                    healthInsuranceProviderPhone={this.state.healthInsuranceProviderPhone}
                     policyNo={this.state.policyNo}
                     knownAllergens={this.state.knownAllergens}
                     medications={this.state.medications}
@@ -168,7 +171,7 @@ class HealthCard extends React.Component {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-fullName" placeholder="" autoComplete="off" maxlength="20"></input>   
+                                        <input type="text" className="form-control" id="healthCardPage-fullName" placeholder="" autoComplete="off" maxlength="30"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -186,7 +189,7 @@ class HealthCard extends React.Component {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-address" placeholder="" autoComplete="off" maxlength="30"></input>   
+                                        <input type="text" className="form-control" id="healthCardPage-address" placeholder="" autoComplete="off" maxlength="70"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -195,7 +198,7 @@ class HealthCard extends React.Component {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-emergencyContactName" placeholder="" autoComplete="off" maxlength="20"></input>   
+                                        <input type="text" className="form-control" id="healthCardPage-emergencyContactName" placeholder="" autoComplete="off" maxlength="30"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -204,7 +207,7 @@ class HealthCard extends React.Component {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" pattern="/d" className="form-control" id="healthCardPage-emergencyContactPhone" placeholder="" autoComplete="off" maxlength="10"></input>   
+                                        <input type="text" pattern="/d" className="form-control" id="healthCardPage-emergencyContactPhone" placeholder="" autoComplete="off" maxlength="20"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -218,11 +221,20 @@ class HealthCard extends React.Component {
                                         <Br />
                                         <Br />
 
+                                        <p className="mainContentTextBlack">Health insurance provider phone number:</p>
+                                        <Br2 />
+                                        <Br2 />
+                                        <Br2 />
+                                        <input type="text" className="form-control" id="healthCardPage-healthInsuranceProviderPhone" placeholder="" autoComplete="off" maxlength="20"></input>   
+                                        {/* autoComplete="off" is used to turn off the autoComplete of input field */}
+                                        <Br />
+                                        <Br />
+
                                         <p className="mainContentTextBlack">Health insurance policy number:</p>
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" pattern="/d" className="form-control" id="healthCardPage-policyNo" placeholder="" autoComplete="off" maxlength="10"></input>   
+                                        <input type="text" pattern="/d" className="form-control" id="healthCardPage-policyNo" placeholder="" autoComplete="off" maxlength="20"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -231,7 +243,7 @@ class HealthCard extends React.Component {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-primaryCarePhysician" placeholder="" autoComplete="off" maxlength="20"></input>   
+                                        <input type="text" className="form-control" id="healthCardPage-primaryCarePhysician" placeholder="" autoComplete="off" maxlength="30"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -240,7 +252,7 @@ class HealthCard extends React.Component {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" pattern="/d" className="form-control" id="healthCardPage-primaryCarePhysicianPhoneNumber" placeholder="" autoComplete="off" maxlength="10"></input>   
+                                        <input type="text" pattern="/d" className="form-control" id="healthCardPage-primaryCarePhysicianPhoneNumber" placeholder="" autoComplete="off" maxlength="20"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -249,7 +261,7 @@ class HealthCard extends React.Component {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <textarea className="form-control" id="healthCardPage-medicalConditions" placeholder="" rows="4" autoComplete="off" maxlength="30"></textarea>     
+                                        <textarea className="form-control" id="healthCardPage-medicalConditions" placeholder="" rows="4" autoComplete="off" maxlength="70"></textarea>     
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -258,7 +270,7 @@ class HealthCard extends React.Component {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <textarea className="form-control" id="healthCardPage-medication" placeholder="" rows="4" autoComplete="off" maxlength="30"></textarea> 
+                                        <textarea className="form-control" id="healthCardPage-medication" placeholder="" rows="4" autoComplete="off" maxlength="70"></textarea> 
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -267,7 +279,7 @@ class HealthCard extends React.Component {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <textarea className="form-control" id="healthCardPage-knownAllergens" placeholder="" rows="4" autoComplete="off" maxlength="30"></textarea>    
+                                        <textarea className="form-control" id="healthCardPage-knownAllergens" placeholder="" rows="4" autoComplete="off" maxlength="70"></textarea>    
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
