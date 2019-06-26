@@ -25,7 +25,7 @@ class HealthTimeline extends React.Component {
         currentExerciseFrequency: "",
         userBMI: "",
         messageBMI: "",
-        lifeExpectancy: "50"
+        lifeExpectancy: ""
     };
 
     componentDidMount() {
@@ -44,48 +44,72 @@ class HealthTimeline extends React.Component {
     };
 
     calculateBMI = (height, weight) => {
-        let { userBMI, messageBMI } = this.state;
+        let { userBMI, messageBMI, lifeExpectancy, currentAge } = this.state;
+        const userDiet = parseInt(this.state.currentDiet);
+        // alert(userDiet);
+        const userExercise = parseInt(this.state.currentExerciseFrequency);
+        console.log(userExercise);
 
-        if (weight > 0 && height > 0) {
-            userBMI = (weight / (height / 100 * height / 100)).toFixed(2);
-
-            if (userBMI < 18.5) {
-                messageBMI = "Too thin"
+        if (weight > 0 && height > 0 ) {
+            userBMI = (weight / (height / 100 * height / 100)).toFixed(0);
+            lifeExpectancy = 76 + parseInt(userDiet) + parseInt(userExercise);
+            // console.log(lifeExpectancy);
+            if (userBMI < 10) {
+                messageBMI = "Are you sure this is your height/weight?"
+                lifeExpectancy = "?";
             }
+            if (userBMI > 10 && userBMI< 18.5) {
+                messageBMI = "Too thin"
+                lifeExpectancy--;
+            } 
             if (userBMI > 18.5 && userBMI < 25) {
                 messageBMI = "Healthy"
-            }
-            if (userBMI > 25) {
+                lifeExpectancy++
+            } 
+            if (userBMI > 25 && userBMI < 35) {
                 messageBMI = "Overweight"
+                lifeExpectancy--;
+            } 
+            if (userBMI > 50) {
+                messageBMI = "Oof"
+                lifeExpectancy = currentAge
             }
 
             // console.log(userBMI)
             // return userBMI
         }
+
         this.setState({
             userBMI: userBMI,
-            messageBMI: messageBMI
+            messageBMI: messageBMI,
+            lifeExpectancy: lifeExpectancy
         })
     }
 
     handleFormSubmit = event => {
+        let { currentHeight, currentWeight, currentAge, currentExerciseFrequency, currentDiet, userBMI, lifeExpectancy } = this.state;
 
         const userHeight = (parseInt(this.state.currentHeightFt * 12) + parseInt(this.state.currentHeightIn)) * 2.54;
-        // userHeight = userHeight * 2.54;
-        // console.log(userHeight);
         const userWeight = this.state.currentWeight / 2.2;
-        this.calculateBMI(userHeight, userWeight);
-        event.preventDefault();
+        // const userDiet = this.state.currentDiet;
+        // const userExercise = this.state.currentExerciseFrequency
 
-        let { currentHeight, currentWeight, currentAge, currentExerciseFrequency, currentDiet, userBMI, lifeExpectancy } = this.state;
+        if (isNaN(userHeight && userWeight)) {
+            document.getElementById("bmi").style.display = "none";
+            alert("Form improperly filled out");
+            return
+        }
+
+        event.preventDefault();
+        this.calculateBMI(userHeight, userWeight);
 
         // if (userBMI > 21 && currentExerciseFrequency === "1-2 Times a Week") {
         //     lifeExpectancy--;
         // }
 
-        this.setState({
-            lifeExpectancy: "80"
-        });
+        // this.setState({
+        //     lifeExpectancy: "80"
+        // });
 
         document.getElementById("bmi").style.display = "block";
 
@@ -180,7 +204,7 @@ class HealthTimeline extends React.Component {
                                                     name="currentHeightFt"
                                                     onChange={this.handleInputChange}
                                                     type="text"
-                                                    pattern="/d"
+                                                    pattern="\d"
                                                     maxlength="1"
                                                     placeholder="ft"
                                                     autocomplete="off"
@@ -195,7 +219,7 @@ class HealthTimeline extends React.Component {
                                                     name="currentHeightIn"
                                                     onChange={this.handleInputChange}
                                                     type="text"
-                                                    pattern="/d"
+                                                    pattern="\d"
                                                     maxlength="2"
                                                     placeholder="in"
                                                     autocomplete="off"
@@ -219,9 +243,9 @@ class HealthTimeline extends React.Component {
                                                     name="currentWeight"
                                                     onChange={this.handleInputChange}
                                                     type="text"
-                                                    pattern="/d"
+                                                    pattern="\d"
                                                     maxlength="3"
-                                                    placeholder="lb"
+                                                    placeholder="lbs"
                                                     autocomplete="off"
                                                 >
                                                 </input>
@@ -239,10 +263,10 @@ class HealthTimeline extends React.Component {
                                                 <label style={{ width: '100%' }}>
                                                     <select className="form-control" name='currentDiet' onChange={this.handleInputChange}>
                                                         <option value="null"></option>
-                                                        <option value="Poor">Poor</option>
-                                                        <option value="Average">Average</option>
-                                                        <option value="Above Average">Above Average</option>
-                                                        <option value="Ideal">Ideal</option>
+                                                        <option value="-2">Poor</option>
+                                                        <option value="0">Average</option>
+                                                        <option value="2">Above Average</option>
+                                                        <option value="4">Ideal</option>
                                                     </select>
                                                 </label>
                                             </Col>
@@ -261,10 +285,10 @@ class HealthTimeline extends React.Component {
                                                 <label style={{ width: '100%' }}>
                                                     <select className="form-control" name="currentExerciseFrequency" onChange={this.handleInputChange}>
                                                         <option value="null"></option>
-                                                        <option value="Never">Never</option>
-                                                        <option value="1-2 Times a Week">1-2 Times a Week</option>
-                                                        <option value="2-3 Times a week">2-3 Times a week</option>
-                                                        <option value="5+ Times a Week">5+ Times a Week</option>
+                                                        <option value="-2">Never</option>
+                                                        <option value="0">1-2 Times a Week</option>
+                                                        <option value="2">2-3 Times a week</option>
+                                                        <option value="4">5+ Times a Week</option>
                                                     </select>
                                                 </label>
                                             </Col>
@@ -286,7 +310,7 @@ class HealthTimeline extends React.Component {
                             <Col size="col-md-6 offset-md-3">
                                 <Row>
                                     <Col size="col-md-12">
-                                        <button className="button1" onClick={this.handleFormSubmit}>Submit</button>
+                                        <button className="button1" onClick={this.handleFormSubmit}>Calculate</button>
                                         <Br />
                                         <span id="bmi">
                                             <p> Your stats: <br />
@@ -299,8 +323,9 @@ class HealthTimeline extends React.Component {
                                                 BMI: {this.state.userBMI} ({this.state.messageBMI}) Life Expectancy: {this.state.lifeExpectancy}
                                                 <br />
                                                 Gender: {this.state.gender}, Age: {this.state.currentAge} years old,
-                                                    Weight: {this.state.currentWeight} lbs, Height: {this.state.currentHeightFt}' {this.state.currentHeightIn}" <br />
-                                                Current dietary habit: {this.state.currentDiet}, Current exercise frequency: {this.state.currentExerciseFrequency}
+                                                Weight: {this.state.currentWeight} lbs, Height: {this.state.currentHeightFt}' {this.state.currentHeightIn}"<br />
+                                                {/* Current dietary habit: {this.state.currentDiet} <br /> 
+                                                Current exercise frequency: {this.state.currentExerciseFrequency} */}
                                             </p>
                                         </span>
                                     </Col>
