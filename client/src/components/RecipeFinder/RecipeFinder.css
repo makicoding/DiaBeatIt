@@ -41,15 +41,18 @@ font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-style: normal;
-  background-color:#4569FF;
+ 
 }
 .recipeFinderTd{
   width:50%;
+  background-color:#4569FF;
+  padding-left:5 !important;
   color:white;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-style: normal;
-  font-size: 20px;
+  font-size: 16px;
+  /* position:relative; */
 }
 
 .recipeCardTitle{
@@ -84,7 +87,6 @@ font-size: 24px;
 
 .search-button{
   height: 40px;
-
   border: 2px solid rgba(166, 203, 216, .5);
   border-radius: 5px;
   background-color: #4569FF;
@@ -102,13 +104,11 @@ font-size: 24px;
 }
 #cardBg{
   width: 100%;
-
   border: 1px solid #cecece;
   padding: 16px 0px 0px 0px;
   border-radius: 10px;
   margin-bottom: 5vh;
   box-shadow: 0 5px 5px #cecece;
-
   position: relative;
   left: 15px;
 }

@@ -52,19 +52,19 @@ class RecipeFinder extends Component {
           message: '',
           recipes: data.hits.map(ele => ele.recipe)
         }))
-        console.log(this.state.recipes)    
+        // console.log(this.state.recipes)    
     }
 
   }
-   componentDidMount = () => {
-    const json = localStorage.getItem("recipes");
-    const recipes = JSON.parse(json);
-    this.setState({ recipes });
-    // this.setState({
-    //   recipeName:'',
-    //   calorie:30
-    // })
-  }
+  //  componentDidMount = () => {
+  //   const json = localStorage.getItem("recipes");
+  //   const recipes = JSON.parse(json);
+  //   this.setState({ recipes });
+  //   // this.setState({
+  //   //   recipeName:'',
+  //   //   calorie:30
+  //   // })
+  // }
   componentDidUpdate = () => {
     const recipes = JSON.stringify(this.state.recipes);
     localStorage.setItem("recipes", recipes);
@@ -105,7 +105,6 @@ class RecipeFinder extends Component {
               }
             </div>
         </div>
-
 
         {/* ---------------------------------------- */}
         {/* HAMBURGER MENU */}
