@@ -60,7 +60,7 @@ class HealthTimeline extends React.Component {
             }
             if (userBMI > 10 && userBMI< 18.5) {
                 messageBMI = "Too thin"
-                lifeExpectancy--;
+                // lifeExpectancy--;
             } 
             if (userBMI > 18.5 && userBMI < 25) {
                 messageBMI = "Healthy"
@@ -87,16 +87,23 @@ class HealthTimeline extends React.Component {
     }
 
     handleFormSubmit = event => {
+        document.getElementById("error").style.display = "none";
+
         let { currentHeight, currentWeight, currentAge, currentExerciseFrequency, currentDiet, userBMI, lifeExpectancy } = this.state;
 
         const userHeight = (parseInt(this.state.currentHeightFt * 12) + parseInt(this.state.currentHeightIn)) * 2.54;
         const userWeight = this.state.currentWeight / 2.2;
         const userDiet = this.state.currentDiet;
         const userExercise = this.state.currentExerciseFrequency
+        // const errorMessage = document.getElementById("error");
+        // console.log(errorMessage);
 
         if (isNaN(userHeight && userWeight) || (!userDiet || !userExercise)) {
             document.getElementById("bmi").style.display = "none";
-            alert("Form improperly filled out");
+            document.getElementById("error").style.display = "block";
+
+            // alert("Form improperly filled out");
+            document.getElementById("error").innerHTML = ("Please fill out all fields.");
             return
         }
 
@@ -311,6 +318,8 @@ class HealthTimeline extends React.Component {
                                 <Row>
                                     <Col size="col-md-12">
                                         <button className="button1" onClick={this.handleFormSubmit}>Calculate</button>
+                                        <span id="error" className="mainContentTextRed"></span>
+
                                         <Br />
                                         <span id="bmi">
                                             <p> Your stats: <br />
