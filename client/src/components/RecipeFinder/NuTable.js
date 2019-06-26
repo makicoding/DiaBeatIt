@@ -8,24 +8,24 @@ const NuTable = ({ recipe }) => {
             <table className="table table-bordered nuTable">
                 <tbody>
                     <tr>
-                        <td>{recipe.totalNutrients.FAT.label}</td>
-                        <td>{recipe.totalNutrients.FAT.quantity.toFixed(2)}{recipe.totalNutrients.FAT.unit}</td>
+                        <td className="recipeFinderTd">{recipe.totalNutrients.FAT.label}</td>
+                        <td className="recipeFinderTd">{recipe.totalNutrients.FAT.quantity.toFixed(2)}{recipe.totalNutrients.FAT.unit}</td>
                     </tr>
                     <tr>
-                        <td>Cholesterol</td>
-                        <td>{recipe.totalNutrients.CHOLE.quantity.toFixed(2)}{recipe.totalNutrients.CHOLE.unit}</td>
+                        <td className="recipeFinderTd">Cholesterol</td>
+                        <td className="recipeFinderTd">{recipe.totalNutrients.CHOLE.quantity.toFixed(2)}{recipe.totalNutrients.CHOLE.unit}</td>
                     </tr>
                     <tr>
-                        <td>{recipe.totalNutrients.SUGAR.label}</td>
-                        <td>{recipe.totalNutrients.SUGAR.quantity.toFixed(2)}{recipe.totalNutrients.SUGAR.unit}</td>
+                        <td className="recipeFinderTd">{recipe.totalNutrients.SUGAR.label}</td>
+                        <td className="recipeFinderTd">{recipe.totalNutrients.SUGAR.quantity.toFixed(2)}{recipe.totalNutrients.SUGAR.unit}</td>
                     </tr>
                     <tr>
-                        <td>{recipe.totalNutrients.PROCNT.label}</td>
-                        <td>{recipe.totalNutrients.PROCNT.quantity.toFixed(2)}{recipe.totalNutrients.PROCNT.unit}</td>
+                        <td className="recipeFinderTd">{recipe.totalNutrients.PROCNT.label}</td>
+                        <td className="recipeFinderTd">{recipe.totalNutrients.PROCNT.quantity.toFixed(2)}{recipe.totalNutrients.PROCNT.unit}</td>
                     </tr>
                     <tr>
-                        <td>{recipe.totalNutrients.FIBTG.label}</td>
-                        <td>{recipe.totalNutrients.FIBTG.quantity.toFixed(2)}{recipe.totalNutrients.FIBTG.unit}</td>
+                        <td className="recipeFinderTd">{recipe.totalNutrients.FIBTG.label}</td>
+                        <td className="recipeFinderTd">{recipe.totalNutrients.FIBTG.quantity.toFixed(2)}{recipe.totalNutrients.FIBTG.unit}</td>
                     </tr>
                 </tbody>
             </table>

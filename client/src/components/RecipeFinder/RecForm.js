@@ -16,6 +16,7 @@ const RecForm =(props)=>{
                             value={props.receipeName}
                             onChange={props.handleChange}
                             required autoFocus
+                            autoComplete="off"
                             />
                 <input  className="form-control col-lg-4 col-md-12 col-sm-12 mb-4 mr-4"
                             type="text"
@@ -26,6 +27,7 @@ const RecForm =(props)=>{
                             value={props.calorie}
                             onChange={props.handleChange}
                             required autoFocus
+                            autoComplete="off"
                             />
                 <button className="col-lg-2 col-md-12 col-sm-12 text-center mb-4  search-button"> Search</button>
             </div>  

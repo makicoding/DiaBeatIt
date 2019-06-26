@@ -20,7 +20,7 @@ class MainMenu extends React.Component {
           <a className="mainMenuAnchor" href="HealthCard">Digital Health Card</a>
           <a className="mainMenuAnchor" href="Resources">Resources</a>
           <a className="mainMenuAnchor" href="Contact">Contact</a>
-          <a className="mainMenuAnchor" href="index.html">Sign Out</a>
+          <a className="mainMenuAnchor" href="/">Back To Home</a>
         </div>
 
       </div>
