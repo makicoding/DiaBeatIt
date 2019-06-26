@@ -319,7 +319,8 @@ class CalorieEntry extends React.Component {
                                         <p className="sectionTitle">1.</p>
                                     </Col>
 
-                                    <Col size="col-md-10">                               
+                                    <Col size="col-md-10">  
+                                        <p className="mainContentTextBlack">Please select date:</p>                             
                                         {/* Datepicker */}
                                         <div className="customReactDatepicker" id="calorieEntryPage-datepicker">
                                             <DatePicker
@@ -330,6 +331,8 @@ class CalorieEntry extends React.Component {
                                         </div>
                                     </Col>
                                 </Row>
+
+                                <Br />
 
                                 {/* <hr class="horizontalRuleGray"></hr> */}
                                 <hr className="horizontalRuleBlue"></hr>

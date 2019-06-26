@@ -124,18 +124,32 @@ class HealthTimeline extends React.Component {
                                 <Row>
                                     <Col size="col-md-12">
                                         <Row>
-                                            <Col size="col-md-6">
+                                            <Col size="col-md-12">
+                                                <p>Gender: </p>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col size="col-md-12">
                                                 <label style={{ width: '100%' }}>
-                                                    <p>Gender: </p>
                                                     <select className="form-control" name="gender" onChange={this.handleInputChange}>
-                                                        <option value="null">-</option>
+                                                        <option value="null"></option>
                                                         <option value="F">Female</option>
                                                         <option value="M">Male</option>
                                                     </select>
                                                 </label>
                                             </Col>
-                                            <Col size="col-md-6">
+                                        </Row>
+                                        <Br />
+                                        <Br2 />
+                                        <Br2 />
+                                        <Br2 />
+                                        <Row>
+                                            <Col size="col-md-12">
                                                 <p>Current age: </p>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col size="col-md-12">
                                                 <input
                                                     className="form-control"
                                                     value={this.state.currentAge}
@@ -151,9 +165,15 @@ class HealthTimeline extends React.Component {
                                             </Col>
                                         </Row>
                                         <Br />
+                                        <Br />
                                         <Row>
-                                            <Col size="col-md-4">
-                                                <p>Current height (ft): </p>
+                                            <Col size="col-md-12">
+                                                <p>Current height: </p>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col size="col-md-6">
+                                                {/* <p>Current height (ft): </p> */}
                                                 <input
                                                     className="form-control"
                                                     value={this.state.currentHeightFt}
@@ -167,8 +187,8 @@ class HealthTimeline extends React.Component {
                                                 >
                                                 </input>
                                             </Col>
-                                            <Col size="col-md-4">
-                                                <p>Current height (in): </p>
+                                            <Col size="col-md-6">
+                                                {/* <p>Current height (in): </p> */}
                                                 <input
                                                     className="form-control"
                                                     value={this.state.currentHeightIn}
@@ -182,8 +202,17 @@ class HealthTimeline extends React.Component {
                                                 >
                                                 </input>
                                             </Col>
-                                            <Col size="col-md-4">
-                                                <p>Current weight (lb): </p>
+                                        </Row>
+                                        <Br />
+                                        <Br />
+                                        <Row>
+                                            <Col size="col-md-12">
+                                                <p>Current weight: </p>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col size="col-md-12">
+                                                {/* <p>Current weight (lb): </p> */}
                                                 <input
                                                     className="form-control"
                                                     value={this.state.currentWeight}
@@ -199,12 +228,17 @@ class HealthTimeline extends React.Component {
                                             </Col>
                                         </Row>
                                         <Br />
+                                        <Br />
                                         <Row>
-                                            <Col size="col-md-6">
+                                            <Col size="col-md-12">
+                                                <p>Current dietary habit: </p>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col size="col-md-12">
                                                 <label style={{ width: '100%' }}>
-                                                    <p>Current dietary habit </p>
                                                     <select className="form-control" name='currentDiet' onChange={this.handleInputChange}>
-                                                        <option value="null">-</option>
+                                                        <option value="null"></option>
                                                         <option value="Poor">Poor</option>
                                                         <option value="Average">Average</option>
                                                         <option value="Above Average">Above Average</option>
@@ -212,11 +246,21 @@ class HealthTimeline extends React.Component {
                                                     </select>
                                                 </label>
                                             </Col>
-                                            <Col size="col-md-6">
+                                        </Row>
+                                        <Br />
+                                        <Br2 />
+                                        <Br2 />
+                                        <Br2 />
+                                        <Row>
+                                            <Col size="col-md-12">
+                                                <p>Current exercise frequency: </p>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col size="col-md-12">
                                                 <label style={{ width: '100%' }}>
-                                                    <p>Current exercise frequency </p>
                                                     <select className="form-control" name="currentExerciseFrequency" onChange={this.handleInputChange}>
-                                                        <option value="null">-</option>
+                                                        <option value="null"></option>
                                                         <option value="Never">Never</option>
                                                         <option value="1-2 Times a Week">1-2 Times a Week</option>
                                                         <option value="2-3 Times a week">2-3 Times a week</option>
@@ -225,11 +269,18 @@ class HealthTimeline extends React.Component {
                                                 </label>
                                             </Col>
                                         </Row>
+                                        <Br />
+                                        <Br2 />
+                                        <Br2 />
+                                        <Br2 />
                                     </Col>
                                 </Row>
                             </Col>
                         </Row>
                     </Container>
+
+                    <Br />
+
                     <Container>
                         <Row>
                             <Col size="col-md-6 offset-md-3">
@@ -254,6 +305,11 @@ class HealthTimeline extends React.Component {
                                         </span>
                                     </Col>
                                 </Row>
+
+                                {/* Bottom of page line breaks for breathing room */}
+                                <Br />      
+                                <Br />
+                                <Br />
 
                             </Col>
                         </Row>
