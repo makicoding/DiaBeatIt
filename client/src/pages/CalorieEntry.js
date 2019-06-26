@@ -18,7 +18,7 @@ import API from "../utils/API";
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
 
 // grabbing username from cookies
-localStorage.setItem("username", "Guest User");   // delete this line in production
+// localStorage.setItem("username", "Guest User");   // delete this line in production
 var userName = localStorage.getItem("username");
 
 class CalorieEntry extends React.Component {
