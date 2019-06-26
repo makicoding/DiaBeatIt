@@ -12,12 +12,8 @@
     font-style: normal;
     font-size: 16px;
     text-align: left;
-
-    outline-color: red;
 }
 
 .dropDownMenu1:focus {
-    /* border-color: #95c8ff;     This is a very similar color to the default outline-color */
-    /* border-width: 2px; */
-    outline-width: 5px;
+
 }
