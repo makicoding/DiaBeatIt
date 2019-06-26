@@ -16,9 +16,11 @@ import "../components/InputAndSelectField/inputAndSelectField.css";
 class HealthTimeline extends React.Component {
 
     state = {
+        gender: "",
         currentAge: "",
         currentWeight: "",
-        currentHeight: "",
+        currentHeightFt: "",
+        currentHeightIn: "",
         currentDiet: "",
         currentExerciseFrequency: "",
         userBMI: "",
@@ -68,7 +70,9 @@ class HealthTimeline extends React.Component {
 
     handleFormSubmit = event => {
 
-        const userHeight = this.state.currentHeight * 2.54;
+        const userHeight = (parseInt(this.state.currentHeightFt * 12) + parseInt(this.state.currentHeightIn)) * 2.54;
+        // userHeight = userHeight * 2.54;
+        // console.log(userHeight);
         const userWeight = this.state.currentWeight / 2.2;
         this.calculateBMI(userHeight, userWeight);
         event.preventDefault();
@@ -119,69 +123,108 @@ class HealthTimeline extends React.Component {
                                 {/* Subrow (FORM) */}
                                 <Row>
                                     <Col size="col-md-12">
-                                        <p>Current age: </p>
-                                        <input
-                                            className="form-control"
-                                            value={this.state.currentAge}
-                                            name="currentAge"
-                                            onChange={this.handleInputChange}
-                                            type="text"
-                                            pattern="/d"
-                                            maxlength="2"
-                                            placeholder=""
-                                            autocomplete="off"
-                                        >
-                                        </input>
+                                        <Row>
+                                            <Col size="col-md-6">
+                                                <label style={{ width: '100%' }}>
+                                                    <p>Gender: </p>
+                                                    <select className="form-control" name="gender" onChange={this.handleInputChange}>
+                                                        <option value="null">-</option>
+                                                        <option value="F">Female</option>
+                                                        <option value="M">Male</option>
+                                                    </select>
+                                                </label>
+                                            </Col>
+                                            <Col size="col-md-6">
+                                                <p>Current age: </p>
+                                                <input
+                                                    className="form-control"
+                                                    value={this.state.currentAge}
+                                                    name="currentAge"
+                                                    onChange={this.handleInputChange}
+                                                    type="text"
+                                                    pattern="/d"
+                                                    maxlength="2"
+                                                    placeholder=""
+                                                    autocomplete="off"
+                                                >
+                                                </input>
+                                            </Col>
+                                        </Row>
                                         <Br />
-                                        <p>Current weight: </p>
-                                        <input
-                                            className="form-control"
-                                            value={this.state.currentWeight}
-                                            name="currentWeight"
-                                            onChange={this.handleInputChange}
-                                            type="text"
-                                            pattern="/d"
-                                            maxlength="3"
-                                            placeholder="(lb)"
-                                            autocomplete="off"
-                                        >
-                                        </input>
+                                        <Row>
+                                            <Col size="col-md-4">
+                                                <p>Current height (ft): </p>
+                                                <input
+                                                    className="form-control"
+                                                    value={this.state.currentHeightFt}
+                                                    name="currentHeightFt"
+                                                    onChange={this.handleInputChange}
+                                                    type="text"
+                                                    pattern="/d"
+                                                    maxlength="1"
+                                                    placeholder="ft"
+                                                    autocomplete="off"
+                                                >
+                                                </input>
+                                            </Col>
+                                            <Col size="col-md-4">
+                                                <p>Current height (in): </p>
+                                                <input
+                                                    className="form-control"
+                                                    value={this.state.currentHeightIn}
+                                                    name="currentHeightIn"
+                                                    onChange={this.handleInputChange}
+                                                    type="text"
+                                                    pattern="/d"
+                                                    maxlength="2"
+                                                    placeholder="in"
+                                                    autocomplete="off"
+                                                >
+                                                </input>
+                                            </Col>
+                                            <Col size="col-md-4">
+                                                <p>Current weight (lb): </p>
+                                                <input
+                                                    className="form-control"
+                                                    value={this.state.currentWeight}
+                                                    name="currentWeight"
+                                                    onChange={this.handleInputChange}
+                                                    type="text"
+                                                    pattern="/d"
+                                                    maxlength="3"
+                                                    placeholder="lb"
+                                                    autocomplete="off"
+                                                >
+                                                </input>
+                                            </Col>
+                                        </Row>
                                         <Br />
-                                        <p>Current height: </p>
-                                        <input
-                                            className="form-control"
-                                            value={this.state.currentHeight}
-                                            name="currentHeight"
-                                            onChange={this.handleInputChange}
-                                            type="text"
-                                            pattern="/d"
-                                            maxlength="2"
-                                            placeholder="(in)"
-                                            autocomplete="off"
-                                        >
-                                        </input>
-                                        <Br />
-                                        <label>
-                                            <p>Current dietary habit </p>
-                                            <select style={{ width: '100%' }} className="form-control" name='currentDiet' onChange={this.handleInputChange}>
-                                                <option value="null">-</option>
-                                                <option value="Poor">Poor</option>
-                                                <option value="Average">Average</option>
-                                                <option value="Above Average">Above Average</option>
-                                                <option value="Ideal">Ideal</option>
-                                            </select>
-                                        </label>
-                                        <Br />
-                                        <label>
-                                            <p>Current exercise frequency </p>
-                                            <select className="form-control" name="currentExerciseFrequency" onChange={this.handleInputChange}>
-                                                <option value="null">-</option>
-                                                <option value="Never">Never</option>
-                                                <option value="1-2 Times a Week">1-2 Times a Week</option>
-                                                <option value="2-3 Times a week">2-3 Times a week</option>
-                                                <option value="5+ Times a Week">5+ Times a Week</option>
-                                            </select>
-                                        </label>
+                                        <Row>
+                                            <Col size="col-md-6">
+                                                <label style={{ width: '100%' }}>
+                                                    <p>Current dietary habit </p>
+                                                    <select className="form-control" name='currentDiet' onChange={this.handleInputChange}>
+                                                        <option value="null">-</option>
+                                                        <option value="Poor">Poor</option>
+                                                        <option value="Average">Average</option>
+                                                        <option value="Above Average">Above Average</option>
+                                                        <option value="Ideal">Ideal</option>
+                                                    </select>
+                                                </label>
+                                            </Col>
+                                            <Col size="col-md-6">
+                                                <label style={{ width: '100%' }}>
+                                                    <p>Current exercise frequency </p>
+                                                    <select className="form-control" name="currentExerciseFrequency" onChange={this.handleInputChange}>
+                                                        <option value="null">-</option>
+                                                        <option value="Never">Never</option>
+                                                        <option value="1-2 Times a Week">1-2 Times a Week</option>
+                                                        <option value="2-3 Times a week">2-3 Times a week</option>
+                                                        <option value="5+ Times a Week">5+ Times a Week</option>
+                                                    </select>
+                                                </label>
+                                            </Col>
+                                        </Row>
                                     </Col>
                                 </Row>
                             </Col>
@@ -193,20 +236,22 @@ class HealthTimeline extends React.Component {
                                 <Row>
                                     <Col size="col-md-12">
                                         <button className="button1" onClick={this.handleFormSubmit}>Submit</button>
-                                        <span id="bmi">Your BMI: {this.state.userBMI} ({this.state.messageBMI}) Life Expectancy: {this.state.lifeExpectancy}</span>
-                                        <div className="barWrapper" style={{ position: 'relative', height: '200px' }}>
-                                            <div className="bar" style={{ position: 'absolute', bottom: '0', height: "5px", width: `${this.state.lifeExpectancy}%`, display: "block", background: "red" }}>
-                                                <p style={{ position: 'absolute', bottom: '0', left: '0' }}>0</p>
-                                                <p style={{ position: 'absolute', bottom: '0', right: '0' }}>{this.state.lifeExpectancy}</p>
-                                            </div>
-                                        </div>
                                         <Br />
-                                        <p>
-                                            Your stats: <br />
-                                            Age: {this.state.currentAge} years old, Weight: {this.state.currentWeight} lbs, Height: {this.state.currentHeight} in,
-                                                    Current dietary habit: {this.state.currentDiet}, Current exercise frequency: {this.state.currentExerciseFrequency}
-                                        </p>
-
+                                        <span id="bmi">
+                                            <p> Your stats: <br />
+                                                <div className="barWrapper" style={{ position: 'relative', height: '200px' }}>
+                                                    <div className="bar" style={{ position: 'absolute', bottom: '0', height: "5px", width: `${this.state.lifeExpectancy}%`, display: "block", background: "red" }}>
+                                                        <p style={{ position: 'absolute', bottom: '0', left: '0' }}>0</p>
+                                                        <p style={{ position: 'absolute', bottom: '0', right: '0' }}>{this.state.lifeExpectancy}</p>
+                                                    </div>
+                                                </div>
+                                                BMI: {this.state.userBMI} ({this.state.messageBMI}) Life Expectancy: {this.state.lifeExpectancy}
+                                                <br />
+                                                Gender: {this.state.gender}, Age: {this.state.currentAge} years old,
+                                                    Weight: {this.state.currentWeight} lbs, Height: {this.state.currentHeightFt}' {this.state.currentHeightIn}" <br />
+                                                Current dietary habit: {this.state.currentDiet}, Current exercise frequency: {this.state.currentExerciseFrequency}
+                                            </p>
+                                        </span>
                                     </Col>
                                 </Row>
 
