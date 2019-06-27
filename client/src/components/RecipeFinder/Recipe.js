@@ -32,16 +32,15 @@ const Recipe = ({ recipe }) => {
                         <Br />
                         <h5 className="card-text ingredientsTitle">Ingredients: </h5>
                         <Br />
-                        {recipe.ingredientLines.map((ingredient,i)=>{
-                            return(
-                                <p className="d-inline-flex ingredients" key ={i} >{ingredient},  </p>
-                            )
-                        })}
+                        {recipe.ingredientLines
+                        .map((ingredient, i)=>{
+                            return<p className="d-inline-flex ingredients" key ={i}>{ingredient}</p>
+                            })
+                        }
+                        
                         <Br />
                         <div className="d-flex justify-content-center">
- 
                                 <a href={recipe.url} target="_blank" className="card-link">More details...</a>
-
                         </div>
                         <Br />
                     </div>
