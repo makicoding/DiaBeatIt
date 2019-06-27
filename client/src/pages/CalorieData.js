@@ -149,6 +149,10 @@ class CalorieData extends React.Component {
                                               <li className="list-group-item mainContentTextBlack calorieDataListGroupItem" key={result._id}>
                                                 <Row>
                                                   <Col size="col-md-12" className="text-justify">
+                                                    <Br2 />
+                                                    <Br2 />
+                                                    <Br2 />
+                                                    <Br2 />
                                                     {result.mealtype.substring(3, 20)}<br />
                                                     {result.mealname}<br />
                                                     Calories: {result.unitcal * result.qty}<br />
