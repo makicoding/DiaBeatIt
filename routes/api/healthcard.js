@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const healthCardController = require("../../controllers/healthCardController");
 
-// Matches with "/api/calorie"
+// Matches with "/api/healthcard"
 router.route("/")
   .post(healthCardController.create)
   .put(healthCardController.update)

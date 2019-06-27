@@ -23,14 +23,16 @@ export default {
     return axios.delete("/api/calorie/" + id);
   },
 
+  getMedId: function(username) {
+    console.log(username)
+    return axios.get("/api/healthcard/", {
+      params: {name: username}      
+    } );
+  },
+
   // Saves the medical ID 
   saveMedId: function(data) {
-    // console.log(axios.post(data));
-    var medId = axios.post("/api/healthcard", data);
-    if (medId === null) {
+    console.log(data)
       return axios.post("/api/healthcard", data)
-    } else {
-      return axios.put("/api/healthcard", data)
-    }
   }
 };
