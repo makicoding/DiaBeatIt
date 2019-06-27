@@ -25,7 +25,7 @@ const Recipe = ({ recipe }) => {
                         <Br />
                         <Br2 />
                         <Br2 />
-                        <h3 className="text-left calories">Calories: {calCalories.toFixed(2)} cal/per serving </h3>
+                        <h3 className="text-left calories">Calories: {calCalories.toFixed(2)} cal per serving </h3>
                         <Br />
                         <h5 className="card-text servingSizeText">Servings: {yeild}</h5> 
                         <Br />
