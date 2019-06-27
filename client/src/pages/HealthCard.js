@@ -75,6 +75,89 @@ prepareData = () => {
     };
 
     saveHealthCard = () => {
+        console.log("Save!");
+    }
+
+    previewHealthCard = () => {
+        // console.log("Print!");
+        let name = document.getElementById("healthCardPage-fullName").value;
+        let DOB = document.getElementById("healthCardPage-DOB").value;
+        let address = document.getElementById("healthCardPage-address").value;
+        let emergencyContact = document.getElementById("healthCardPage-emergencyContactName").value;
+        let emergencyContactPhone = document.getElementById("healthCardPage-emergencyContactPhone").value;
+        let primaryCarePhysician = document.getElementById("healthCardPage-primaryCarePhysician").value;
+        let primaryCarePhysicianPhone = document.getElementById("healthCardPage-primaryCarePhysicianPhoneNumber").value;
+        let healthInsuranceProvider = document.getElementById("healthCardPage-healthInsuranceProvider").value;
+        let healthInsuranceProviderPhone = document.getElementById("healthCardPage-healthInsuranceProviderPhone").value;
+        let policyNo = document.getElementById("healthCardPage-policyNo").value;
+        let knownAllergens = document.getElementById("healthCardPage-knownAllergens").value;
+        let medications = document.getElementById("healthCardPage-medication").value;
+        let knownConditions = document.getElementById("healthCardPage-medicalConditions").value;
+        let bloodType= document.getElementById("healthCardPage-bloodType").value;
+        let organDonor = document.getElementById("healthCardPage-organDonor").value;
+        let doNotResuscitate = document.getElementById("healthCardPage-doNotResuscitate").value;
+        // // Updating the input's state
+        this.setState({
+            name: name,
+            DOB: DOB,
+            address: address,
+            emergencyContact: emergencyContact,
+            emergencyContactPhone: emergencyContactPhone,
+            primaryCarePhysician: primaryCarePhysician,
+            primaryCarePhysicianPhone: primaryCarePhysicianPhone,
+            healthInsuranceProvider: healthInsuranceProvider,
+            healthInsuranceProviderPhone: healthInsuranceProviderPhone,
+            policyNo: policyNo,
+            knownAllergens: knownAllergens,
+            medications: medications,
+            knownConditions: knownConditions,
+            bloodType: bloodType,
+            organDonor: organDonor,
+            doNotResuscitate: doNotResuscitate, 
+            showPreview: true
+        });
+
+    }
+
+    render() {
+        if (this.state.showPreview) {
+            return (
+
+                <div style={{height: '100vh', width:'100vw'}}>
+
+                    <HealthCardPreview 
+                    name={this.state.name}
+                    DOB={this.state.DOB}
+                    address={this.state.address}
+                    emergencyContact={this.state.emergencyContact}
+                    emergencyContactPhone={this.state.emergencyContactPhone}
+                    primaryCarePhysician={this.state.primaryCarePhysician}
+                    primaryCarePhysicianPhone={this.state.primaryCarePhysicianPhone}
+                    healthInsuranceProvider={this.state.healthInsuranceProvider}
+                    healthInsuranceProviderPhone={this.state.healthInsuranceProviderPhone}
+                    policyNo={this.state.policyNo}
+                    knownAllergens={this.state.knownAllergens}
+                    medications={this.state.medications}
+                    knownConditions={this.state.knownConditions}
+                    bloodType={this.state.bloodType}
+                    organDonor={this.state.organDonor}
+                    doNotResuscitate={this.state.doNotResuscitate}
+                    />
+                    <Container> 
+                        {/* <Row>
+                            <Col> */}
+                                <Row>
+                                    <Col size="col-md-3"></Col>
+                                    <Col size="col-md-6">
+                                        <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: false})}>Close</button>
+                                        <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
+                                    </Col>
+                                    <Col size="col-md-3"></Col>
+                                </Row>
+                            {/* </Col>
+                        </Row> */}
+                    </Container>
+            <HamburgerMenu />
 console.log("Save!");
 }
 printHealthCard = () => {
@@ -82,24 +165,24 @@ console.log("Print!");
 }
 render() {
 
+                </div>
+            )
+        }
         return(
         <div>
 
             {/* ---------------------------------------- */}
             {/* MAIN CONTENT OF PAGE */}
-
             {/* Page Wrapper */}
             <div className="pageWrapper">
                 
                 {/* Hello user first name text and sign out anchor */}
                 <HelloUserAndSignOut />
-
                 {/* Page header */}
                 <div className="pageHeader">Digital Health Card</div>
             
                 {/* Main content container */}
                 <div className="mainContentContainer">
-
                     {/* BOOTSTRAP GRID */}
                     {/* Max width 960px container */}
                     {/* Put any bootstrap elements into class="container" to set max width to 960px and have it centered on page */}
@@ -107,20 +190,15 @@ render() {
                         
                         {/* Calorie entry form */}
                         <Row>
-
                             <Col size="col-md-6 offset-md-3">           
-
                                 <Br2 />
-
                                 {/* Subrow */}
                                 <Row>
                                     <Col size="col-md-12">
                                         <p className="mainContentTextBlack">This information can be printed and kept in your wallet for reference in case of an emergency:</p>
                                     </Col>
                                 </Row> 
-
                                 <Br />
-
                                 {/* ------------------------------ */}
                                 {/* Subrow (FORM) */}
                                 <Row>
@@ -133,7 +211,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Date of birth:</p>
                                         <Br2 />
                                         <Br2 />
@@ -142,7 +219,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Address:</p>
                                         <Br2 />
                                         <Br2 />
@@ -151,7 +227,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Emergency contact name:</p>
                                         <Br2 />
                                         <Br2 />
@@ -160,7 +235,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Emergency contact phone number:</p>
                                         <Br2 />
                                         <Br2 />
@@ -169,7 +243,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Health insurance provider:</p>
                                         <Br2 />
                                         <Br2 />
@@ -178,7 +251,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Health insurance provider phone number:</p>
                                         <Br2 />
                                         <Br2 />
@@ -187,7 +259,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Health insurance policy number:</p>
                                         <Br2 />
                                         <Br2 />
@@ -196,7 +267,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Primary care physician:</p>
                                         <Br2 />
                                         <Br2 />
@@ -205,7 +275,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Primary care physician phone number:</p>
                                         <Br2 />
                                         <Br2 />
@@ -214,7 +283,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Medical conditions:</p>
                                         <Br2 />
                                         <Br2 />
@@ -223,7 +291,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Medications:</p>
                                         <Br2 />
                                         <Br2 />
@@ -232,7 +299,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Known allergies:</p>
                                         <Br2 />
                                         <Br2 />
@@ -241,7 +307,6 @@ render() {
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
-
                                         <p className="mainContentTextBlack">Blood type:</p>
                                         <select className="chosen-select dropDownMenu1" id="healthCardPage-bloodType">
                                             {/* IN ALPHABETICAL ORDER */}
@@ -257,16 +322,13 @@ render() {
                                         </select>
                                     </Col>
                                 </Row> 
-
                                 <Br />
                                 <Br />
-
                                 {/* Subrow */}
                                 <Row>
                                     <Col size="col-md-4">
                                         <p className="mainContentTextBlack">Do not resuscitate:</p>
                                     </Col>
-
                                     <Col size="col-md-12">
                                         <select className="chosen-select dropDownMenu1" id="healthCardPage-doNotResuscitate">
                                             {/* IN ALPHABETICAL ORDER */}
@@ -276,16 +338,13 @@ render() {
                                         </select> 
                                     </Col>
                                 </Row> 
-
                                 <Br />
                                 <Br />
-
                                 {/* Subrow */}
                                 <Row>
                                     <Col size="col-md-4">
                                         <p className="mainContentTextBlack">Organ donor:</p>
                                     </Col>
-
                                     <Col size="col-md-12">
                                         <select className="chosen-select dropDownMenu1" id="healthCardPage-organDonor">
                                             {/* IN ALPHABETICAL ORDER */}
@@ -295,10 +354,8 @@ render() {
                                         </select> 
                                     </Col>
                                 </Row> 
-
                                 <Br />
                                 <Br />
-
                                 {/* ------------------------------ */}
                                 {/* Subrow (SAVE) */}
                                 <Row>
@@ -307,49 +364,17 @@ render() {
                                         <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
                                     </Col>
                                 </Row> 
-
                                 <Br />
-
                                 {/* ------------------------------ */}
                                 {/* Subrow (PRINT) */}
                                 <Row>
+                                <Col size="col-md-12">
+                                <button className="button1" id="healthCardPage-save" onClick={this.previewHealthCard}>Print</button>
+
+                                        {/* <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: true})}>Preview</button> */}
+                                        <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
                                     <Col size="col-md-12">
                                     <button className="button1" id="healthCardPage-print" onClick={this.prepareData}>Print</button>
                                     </Col>
                                 {/* <Link to="/Preview" role="button" className="button1">
                                 Preview
-                                </Link>{" "}
- 
-                                <Route exact path="/Preview" component={HealthCardPreview} />
-                                    <Col size="col-md-12">
-                                        <button className="button1" id="healthCardPage-print" onClick={this.previewHealthCard}>Preview</button>
-                                        <Route exact path="Preview" component={HealthCardPreview} />
-                                    </Col> */}
-                                </Row> 
-
-                                <Br />
-                                <Br />
-                                <Br />
-                                
-                            </Col>
-
-                        </Row>
-
-                    </Container>
-
-                </div>
-
-            </div>
-
-
-            {/* ---------------------------------------- */}
-            {/* HAMBURGER MENU */}
-
-            <HamburgerMenu />
-
-        </div>
-        )
-    }
-}
-
-export default HealthCard;
