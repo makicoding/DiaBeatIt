@@ -1,16 +1,12 @@
 import React from "react";
 import "./helloUserAndSignOut.css";
-import { Auth } from 'aws-amplify';
-
 
 var userName = localStorage.getItem("username");
 
 class HelloUserAndSignOut extends React.Component {
 
   signOut = () => {
-    Auth.signOut()
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+    window.open("https://www.google.com");
   }
 
   render() {
