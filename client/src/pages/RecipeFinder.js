@@ -38,7 +38,7 @@ class RecipeFinder extends Component {
 
   getRecipe = async (e) => {
     e.preventDefault()
-    const api_call = await fetch(`https://api.edamam.com/search?q=${this.state.recipeName}&app_id=${app_id}&app_key=${app_key}&from=0&to=2&calories=${this.state.calorie}`)
+    const api_call = await fetch(`https://api.edamam.com/search?q=${this.state.recipeName}&app_id=${app_id}&app_key=${app_key}&from=0&to=20&calories=${this.state.calorie}`)
     let data = await api_call.json()
     data = data.hits.map(ele => ele.recipe);
     console.log('RAW DATA ', data)
