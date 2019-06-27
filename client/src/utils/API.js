@@ -31,6 +31,6 @@ export default {
 
   // Saves the medical ID 
   saveMedId: function(data) {
-    return axios.post("/api/healthcard", data)
+    return axios.put("/api/healthcard", data)
   }
 };

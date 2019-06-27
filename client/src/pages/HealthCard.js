@@ -72,8 +72,6 @@ class HealthCard extends React.Component {
     };
 
     saveInfo = event => {
-        console.log("saveInfo")
-        console.log(event)
         API.saveMedId(event)
             .then(res => this.setState({ didSubmit: "Yes" }))
             .catch(err => console.log(err));
