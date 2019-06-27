@@ -49,7 +49,6 @@ const Recipe = ({ recipe }) => {
             </div>
         // </div>
     )
-
 }
 
 export default Recipe
