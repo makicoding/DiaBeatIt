@@ -292,7 +292,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="emergencyContactName" value={this.state.emergencyContact} className="form-control" id="healthCardPage-emergencyContactName" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
+                                            <input type="text" name="emergencyContactName" value={this.state.emergencyContactName} className="form-control" id="healthCardPage-emergencyContactName" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
