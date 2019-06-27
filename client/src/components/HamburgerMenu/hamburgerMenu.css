@@ -3,12 +3,12 @@
 /* Top Bar */
 .topBar {
     /* display: none;  topBar is set to be hidden.  To make topBar visible, set display: block */
-    display: block;  /* topBar is set to be hidden.  To make topBar visible, set display: block */
+    display: block;
 
     width: 100%;
     height: 54px;
     background-color: #4569FF;
-    
+
     position: fixed;
     top: 0;
     left: 0;
@@ -17,7 +17,7 @@
 /* Branding */
 .branding {
     /* display: none;  branding is set to be hidden.  To make branding visible, set display: block */
-    display: block;  /* branding is set to be hidden.  To make branding visible, set display: block */
+    display: block;
 
     width: 250px;
 
@@ -43,23 +43,25 @@
 
 /* Style navigation menu links */
 .topnav a {
-    color: white;
-    padding: 15px 16px;
-    text-decoration: none;
-    font-size: 16px;
     display: block;
+
+    padding: 15px 16px;
+
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
 }
 
 /* Style the hamburger menu */
 .topnav a.icon {
     background: #FFAB0A;
-    text-decoration: none;
+    
     position: fixed;
     right: 0px;
     top: 0px;
 }
 
-/* Add a grey background color on mouse-over */
+/* Add a background color on mouse-over */
 .topnav a:hover {
     background-color: #2AC940;
     color: white;
@@ -71,23 +73,33 @@
 
 /* The Overlay (background) */
 .overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS file) */    
-    height: 0%;
+    /* Width & height depends on how you want to reveal the overlay (see JS file) */
     width: 100%;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    top: 0;
-    left: 0;
+    height: 0%;
+    
     /* background-color: #4569FF;
     opacity: 1; */
     background-color: rgb(39, 82, 255);     /* Color slightly darkened to compensate for opacity */
     opacity: 0.9;
+    
     overflow-x: hidden; /* Disable horizontal scroll */
+    
+    position: fixed; /* Stay in place */
+    top: 0;
+    left: 0;
+    
+    z-index: 1; /* Sit on top */
+
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
-  
+
 /* Position the content inside the overlay */
 .overlay-content {
+    width: 100%; /* 100% width */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+
+    text-align: center; /* Centered text/links */
+
     position: relative;
     /* top: 19%; Percentage from the top  - Original position */
     top: 13%; /* Percentage from the top
@@ -95,109 +107,110 @@
                     happening with the text seeming to appear slightly to the right */
     left: -2px; /*  offset a little here because the font is italic and there is an optical illusion
                     happening with the text seeming to appear slightly to the right */
-    width: 100%; /* 100% width */
-    text-align: center; /* Centered text/links */
-    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
-}
-
-/* -------------------- */
-/* The navigation links inside the overlay */
-.overlay a {
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    /* font-size: 45px;    Original position */
-    font-size: 32px;
-    font-weight: 700;
-    color:white;
-    display: block; /* Display block instead of inline */
-    cursor: pointer;
-    transition: 0.3s; /* Transition effects on hover (color) */  
-}
-  
-/* When you mouse over the navigation links, change their color */
-.overlay a:hover, .overlay a:focus {
-    /* font-size: 55px;    Original position */
-    font-size: 42px;
-    /* color: #FFAB0A; */
-    color: rgb(238, 155, 0);    /* Slightly darker yellow to improve visibility */
-    /* color: rgb(222, 144, 0); */
-    text-decoration: none;
 }
 
 /* -------------------- */
 /* Position the close button (top right corner) */
 .overlay .closebtn {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    /* font-size: 100px;   Original size */
+    font-size: 90px;
+    text-decoration: none;
+    
+    cursor: pointer;
+    
     position: absolute;
     /* top: 0px;       Original position */
     /* right: 45px;    Original position */
     top: -20px;
     right: 40px;
-    color: white;
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
-    /* font-size: 100px;   Original size */
-    font-size: 90px;
-    font-weight: 500;
-    cursor: pointer;
+
     transition: 0.3s; /* Transition effects on hover (color) */
 }
 
-/* close button hover */
 .overlay .closebtn:hover {
+    /* color: #FFAB0A; */
+    color: rgb(238, 155, 0);    /* Slightly darker yellow to improve visibility */
+    /* color: rgb(222, 144, 0); */
+    /* font-size: 140px;   Original position */
+    font-size: 130px;
+    
     /* top: -26px;     Original position */
     /* right: 35px;    Original position */
     top: -46px;
     right: 30px;
-    /* font-size: 140px;   Original position */
-    font-size: 130px;   
+}
+
+/* -------------------- */
+/* The navigation links inside the overlay */
+
+/* Active Button */
+/* Anchor (in React's case Link) for when the window URL DOES NOT match the Link className  */
+a.menu-item {
+    display: block; /* Display block instead of inline */
+
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    /* font-size: 45px;    Original position */
+    font-size: 32px;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+a.menu-item:hover, a.menu-item:focus {
     /* color: #FFAB0A; */
     color: rgb(238, 155, 0);    /* Slightly darker yellow to improve visibility */
     /* color: rgb(222, 144, 0); */
+    /* font-size: 55px;    Original position */
+    font-size: 42px;
     text-decoration: none;
 }
 
 /* -------------------- */
-/* Non-Active button */
-.nonActiveButton {
-    text-decoration: none;
+/* Inactive Button */
+/* Anchor (in React's case Link) for when the window URL DOES match the Link className  */
+a.menu-item--inactive {
+    display: block; /* Display block instead of inline */
+
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
     font-style: italic;
     /* font-size: 45px;    Original position */
     font-size: 32px;
-    font-weight: 700;
-    color: white;
-    display: block; /* Display block instead of inline */
+    text-decoration: none;
+
     cursor: pointer;
+    
     transition: 0.3s; /* Transition effects on hover (color) */
 }
 
-/* Non-Active button hover */
-.nonActiveButton:hover {
-    /* font-size: 55px;    Original position */
-    font-size: 42px;
+a.menu-item--inactive:hover {
     /* color: #FFAB0A; */
     color: rgb(238, 155, 0);    /* Slightly darker yellow to improve visibility */
     /* color: rgb(222, 144, 0); */
-    text-decoration: none;
+    /* font-size: 55px;    Original position */
+    font-size: 42px;
+}
+
+/* The following focus is optional depending on the effect you want after clicking the Link */
+a.menu-item--inactive:focus {
+    color: white;
+    /* font-size: 45px;    Original position */
+    font-size: 32px;
 }
 
 /* ---------------------------------------- */
 /* ---------------------------------------- */
 /* MEDIA QUERIES */
-
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-    .overlay {overflow-y: auto;}
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-      font-size: 40px;
-      top: 15px;
-      right: 35px;
-    }
-}
-
-/* ---------------------------------------- */
 
 /* When Screen Size Max-Width is 1030px */
 /* (1024px is viewport width of iPad Pro in vertical) */
@@ -231,14 +244,6 @@
         top: 10%;
     }
 
-    .overlay a {
-        font-size: 30px;
-    }
-
-    .overlay a:hover, .overlay a:focus {
-        font-size: 30px;
-    }
-
     .overlay .closebtn {
         position: absolute;
         /* top: 12px;  Original position */
@@ -255,13 +260,21 @@
         font-size: 70px;
     }
 
-    /* Non-Active button */
-    .nonActiveButton {
+    /* Active button */
+    a.menu-item {
         font-size: 30px;
     }
 
-    /* Non-Active button hover*/
-    .nonActiveButton:hover {
+    a.menu-item:hover, a.menu-item:focus {
+        font-size: 30px;
+    }
+
+    /* Inactive button */
+    a.menu-item--inactive {
+        font-size: 30px;
+    }
+
+    a.menu-item--inactive:hover {
         font-size: 30px;
     }
 
