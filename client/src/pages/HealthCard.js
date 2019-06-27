@@ -11,30 +11,30 @@ import HelloUserAndSignOut from "../components/HelloUserAndSignOut";
 import "../components/PageWrapper/pageWrapper.css";
 import "../components/MainContentContainer/mainContentContainer.css";
 import "../components/InputAndSelectField/inputAndSelectField.css";
+import API from "../utils/API";
 
 // Run "npm start" to start React app.
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
 
-class HealthCard extends React.Component {
+var userName = localStorage.getItem("username");
 
-    state = {
-        name: "",
-        showPreview: false,
-    //     DOB: "",
-    //     address: "",
-        emergencyContact: ""
-    //     emergencyContactPhone: "",
-    //     insuranceProvider: "",
-    //     policyNo: "",
-    //     primaryCarePhysician: "",
-    //     primaryCarePhysicianPhone: "",
-    //     knownConditions: "",
-    //     knownAllergens: "",
-    //     medications: "",
-    //     bloodType: "",
-    //     organDonor: "",
-    //     doNotResuscitate: ""
-    };
+class HealthCard extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            didSubmit: "No",
+            username: userName,
+            contactname: "james bond",
+            contactphone: "007",
+            primarycarephysician: "dr. no",
+            medicalconditions: "killer",
+            medication: "diamonds",
+            allergies: "bad guys",
+            bloodtype: "gold",
+            resuscitate: 0,
+            organdonor: 0
+        };
+    }
 
     saveHealthCard = () => {
         console.log("Save!");
@@ -171,7 +171,7 @@ class HealthCard extends React.Component {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-fullName" placeholder="" autoComplete="off" maxlength="20"></input>   
+                                        <input type="text" className="form-control" id="healthCardPage-fullName" placeholder="" autoComplete="off" maxlength="20" value={this.state.username}></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
