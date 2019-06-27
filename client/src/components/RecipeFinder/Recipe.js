@@ -25,9 +25,9 @@ const Recipe = ({ recipe }) => {
                         <Br />
                         <Br2 />
                         <Br2 />
-                        <h3 className="text-left calories">Calories: {calCalories.toFixed(2)}{recipe.totalNutrients.ENERC_KCAL.unit}/per </h3>
+                        <h3 className="text-left calories">Calories: {calCalories.toFixed(2)} cal per serving </h3>
                         <Br />
-                        <h5 className="card-text servingSizeText">Serving for {yeild} person</h5> 
+                        <h5 className="card-text servingSizeText">Servings: {yeild}</h5> 
                         <Br />
                         <Br />
                         <h5 className="card-text ingredientsTitle">Ingredients: </h5>

@@ -40,6 +40,9 @@ class HealthCard extends React.Component {
         console.log("Save!");
     }
 
+    componentDidMount() {
+        
+    }
     previewHealthCard = () => {
         // console.log("Print!");
         let name = document.getElementById("healthCardPage-fullName").value;
@@ -108,7 +111,7 @@ class HealthCard extends React.Component {
                                 <Row>
                                     <Col size="col-md-3"></Col>
                                     <Col size="col-md-6">
-                                        <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: false})}>Close</button>
+                                        <button className="button1" id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close Preview</button>
                                         <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
                                     </Col>
                                     <Col size="col-md-3"></Col>
@@ -173,11 +176,11 @@ class HealthCard extends React.Component {
                                         <Br />
                                         <Br />
 
-                                        <p className="mainContentTextBlack">Date of birth:</p>
+                                        <p className="mainContentTextBlack">DOB:</p>
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-DOB" placeholder="MM/DD/YYYY" autoComplete="off" maxlength="10"></input>   
+                                        <input type="text" className="form-control" id="healthCardPage-DOB" placeholder="" autoComplete="off" maxlength="10"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -209,7 +212,7 @@ class HealthCard extends React.Component {
                                         <Br />
                                         <Br />
 
-                                        <p className="mainContentTextBlack">Health insurance provider:</p>
+                                        <p className="mainContentTextBlack">Health Insurance Provider:</p>
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
@@ -218,7 +221,7 @@ class HealthCard extends React.Component {
                                         <Br />
                                         <Br />
 
-                                        <p className="mainContentTextBlack">Health insurance policy number:</p>
+                                        <p className="mainContentTextBlack">Policy No:</p>
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
@@ -344,7 +347,7 @@ class HealthCard extends React.Component {
                                 {/* Subrow (PRINT) */}
                                 <Row>
                                 <Col size="col-md-12">
-                                <button className="button1" id="healthCardPage-save" onClick={this.previewHealthCard}>Print</button>
+                                <button className="button1" id="healthCardPage-save" onClick={this.previewHealthCard}>Preview</button>
                                         
                                         {/* <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: true})}>Preview</button> */}
                                         <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>

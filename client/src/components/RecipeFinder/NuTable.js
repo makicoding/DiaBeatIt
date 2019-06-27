@@ -8,24 +8,41 @@ const NuTable = ({ recipe }) => {
             <table className="table table-bordered nuTable">
                 <tbody>
                     <tr>
-                        <td className="recipeFinderTd">{recipe.totalNutrients.FAT.label}</td>
-                        <td className="recipeFinderTd">{recipe.totalNutrients.FAT.quantity.toFixed(2)}{recipe.totalNutrients.FAT.unit}</td>
+                        <td className="recipeFinderTd">Fat</td>
+                        {recipe.totalNutrients.FAT === undefined ?
+                            <td className="recipeFinderTd">No data</td> :
+                            <td className="recipeFinderTd">{recipe.totalNutrients.FAT.quantity.toFixed(2)}g</td>
+                        }
+                        {/* <td className="recipeFinderTd">{recipe.totalNutrients.FAT.quantity.toFixed(2)}g</td> */}
                     </tr>
                     <tr>
                         <td className="recipeFinderTd">Cholesterol</td>
-                        <td className="recipeFinderTd">{recipe.totalNutrients.CHOLE.quantity.toFixed(2)}{recipe.totalNutrients.CHOLE.unit}</td>
+                        {recipe.totalNutrients.CHOLE === undefined ?
+                            <td className="recipeFinderTd">No data</td> :
+                            <td className="recipeFinderTd">{recipe.totalNutrients.CHOLE.quantity.toFixed(2)}mg</td>
+                        }
                     </tr>
                     <tr>
-                        <td className="recipeFinderTd">{recipe.totalNutrients.SUGAR.label}</td>
-                        <td className="recipeFinderTd">{recipe.totalNutrients.SUGAR.quantity.toFixed(2)}{recipe.totalNutrients.SUGAR.unit}</td>
+                        <td className="recipeFinderTd">Sugar</td>
+                        {recipe.totalNutrients.SUGAR === undefined ?
+                            <td className="recipeFinderTd">No data</td> :
+                            <td className="recipeFinderTd">{recipe.totalNutrients.SUGAR.quantity.toFixed(2)}g</td>
+                        }
                     </tr>
                     <tr>
-                        <td className="recipeFinderTd">{recipe.totalNutrients.PROCNT.label}</td>
-                        <td className="recipeFinderTd">{recipe.totalNutrients.PROCNT.quantity.toFixed(2)}{recipe.totalNutrients.PROCNT.unit}</td>
+                        <td className="recipeFinderTd">Protein</td>
+                        {recipe.totalNutrients.PROCNT === undefined ?
+                            <td className="recipeFinderTd">No data</td> :
+                            <td className="recipeFinderTd">{recipe.totalNutrients.PROCNT.quantity.toFixed(2)}g</td>
+                        }
                     </tr>
                     <tr>
-                        <td className="recipeFinderTd">{recipe.totalNutrients.FIBTG.label}</td>
-                        <td className="recipeFinderTd">{recipe.totalNutrients.FIBTG.quantity.toFixed(2)}{recipe.totalNutrients.FIBTG.unit}</td>
+                        <td className="recipeFinderTd">Fiber</td>
+                        {recipe.totalNutrients.FIBTG === undefined ?
+                            // null :
+                            <td className="recipeFinderTd">No data</td>: 
+                            <td className="recipeFinderTd">{recipe.totalNutrients.FIBTG.quantity.toFixed(2)}g</td>
+                        }
                     </tr>
                 </tbody>
             </table>
