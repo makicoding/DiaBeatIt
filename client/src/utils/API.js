@@ -26,7 +26,11 @@ export default {
   // Saves the medical ID 
   saveMedId: function(data) {
     // console.log(axios.post(data));
-    return axios.post("/api/healthcard", data)
+    var medId = axios.post("/api/healthcard", data);
+    if (medId === null) {
+      return axios.post("/api/healthcard", data)
+    } else {
+      return axios.put("/api/healthcard", data)
     }
-    
+  }
 };
