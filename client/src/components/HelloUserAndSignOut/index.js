@@ -13,8 +13,7 @@ class HelloUserAndSignOut extends React.Component {
     return(
       <div>             
         <div className="helloUserTxt">Hello <span className="userFirstName">{userName}</span>!</div>
-        {/* <p className="signOutAnchor" href="https://www.nutritionix.com/uk/database/common-foods" target="_blank">Click here to look up calories</p> */}
-        <div className="signOutContainer"><span className="signOutAnchor" onClick={this.signOut}>Sign Out</span></div>
+        {/* <div className="signOutContainer"><span className="signOutAnchor" onClick={this.signOut}>Sign Out</span></div> */}
       </div>   
     )
   }
