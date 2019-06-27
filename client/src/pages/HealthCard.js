@@ -46,10 +46,24 @@ class HealthCard extends React.Component {
         API.getMedId(user)
             .then(res => {
                 this.setState({ 
+
                     // userInfo: res.data,
                     name: res.data[0].fullname,
                     DOB: res.data[0].dateofbirth,
-                    address: res.data[0].address
+                    address: res.data[0].address,
+                    emergencyContactName: res.data[0].contactname,
+                    emergencyContactPhone: res.data[0].contactphone,
+                    healthInsuranceProvider: res.data[0].inscompany,
+                    policyNo: res.data[0].policyno,
+                    primaryCarePhysician: res.data[0].primarycarephysician,
+                    primaryCarePhysicianPhone: res.data[0].pcpphoneno,
+                    knownConditions: res.data[0].medicalconditions,
+                    medications: res.data[0].medications,
+                    knownAllergens: res.data[0].allergies,
+                    bloodType: res.data[0].bloodtype,
+                    organDonor: res.data[0].organdonor,
+                    doNotResuscitate: res.data[0].resuscitate
+
                 });
             }
             )

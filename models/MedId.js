@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const medidSchema = new Schema({
   username: String,
   fullname: String,
-  dateofbirth: Date,
+  dateofbirth: String,
   address: String,
   contactname: String,
   contactphone: String,
@@ -17,8 +17,8 @@ const medidSchema = new Schema({
   medications: String,
   allergies: String,
   bloodtype: String,
-  resuscitate: Boolean,
-  organdonor: Boolean
+  resuscitate: String,
+  organdonor: String
 });
 
 const MedId = mongoose.model("MedId", medidSchema);
