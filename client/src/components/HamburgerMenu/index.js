@@ -37,12 +37,12 @@ class HamburgerMenu extends React.Component {
             <a href="CalorieEntry">Calorie Entry</a>
             <a href="CalorieData">Calorie Data</a>
             <a href="StoreFinder">Store Finder</a>
-            <a href="RecipesFinder">Recipe Finder</a>
+            <a href="RecipeFinder">Recipe Finder</a>
             <a href="HealthTimeline">Health Timeline</a>
             <a href="HealthCard">Digital Health Card</a>
             <a href="Resources">Resources</a>
             <a href="Contact">Contact</a>
-            <a href="SignOut">Sign Out</a>
+            <a href="/">Back To Home</a>
           </div>
 
         </div>

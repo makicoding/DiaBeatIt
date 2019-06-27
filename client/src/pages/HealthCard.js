@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link, Route } from "react-router-dom";
+import HealthCardPreview from "./HealthCardPreview";
 import { Container, Row, Col } from "../components/Grid";
 import HamburgerMenu from "../components/HamburgerMenu";
 import Br from "../components/CustomLineBreak";
@@ -53,6 +55,25 @@ prepareData = () => {
 
 
 
+    state = {
+        name: "",
+        showPreview: false,
+    //     DOB: "",
+    //     address: "",
+        emergencyContact: ""
+    //     emergencyContactPhone: "",
+    //     insuranceProvider: "",
+    //     policyNo: "",
+    //     primaryCarePhysician: "",
+    //     primaryCarePhysicianPhone: "",
+    //     knownConditions: "",
+    //     knownAllergens: "",
+    //     medications: "",
+    //     bloodType: "",
+    //     organDonor: "",
+    //     doNotResuscitate: ""
+    };
+
     saveHealthCard = () => {
 console.log("Save!");
 }
@@ -69,7 +90,7 @@ render() {
 
             {/* Page Wrapper */}
             <div className="pageWrapper">
-
+                
                 {/* Hello user first name text and sign out anchor */}
                 <HelloUserAndSignOut />
 
@@ -108,7 +129,25 @@ render() {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-fullName" placeholder="" autoComplete="off"></input>   
+                                        <input type="text" className="form-control" id="healthCardPage-fullName" placeholder="" autoComplete="off" maxlength="30"></input>   
+                                        {/* autoComplete="off" is used to turn off the autoComplete of input field */}
+                                        <Br />
+                                        <Br />
+
+                                        <p className="mainContentTextBlack">Date of birth:</p>
+                                        <Br2 />
+                                        <Br2 />
+                                        <Br2 />
+                                        <input type="text" className="form-control" id="healthCardPage-DOB" placeholder="MM/DD/YYYY" autoComplete="off" maxlength="10"></input>   
+                                        {/* autoComplete="off" is used to turn off the autoComplete of input field */}
+                                        <Br />
+                                        <Br />
+
+                                        <p className="mainContentTextBlack">Address:</p>
+                                        <Br2 />
+                                        <Br2 />
+                                        <Br2 />
+                                        <input type="text" className="form-control" id="healthCardPage-address" placeholder="" autoComplete="off" maxlength="70"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -117,7 +156,7 @@ render() {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-emergencyContactName" placeholder="" autoComplete="off"></input>   
+                                        <input type="text" className="form-control" id="healthCardPage-emergencyContactName" placeholder="" autoComplete="off" maxlength="30"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -126,7 +165,34 @@ render() {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-emergencyContactPhone" placeholder="" autoComplete="off"></input>   
+                                        <input type="text" pattern="/d" className="form-control" id="healthCardPage-emergencyContactPhone" placeholder="" autoComplete="off" maxlength="20"></input>   
+                                        {/* autoComplete="off" is used to turn off the autoComplete of input field */}
+                                        <Br />
+                                        <Br />
+
+                                        <p className="mainContentTextBlack">Health insurance provider:</p>
+                                        <Br2 />
+                                        <Br2 />
+                                        <Br2 />
+                                        <input type="text" className="form-control" id="healthCardPage-healthInsuranceProvider" placeholder="" autoComplete="off" maxlength="30"></input>   
+                                        {/* autoComplete="off" is used to turn off the autoComplete of input field */}
+                                        <Br />
+                                        <Br />
+
+                                        <p className="mainContentTextBlack">Health insurance provider phone number:</p>
+                                        <Br2 />
+                                        <Br2 />
+                                        <Br2 />
+                                        <input type="text" className="form-control" id="healthCardPage-healthInsuranceProviderPhone" placeholder="" autoComplete="off" maxlength="20"></input>   
+                                        {/* autoComplete="off" is used to turn off the autoComplete of input field */}
+                                        <Br />
+                                        <Br />
+
+                                        <p className="mainContentTextBlack">Health insurance policy number:</p>
+                                        <Br2 />
+                                        <Br2 />
+                                        <Br2 />
+                                        <input type="text" pattern="/d" className="form-control" id="healthCardPage-policyNo" placeholder="" autoComplete="off" maxlength="20"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -135,7 +201,7 @@ render() {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-primaryCarePhysician" placeholder="" autoComplete="off"></input>   
+                                        <input type="text" className="form-control" id="healthCardPage-primaryCarePhysician" placeholder="" autoComplete="off" maxlength="30"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -144,7 +210,7 @@ render() {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <input type="text" className="form-control" id="healthCardPage-primaryCarePhysicianPhoneNumber" placeholder="" autoComplete="off"></input>   
+                                        <input type="text" pattern="/d" className="form-control" id="healthCardPage-primaryCarePhysicianPhoneNumber" placeholder="" autoComplete="off" maxlength="20"></input>   
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -153,16 +219,16 @@ render() {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <textarea className="form-control" id="healthCardPage-medicalConditions" placeholder="" rows="4" autoComplete="off"></textarea>     
+                                        <textarea className="form-control" id="healthCardPage-medicalConditions" placeholder="" rows="4" autoComplete="off" maxlength="70"></textarea>     
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
 
-                                        <p className="mainContentTextBlack">Medication:</p>
+                                        <p className="mainContentTextBlack">Medications:</p>
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <textarea className="form-control" id="healthCardPage-medication" placeholder="" rows="4" autoComplete="off"></textarea> 
+                                        <textarea className="form-control" id="healthCardPage-medication" placeholder="" rows="4" autoComplete="off" maxlength="70"></textarea> 
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -171,7 +237,7 @@ render() {
                                         <Br2 />
                                         <Br2 />
                                         <Br2 />
-                                        <textarea className="form-control" id="healthCardPage-knownAllergies" placeholder="" rows="4" autoComplete="off"></textarea>    
+                                        <textarea className="form-control" id="healthCardPage-knownAllergens" placeholder="" rows="4" autoComplete="off" maxlength="70"></textarea>    
                                         {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                         <Br />
                                         <Br />
@@ -250,6 +316,15 @@ render() {
                                     <Col size="col-md-12">
                                     <button className="button1" id="healthCardPage-print" onClick={this.prepareData}>Print</button>
                                     </Col>
+                                {/* <Link to="/Preview" role="button" className="button1">
+                                Preview
+                                </Link>{" "}
+ 
+                                <Route exact path="/Preview" component={HealthCardPreview} />
+                                    <Col size="col-md-12">
+                                        <button className="button1" id="healthCardPage-print" onClick={this.previewHealthCard}>Preview</button>
+                                        <Route exact path="Preview" component={HealthCardPreview} />
+                                    </Col> */}
                                 </Row> 
 
                                 <Br />

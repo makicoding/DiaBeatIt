@@ -1,5 +1,7 @@
 import React from 'react'
 import NuTable from './NuTable'
+import Br from "../CustomLineBreak";
+import Br2 from "../CustomLineBreak2";
 
 
 const Recipe = ({ recipe }) => {
@@ -11,27 +13,37 @@ const Recipe = ({ recipe }) => {
     return (
        
             <div className="row" id="cardBg">
-                <div className="align-self-center col-lg-2 col-md-12">
+                <div className="align-self-center col-lg-3 col-md-12">
                     <img className="card-img recipeImg"  
                         src={recipe.image} 
                         alt={recipe.source}
                         />
                 </div>
-                <div className="col-lg-7 col-md-12 ml-0 mr-0" id="text-content">
+                <div className="col-lg-6 col-md-12 ml-0 mr-0" id="text-content">
                     <div className="card-body">
-                        <h3 className="card-title" >{recipe.label}</h3>
-                        <h4 className="text-right calories">Calories: {calCalories.toFixed(2)}{recipe.totalNutrients.ENERC_KCAL.unit}/per </h4>
-                        <h5 className="card-text">Ingredients: Serving for {yeild} person</h5> 
+                        <h3 className="recipeCardTitle" >{recipe.label}</h3>
+                        <Br />
+                        <Br2 />
+                        <Br2 />
+                        <h3 className="text-left calories">Calories: {calCalories.toFixed(2)}{recipe.totalNutrients.ENERC_KCAL.unit}/per </h3>
+                        <Br />
+                        <h5 className="card-text servingSizeText">Serving for {yeild} person</h5> 
+                        <Br />
+                        <Br />
+                        <h5 className="card-text ingredientsTitle">Ingredients: </h5>
+                        <Br />
                         {recipe.ingredientLines.map((ingredient,i)=>{
                             return(
-                                <p className="d-inline-flex" key ={i} >{ingredient},  </p>
+                                <p className="d-inline-flex ingredients" key ={i} >{ingredient},  </p>
                             )
                         })}
+                        <Br />
                         <div className="d-flex justify-content-center">
  
                                 <a href={recipe.url} target="_blank" className="card-link">More details...</a>
 
                         </div>
+                        <Br />
                     </div>
                 </div>
                     <NuTable recipe={recipe} />

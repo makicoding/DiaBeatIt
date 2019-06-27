@@ -4,6 +4,7 @@ import Recipe from './Recipe'
 const Recipes = ({ recipes }) => {
     return (
         <section className="container">
+        
             <div className="row">
                 {recipes.map((recipe, i) => 
                     <Recipe key={i} recipe={recipe}
@@ -15,6 +16,4 @@ const Recipes = ({ recipes }) => {
 }
 
 
-
-
-export default Recipes
+export default Recipes;

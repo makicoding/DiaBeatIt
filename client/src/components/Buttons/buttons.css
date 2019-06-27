@@ -5,9 +5,9 @@
     width: 100%;
     height: 40px;
 
-    margin: 0px 0px 15px 0px;
     border: 1px solid #CECECE;
     border-radius: 5px;
+    margin: 0px 0px 15px 0px;
   
     background-color: #4569FF;
     color: white;
@@ -43,9 +43,9 @@ instead of #CECECE border)
     width: 100%;
     height: 40px;
 
-    margin: 0px 0px 15px 0px;
     border: 1px solid #CECECE;
     border-radius: 5px;
+    margin: 0px 0px 15px 0px;
   
     background-color: #4569FF;
     color: white;
@@ -69,6 +69,77 @@ instead of #CECECE border)
 .button2:focus {
     /* outline: 0;         This gets rid of the blue outline around the button when the button is clicked */
 }
+
+/* -------------------- */
+/* Edit and Delete buttons on Calorie Data page */
+
+#calorieDataEdit {
+    width: 100px;;
+    height: 40px;
+
+    padding: 0px 3px 0px 0px;   /* offset text to compensate for the optical illusion that is happening with the italic font style */
+    border: 1px solid #CECECE;
+    border-radius: 5px;
+    margin: 0px 5px 15px 0px;
+    
+    background-color: #4569FF;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    
+    cursor: pointer;
+
+    position: relative;
+    left: 0px;   
+}
+
+#calorieDataEdit:hover {
+    /* background-color: #2AC940; */
+    background-color: rgb(28, 66, 218);
+
+    color: white;
+}
+
+#calorieDataEdit:focus {
+    /* outline: 0;         This gets rid of the blue outline around the button when the button is clicked */
+}
+
+#calorieDataDelete {
+    width: 100px;
+    height: 40px;
+
+    padding: 0px 3px 0px 0px;   /* offset text to compensate for the optical illusion that is happening with the italic font style */
+    border: 1px solid #CECECE;
+    border-radius: 5px;
+    margin: 0px 0px 15px 0px;
+    
+    /* background-color: rgb(249, 52, 81); */
+    background-color: rgb(249, 52, 65);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    
+    cursor: pointer;
+
+    position: relative;
+    left: 0px;   
+}
+
+#calorieDataDelete:hover {
+    background-color: rgb(186, 19, 30);
+    color: white;
+}
+
+#calorieDataDelete:focus {
+    /* outline: 0;         This gets rid of the blue outline around the button when the button is clicked */
+}
+
 /* -------------------- */
 /* Anchor 1 button */
 
@@ -86,5 +157,25 @@ instead of #CECECE border)
 }
   
 .anchor1:hover {
+    color: #2AC940;
+}
+
+/* -------------------- */
+/* Contact Anchor */
+
+.contactAnchor {
+    background-color: none;  /* Change color to see positioning on page */
+
+    color: #4569FF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    text-align: left;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+  
+.contactAnchor:hover {
     color: #2AC940;
 }

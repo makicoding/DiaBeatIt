@@ -1,0 +1,13 @@
+nav {
+    background-color: red;
+    color: white;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    width: 60%;
+    border-radius: 0px 0px 70px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
