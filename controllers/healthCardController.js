@@ -8,7 +8,6 @@ module.exports = {
     .catch(err => res.status(422).json(err));
   },
   findOne: function(req, res) { 
-    console.log(req.query.name)
     db.MedId
     .find({username: req.query.name}).sort({ _id: -1 }).limit(1)
     .then(dbModel => res.json(dbModel))
@@ -16,8 +15,21 @@ module.exports = {
   },
   update: function(req, res) {
     db.MedId
-    .findOneAndUpdate({ _id: req.params.id }, req.body)
+    .findOneAndUpdate({username: req.body.username}, req.body)
     .then(dbModel => res.json(dbModel))
-    .catch(err => res.status(422).json(err));
+    .catch(
+      db.MedId
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err))
+    );    //err => res.status(422).json(err)
   }
 };
+
+/* 
+
+      db.MedId
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err))
+      */
