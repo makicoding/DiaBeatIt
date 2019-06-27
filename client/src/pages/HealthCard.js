@@ -11,11 +11,49 @@ import HelloUserAndSignOut from "../components/HelloUserAndSignOut";
 import "../components/PageWrapper/pageWrapper.css";
 import "../components/MainContentContainer/mainContentContainer.css";
 import "../components/InputAndSelectField/inputAndSelectField.css";
+import API from "../utils/API";
+
 
 // Run "npm start" to start React app.
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
 
+var userName= localStorage.getItem("username");
+
 class HealthCard extends React.Component {
+constructor(props) {
+super(props);
+this.state = {
+didSubmit: "No"
+};
+}
+// This function will call the post route
+handleMedIdSave = event => {
+    API.saveMedId(event)
+    .then(res => this.setState({didSubmit:"Yes"}))
+.catch(err => console.log(err));
+}
+
+prepareData = () => {
+        var data = {
+            username: userName,
+            patientname: "bill",
+            contactname: "james bond",
+            contactphone: "007",
+            insurancecompany: "healthnet",
+            policyno: "String",
+            primarycarephysician: "dr. no",
+            medicalconditions: "killer",
+            medication: "diamonds",
+            allergies: "bad guys",
+            bloodtype: "gold",
+            resuscitate: 0,
+            organdonor: 0
+        }
+        console.log(data);
+        this.handleMedIdSave(data);
+}
+
+
 
     state = {
         name: "",
@@ -37,93 +75,13 @@ class HealthCard extends React.Component {
     };
 
     saveHealthCard = () => {
-        console.log("Save!");
-    }
+console.log("Save!");
+}
+printHealthCard = () => {
+console.log("Print!");
+}
+render() {
 
-    previewHealthCard = () => {
-        // console.log("Print!");
-        let name = document.getElementById("healthCardPage-fullName").value;
-        let DOB = document.getElementById("healthCardPage-DOB").value;
-        let address = document.getElementById("healthCardPage-address").value;
-        let emergencyContact = document.getElementById("healthCardPage-emergencyContactName").value;
-        let emergencyContactPhone = document.getElementById("healthCardPage-emergencyContactPhone").value;
-        let primaryCarePhysician = document.getElementById("healthCardPage-primaryCarePhysician").value;
-        let primaryCarePhysicianPhone = document.getElementById("healthCardPage-primaryCarePhysicianPhoneNumber").value;
-        let healthInsuranceProvider = document.getElementById("healthCardPage-healthInsuranceProvider").value;
-        let healthInsuranceProviderPhone = document.getElementById("healthCardPage-healthInsuranceProviderPhone").value;
-        let policyNo = document.getElementById("healthCardPage-policyNo").value;
-        let knownAllergens = document.getElementById("healthCardPage-knownAllergens").value;
-        let medications = document.getElementById("healthCardPage-medication").value;
-        let knownConditions = document.getElementById("healthCardPage-medicalConditions").value;
-        let bloodType= document.getElementById("healthCardPage-bloodType").value;
-        let organDonor = document.getElementById("healthCardPage-organDonor").value;
-        let doNotResuscitate = document.getElementById("healthCardPage-doNotResuscitate").value;
-        // // Updating the input's state
-        this.setState({
-            name: name,
-            DOB: DOB,
-            address: address,
-            emergencyContact: emergencyContact,
-            emergencyContactPhone: emergencyContactPhone,
-            primaryCarePhysician: primaryCarePhysician,
-            primaryCarePhysicianPhone: primaryCarePhysicianPhone,
-            healthInsuranceProvider: healthInsuranceProvider,
-            healthInsuranceProviderPhone: healthInsuranceProviderPhone,
-            policyNo: policyNo,
-            knownAllergens: knownAllergens,
-            medications: medications,
-            knownConditions: knownConditions,
-            bloodType: bloodType,
-            organDonor: organDonor,
-            doNotResuscitate: doNotResuscitate, 
-            showPreview: true
-        });
-
-    }
-    
-    render() {
-        if (this.state.showPreview) {
-            return (
-            
-                <div style={{height: '100vh', width:'100vw'}}>
-            
-                    <HealthCardPreview 
-                    name={this.state.name}
-                    DOB={this.state.DOB}
-                    address={this.state.address}
-                    emergencyContact={this.state.emergencyContact}
-                    emergencyContactPhone={this.state.emergencyContactPhone}
-                    primaryCarePhysician={this.state.primaryCarePhysician}
-                    primaryCarePhysicianPhone={this.state.primaryCarePhysicianPhone}
-                    healthInsuranceProvider={this.state.healthInsuranceProvider}
-                    healthInsuranceProviderPhone={this.state.healthInsuranceProviderPhone}
-                    policyNo={this.state.policyNo}
-                    knownAllergens={this.state.knownAllergens}
-                    medications={this.state.medications}
-                    knownConditions={this.state.knownConditions}
-                    bloodType={this.state.bloodType}
-                    organDonor={this.state.organDonor}
-                    doNotResuscitate={this.state.doNotResuscitate}
-                    />
-                    <Container> 
-                        {/* <Row>
-                            <Col> */}
-                                <Row>
-                                    <Col size="col-md-3"></Col>
-                                    <Col size="col-md-6">
-                                        <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: false})}>Close</button>
-                                        <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
-                                    </Col>
-                                    <Col size="col-md-3"></Col>
-                                </Row>
-                            {/* </Col>
-                        </Row> */}
-                    </Container>
-            <HamburgerMenu />
-
-                </div>
-            )
-        }
         return(
         <div>
 
@@ -355,11 +313,8 @@ class HealthCard extends React.Component {
                                 {/* ------------------------------ */}
                                 {/* Subrow (PRINT) */}
                                 <Row>
-                                <Col size="col-md-12">
-                                <button className="button1" id="healthCardPage-save" onClick={this.previewHealthCard}>Print</button>
-                                        
-                                        {/* <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: true})}>Preview</button> */}
-                                        <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
+                                    <Col size="col-md-12">
+                                    <button className="button1" id="healthCardPage-print" onClick={this.prepareData}>Print</button>
                                     </Col>
                                 {/* <Link to="/Preview" role="button" className="button1">
                                 Preview
