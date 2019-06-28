@@ -176,49 +176,51 @@ class HealthCard extends React.Component {
             showPreview: true
         });
 
+        // Scroll to top of page
+        window.scrollTo(0, 0);
+
     }
 
     render() {
         if (this.state.showPreview) {
             return (
 
-                <div className="cardPreview" style={{ height: '100vh', width: '75vw' }}>
-
-                    <HealthCardPreview
-                        name={this.state.name}
-                        DOB={this.state.DOB}
-                        address={this.state.address}
-                        emergencyContact={this.state.emergencyContact}
-                        emergencyContactPhone={this.state.emergencyContactPhone}
-                        primaryCarePhysician={this.state.primaryCarePhysician}
-                        primaryCarePhysicianPhone={this.state.primaryCarePhysicianPhone}
-                        healthInsuranceProvider={this.state.healthInsuranceProvider}
-                        healthInsuranceProviderPhone={this.state.healthInsuranceProviderPhone}
-                        policyNo={this.state.policyNo}
-                        knownAllergens={this.state.knownAllergens}
-                        medications={this.state.medications}
-                        knownConditions={this.state.knownConditions}
-                        bloodType={this.state.bloodType}
-                        organDonor={this.state.organDonor}
-                        doNotResuscitate={this.state.doNotResuscitate}
-                    />
-                    <Br />
-                    <Br />
-                    <Br />
+                // <div className="cardPreview" style={{ height: '100vh', width: '75vw' }}>
+                <div className="cardPreview">
                     <Container>
-                        {/* <Row>
-                            <Col> */}
                         <Row>
-                            <Col size="col-md-3"></Col>
-                            <Col size="col-md-6">
+                            <Col size="col-md-10 offset-md-1">
+                                <HealthCardPreview
+                                    name={this.state.name}
+                                    DOB={this.state.DOB}
+                                    address={this.state.address}
+                                    emergencyContact={this.state.emergencyContact}
+                                    emergencyContactPhone={this.state.emergencyContactPhone}
+                                    primaryCarePhysician={this.state.primaryCarePhysician}
+                                    primaryCarePhysicianPhone={this.state.primaryCarePhysicianPhone}
+                                    healthInsuranceProvider={this.state.healthInsuranceProvider}
+                                    healthInsuranceProviderPhone={this.state.healthInsuranceProviderPhone}
+                                    policyNo={this.state.policyNo}
+                                    knownAllergens={this.state.knownAllergens}
+                                    medications={this.state.medications}
+                                    knownConditions={this.state.knownConditions}
+                                    bloodType={this.state.bloodType}
+                                    organDonor={this.state.organDonor}
+                                    doNotResuscitate={this.state.doNotResuscitate}
+                                />
+                            </Col>
+                        </Row>
+
+                        <Br />
+                        <Br />
+
+                        <Row>
+                            <Col size="col-md-4 offset-md-4">
                                 <button className="button1" id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button>
                                 {/* <button className={this.state.showPreview ? "button-preview" : "button1" } id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button> */}
                                 {/* <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div> */}
                             </Col>
-                            <Col size="col-md-3"></Col>
                         </Row>
-                        {/* </Col>
-                        </Row> */}
                     </Container>
 
                     {/* Bottom of page line breaks for breathing room */}
@@ -278,7 +280,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="name" value={this.state.name} className="form-control" id="healthCardPage-fullName" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
+                                            <input type="text" name="name" value={this.state.name} className="form-control" id="healthCardPage-fullName" placeholder="" autoComplete="off" maxlength="30" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
@@ -287,7 +289,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="DOB" value={this.state.DOB} className="form-control" id="healthCardPage-DOB" placeholder="" autoComplete="off" maxlength="10" onChange={this.localState}></input>
+                                            <input type="text" name="DOB" value={this.state.DOB} className="form-control" id="healthCardPage-DOB" placeholder="MM/DD/YYYY" autoComplete="off" maxlength="10" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
@@ -296,7 +298,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="address" value={this.state.address} className="form-control" id="healthCardPage-address" placeholder="" autoComplete="off" maxlength="30" onChange={this.localState}></input>
+                                            <input type="text" name="address" value={this.state.address} className="form-control" id="healthCardPage-address" placeholder="" autoComplete="off" maxlength="100" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
@@ -305,7 +307,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="emergencyContactName" value={this.state.emergencyContactName} className="form-control" id="healthCardPage-emergencyContactName" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
+                                            <input type="text" name="emergencyContactName" value={this.state.emergencyContactName} className="form-control" id="healthCardPage-emergencyContactName" placeholder="" autoComplete="off" maxlength="30" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
@@ -332,7 +334,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="healthInsuranceProviderPhone" value={this.state.healthInsuranceProviderPhone} className="form-control" id="healthCardPage-healthInsuranceProviderPhone" placeholder="" autoComplete="off" maxlength="30" onChange={this.localState}></input>
+                                            <input type="text" name="healthInsuranceProviderPhone" value={this.state.healthInsuranceProviderPhone} className="form-control" id="healthCardPage-healthInsuranceProviderPhone" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
@@ -341,7 +343,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="policyNo" value={this.state.policyNo} pattern="/d" className="form-control" id="healthCardPage-policyNo" placeholder="" autoComplete="off" maxlength="15" onChange={this.localState}></input>
+                                            <input type="text" name="policyNo" value={this.state.policyNo} pattern="/d" className="form-control" id="healthCardPage-policyNo" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
@@ -350,7 +352,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="primaryCarePhysician" value={this.state.primaryCarePhysician} className="form-control" id="healthCardPage-primaryCarePhysician" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
+                                            <input type="text" name="primaryCarePhysician" value={this.state.primaryCarePhysician} className="form-control" id="healthCardPage-primaryCarePhysician" placeholder="" autoComplete="off" maxlength="30" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
@@ -368,7 +370,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <textarea name="knownConditions" value={this.state.knownConditions} className="form-control" id="healthCardPage-medicalConditions" placeholder="" rows="4" autoComplete="off" maxlength="50" onChange={this.localState}></textarea>
+                                            <textarea name="knownConditions" value={this.state.knownConditions} className="form-control" id="healthCardPage-medicalConditions" placeholder="" rows="4" autoComplete="off" maxlength="100" onChange={this.localState}></textarea>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
@@ -377,7 +379,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <textarea name="medications" value={this.state.medications} className="form-control" id="healthCardPage-medication" placeholder="" rows="4" autoComplete="off" maxlength="50" onChange={this.localState}></textarea>
+                                            <textarea name="medications" value={this.state.medications} className="form-control" id="healthCardPage-medication" placeholder="" rows="4" autoComplete="off" maxlength="100" onChange={this.localState}></textarea>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
@@ -386,7 +388,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <textarea name="knownAllergens" value={this.state.knownAllergens} className="form-control" id="healthCardPage-knownAllergens" placeholder="" rows="4" autoComplete="off" maxlength="30" onChange={this.localState}></textarea>
+                                            <textarea name="knownAllergens" value={this.state.knownAllergens} className="form-control" id="healthCardPage-knownAllergens" placeholder="" rows="4" autoComplete="off" maxlength="100" onChange={this.localState}></textarea>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />

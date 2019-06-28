@@ -1,17 +1,64 @@
 footer {
     background-color: #4569FF;
     color: #FFAB0A;
+    /* color: white; */
     text-align: center;
     width: 50%;
     float: right;
-    border-radius: 70px 0px 0px 0px;
+    /* border-radius: 70px 0px 0px 0px; */
+    border-radius: 50px 0px 0px 0px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
     font-size: 20px;
-    }
+}
 
-    @media only screen and (max-width: 960px) {
+    /* @media only screen and (max-width: 960px) {
         footer {
             font-size: 15px;
         }
-      }
+      } */
+
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+/* MEDIA QUERIES */
+/* When Screen Size Max-Width is 1030px */
+/* (1024px is viewport width of iPad Pro in vertical) */
+/* (1366px is viewport height of iPad Pro in vertical) */
+@media screen and (max-width: 1030px) {
+
+}
+
+/* -------------------- */
+
+/* When Screen Size Max-Width is 980px */
+/* (768px is viewport width of iPad in vertical) */
+/* (1024px is viewport height of iPad in vertical) */
+@media screen and (max-width: 980px) {
+
+}
+
+/* -------------------- */
+
+/* When Screen Size Max-Width is 750px */
+/* (375px is viewport width of iPhone X in vertical) */
+@media screen and (max-width: 750px) {
+
+    footer {
+        padding: 20px 10px 16px 20px;
+        font-size: 18px;
+    }
+
+}
+
+/* -------------------- */
+
+/* When Screen Size Max-Width is 340px */
+/* (320px is viewport width of iPhone 5/SE in vertical) */
+@media screen and (max-width: 340px) {
+
+    footer {
+        padding: 20px 10px 16px 17px;
+        font-size: 18px;
+    }
+
+}
