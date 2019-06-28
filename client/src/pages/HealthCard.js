@@ -184,51 +184,62 @@ class HealthCard extends React.Component {
     render() {
         if (this.state.showPreview) {
             return (
+                <div>
 
-                // <div className="cardPreview" style={{ height: '100vh', width: '75vw' }}>
-                <div className="cardPreview">
-                    <Container>
-                        <Row>
-                            <Col size="col-md-10 offset-md-1">
-                                <HealthCardPreview
-                                    name={this.state.name}
-                                    DOB={this.state.DOB}
-                                    address={this.state.address}
-                                    emergencyContact={this.state.emergencyContact}
-                                    emergencyContactPhone={this.state.emergencyContactPhone}
-                                    primaryCarePhysician={this.state.primaryCarePhysician}
-                                    primaryCarePhysicianPhone={this.state.primaryCarePhysicianPhone}
-                                    healthInsuranceProvider={this.state.healthInsuranceProvider}
-                                    healthInsuranceProviderPhone={this.state.healthInsuranceProviderPhone}
-                                    policyNo={this.state.policyNo}
-                                    knownAllergens={this.state.knownAllergens}
-                                    medications={this.state.medications}
-                                    knownConditions={this.state.knownConditions}
-                                    bloodType={this.state.bloodType}
-                                    organDonor={this.state.organDonor}
-                                    doNotResuscitate={this.state.doNotResuscitate}
-                                />
-                            </Col>
-                        </Row>
+                    {/* Page Wrapper */}
+                    <div className="pageWrapper">
 
-                        <Br />
-                        <Br />
+                        {/* Hello user first name text and sign out anchor */}
+                        <HelloUserAndSignOut />
 
-                        <Row>
-                            <Col size="col-md-4 offset-md-4">
-                                <button className="button1" id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button>
-                                {/* <button className={this.state.showPreview ? "button-preview" : "button1" } id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button> */}
-                                {/* <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div> */}
-                            </Col>
-                        </Row>
-                    </Container>
+                        {/* <div className="cardPreview" style={{ height: '100vh', width: '75vw' }}> */}
+                        <div className="cardPreview">
+                            <Container>
+                                <Row>
+                                    <Col size="col-md-10 offset-md-1">
+                                        <HealthCardPreview
+                                            name={this.state.name}
+                                            DOB={this.state.DOB}
+                                            address={this.state.address}
+                                            emergencyContact={this.state.emergencyContact}
+                                            emergencyContactPhone={this.state.emergencyContactPhone}
+                                            primaryCarePhysician={this.state.primaryCarePhysician}
+                                            primaryCarePhysicianPhone={this.state.primaryCarePhysicianPhone}
+                                            healthInsuranceProvider={this.state.healthInsuranceProvider}
+                                            healthInsuranceProviderPhone={this.state.healthInsuranceProviderPhone}
+                                            policyNo={this.state.policyNo}
+                                            knownAllergens={this.state.knownAllergens}
+                                            medications={this.state.medications}
+                                            knownConditions={this.state.knownConditions}
+                                            bloodType={this.state.bloodType}
+                                            organDonor={this.state.organDonor}
+                                            doNotResuscitate={this.state.doNotResuscitate}
+                                        />
+                                    </Col>
+                                </Row>
 
-                    {/* Bottom of page line breaks for breathing room */}
-                    <Br />      
-                    <Br />
-                    <Br />
+                                <Br />
+                                <Br />
 
-                    <HamburgerMenu />
+                                <Row>
+                                    <Col size="col-md-4 offset-md-4">
+                                        <button className="button1" id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button>
+                                        {/* <button className={this.state.showPreview ? "button-preview" : "button1" } id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button> */}
+                                        {/* <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div> */}
+                                    </Col>
+                                </Row>
+                            </Container>
+
+                            {/* Bottom of page line breaks for breathing room */}
+                            <Br />      
+                            <Br />
+                            <Br />
+
+                            <HamburgerMenu />
+
+                        </div>
+
+                    </div>
 
                 </div>
             )
@@ -411,6 +422,7 @@ class HealthCard extends React.Component {
 
                                     <Br />
                                     <Br />
+                                    <Br />
 
                                     {/* Subrow */}
                                     <Row>
@@ -481,6 +493,7 @@ class HealthCard extends React.Component {
                                     </Col> */}
                                     </Row>
 
+                                    <Br />
                                     <Br />
                                     <Br />
 
