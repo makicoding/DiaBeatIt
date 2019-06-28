@@ -11,3 +11,11 @@ nav {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
 }
+
+@media only screen and (max-width: 960px) {
+    nav {
+        font-size: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+  }

@@ -54,6 +54,7 @@ class HealthCard extends React.Component {
                     emergencyContactName: res.data[0].contactname,
                     emergencyContactPhone: res.data[0].contactphone,
                     healthInsuranceProvider: res.data[0].inscompany,
+                    healthInsuranceProviderPhone: res.data[0].insphoneno,
                     policyNo: res.data[0].policyno,
                     primaryCarePhysician: res.data[0].primarycarephysician,
                     primaryCarePhysicianPhone: res.data[0].pcpphoneno,
@@ -90,6 +91,7 @@ class HealthCard extends React.Component {
         let primaryCarePhysician = document.getElementById("healthCardPage-primaryCarePhysician").value;
         let primaryCarePhysicianPhone = document.getElementById("healthCardPage-primaryCarePhysicianPhoneNumber").value;
         let healthInsuranceProvider = document.getElementById("healthCardPage-healthInsuranceProvider").value;
+        let healthInsuranceProviderPhone = document.getElementById("healthCardPage-healthInsuranceProviderPhone").value;
         let policyNo = document.getElementById("healthCardPage-policyNo").value;
         let knownAllergens = document.getElementById("healthCardPage-knownAllergens").value;
         let medications = document.getElementById("healthCardPage-medication").value;
@@ -106,7 +108,7 @@ class HealthCard extends React.Component {
             contactname: emergencyContact,
             contactphone: emergencyContactPhone,
             inscompany: healthInsuranceProvider,
-            insphoneno: "",
+            insphoneno: healthInsuranceProviderPhone,
             policyno: policyNo,
             primarycarephysician: primaryCarePhysician,
             pcpphoneno: primaryCarePhysicianPhone,
@@ -144,6 +146,7 @@ class HealthCard extends React.Component {
         let primaryCarePhysician = document.getElementById("healthCardPage-primaryCarePhysician").value;
         let primaryCarePhysicianPhone = document.getElementById("healthCardPage-primaryCarePhysicianPhoneNumber").value;
         let healthInsuranceProvider = document.getElementById("healthCardPage-healthInsuranceProvider").value;
+        let healthInsuranceProviderPhone = document.getElementById("healthCardPage-healthInsuranceProviderPhone").value;
         let policyNo = document.getElementById("healthCardPage-policyNo").value;
         let knownAllergens = document.getElementById("healthCardPage-knownAllergens").value;
         let medications = document.getElementById("healthCardPage-medication").value;
@@ -162,6 +165,7 @@ class HealthCard extends React.Component {
             primaryCarePhysician: primaryCarePhysician,
             primaryCarePhysicianPhone: primaryCarePhysicianPhone,
             healthInsuranceProvider: healthInsuranceProvider,
+            healthInsuranceProviderPhone: healthInsuranceProviderPhone,
             policyNo: policyNo,
             knownAllergens: knownAllergens,
             medications: medications,
@@ -178,7 +182,7 @@ class HealthCard extends React.Component {
         if (this.state.showPreview) {
             return (
 
-                <div style={{ height: '100vh', width: '100vw' }}>
+                <div className="cardPreview" style={{ height: '100vh', width: '75vw' }}>
 
                     <HealthCardPreview
                         name={this.state.name}
@@ -189,6 +193,7 @@ class HealthCard extends React.Component {
                         primaryCarePhysician={this.state.primaryCarePhysician}
                         primaryCarePhysicianPhone={this.state.primaryCarePhysicianPhone}
                         healthInsuranceProvider={this.state.healthInsuranceProvider}
+                        healthInsuranceProviderPhone={this.state.healthInsuranceProviderPhone}
                         policyNo={this.state.policyNo}
                         knownAllergens={this.state.knownAllergens}
                         medications={this.state.medications}
@@ -211,7 +216,7 @@ class HealthCard extends React.Component {
                         {/* </Col>
                         </Row> */}
                     </Container>
-                    <HamburgerMenu />
+                    {/* <HamburgerMenu /> */}
 
                 </div>
             )
@@ -309,6 +314,15 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <input type="text" name="healthInsuranceProvider" value={this.state.healthInsuranceProvider} className="form-control" id="healthCardPage-healthInsuranceProvider" placeholder="" autoComplete="off" maxlength="30" onChange={this.localState}></input>
+                                            {/* autoComplete="off" is used to turn off the autoComplete of input field */}
+                                            <Br />
+                                            <Br />
+
+                                            <p className="mainContentTextBlack">Phone:</p>
+                                            <Br2 />
+                                            <Br2 />
+                                            <Br2 />
+                                            <input type="text" name="healthInsuranceProviderPhone" value={this.state.healthInsuranceProviderPhone} className="form-control" id="healthCardPage-healthInsuranceProviderPhone" placeholder="" autoComplete="off" maxlength="30" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />

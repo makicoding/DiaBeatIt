@@ -23,7 +23,7 @@ import HealthCardFooter from "../components/HealthCardFooter";
                 <HealthCardNavBar />
                 <Container>
                     <Row>
-                        <Col size="col-xs-12 col-sm 12 col-md-6">
+                        <Col size="col-md-6">
                             <br/>
                             <p>Name: {props.name}</p>
                             <p>DOB: {props.DOB}</p>
@@ -37,7 +37,7 @@ import HealthCardFooter from "../components/HealthCardFooter";
                             <p>Primary Care Physician: {props.primaryCarePhysician}</p>
                             <p>Phone: {props.primaryCarePhysicianPhone}</p>
                         </Col>
-                        <Col size="col-xs-12 col-sm 12 col-md-6">
+                        <Col size="col-md-6">
                             <br/>
                             <p>Known Conditions: {props.knownConditions ? props.knownConditions : 'N/A'}</p>
                             <p>Known Allergens: {props.knownAllergens ? props.knownAllergens : 'N/A'}</p>
@@ -48,7 +48,7 @@ import HealthCardFooter from "../components/HealthCardFooter";
                             <Br/>
                             <Br/>
                             <p>Blood Type: {props.bloodType === "0" ? " " : props.bloodType}</p>
-                            <p>Organ Donor: <i style={{color: 'red'}} className={props.organDonor === "Yes" ? "fas fa-heart" : "blank"}></i></p>
+                            <p>Organ Donor: <i style={{color: 'red'}} className={props.organDonor === "Yes" ? "fas fa-lg fa-heart" : "blank"}></i></p>
                             <p>DNR: {props.doNotResuscitate === "0" ? " " : props.doNotResuscitate}</p>
                         </Col>
                     </Row>
