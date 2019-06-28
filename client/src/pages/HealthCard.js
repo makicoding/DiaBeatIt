@@ -202,14 +202,16 @@ class HealthCard extends React.Component {
                         organDonor={this.state.organDonor}
                         doNotResuscitate={this.state.doNotResuscitate}
                     />
+                    <Br />
+                    <Br />
                     <Container>
                         {/* <Row>
                             <Col> */}
                         <Row>
                             <Col size="col-md-3"></Col>
                             <Col size="col-md-6">
-                                <button className="button1" id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close Preview</button>
-                                <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
+                                <button className="button1" id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button>
+                                {/* <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div> */}
                             </Col>
                             <Col size="col-md-3"></Col>
                         </Row>
@@ -440,13 +442,23 @@ class HealthCard extends React.Component {
                                     <Br />
 
                                     {/* ------------------------------ */}
-                                    {/* Subrow (PRINT) */}
+                                    {/* Subrow (SAVE) */}
+
                                     <Row>
                                         <Col size="col-md-12">
-                                            <button className="button1" id="healthCardPage-save" onClick={this.previewHealthCard}>Preview</button>
+                                            <button className="button1" id="healthCardPage-save" onClick={this.saveHealthCard}>Save</button>
+                                            {/* <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div> */}
+                                        </Col>
+                                    </Row> 
+
+                                    {/* ------------------------------ */}
+                                    {/* Subrow (PREVIEW) */}
+                                    <Row>
+                                        <Col size="col-md-12">
+                                            <button className="button1" id="healthCardPage-save" onClick={this.previewHealthCard}>Render</button>
 
                                             {/* <button className="button1" id="healthCardPage-save" onClick={() => this.setState({showPreview: true})}>Preview</button> */}
-                                            <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
+                                            {/* <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div> */}
                                         </Col>
                                         {/* <Link to="/Preview" role="button" className="button1">
                                 Preview
@@ -458,15 +470,6 @@ class HealthCard extends React.Component {
                                         <Route exact path="Preview" component={HealthCardPreview} />
                                     </Col> */}
                                     </Row>
-                                    {/* ------------------------------ */}
-                                    {/* Subrow (SAVE) */}
-
-                                    <Row>
-                                        <Col size="col-md-12">
-                                            <button className="button1" id="healthCardPage-save" onClick={this.saveHealthCard}>Save</button>
-                                            <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
-                                        </Col>
-                                    </Row> 
 
                                     <Br />
                                     <Br />

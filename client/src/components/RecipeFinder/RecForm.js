@@ -21,7 +21,7 @@ const RecForm =(props)=>{
                 <input  className="form-control col-lg-4 col-md-12 col-sm-12 mb-4"
                             type="text"
                             name= "calorie"
-                            placeholder="Maximum target calories"
+                            placeholder="Maximum calories"
                             maxLength="4"
                             onInput={maxLengthCheck}
                             value={props.calorie}
