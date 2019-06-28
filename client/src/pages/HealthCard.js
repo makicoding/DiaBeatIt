@@ -228,7 +228,7 @@ class HealthCard extends React.Component {
                     <Br />
                     <Br />
 
-                    {/* <HamburgerMenu /> */}
+                    <HamburgerMenu />
 
                 </div>
             )
