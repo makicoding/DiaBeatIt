@@ -2,3 +2,31 @@
   transform: scale(.80);
   margin: 0 auto;
 }
+
+.button-preview {
+  width: 100%;
+  height: 50px;
+
+  border: 1px solid #CECECE;
+  border-radius: 5px;
+  margin: 0px 0px 15px 0px;
+
+
+  background-color: #4569FF;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 27px;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  position: relative; 
+  left: 0px;
+}
+
+.button-preview:hover {
+  background-color: #2AC940;
+  color: white;
+}
