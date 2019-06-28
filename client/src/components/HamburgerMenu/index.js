@@ -19,6 +19,17 @@ class HamburgerMenu extends React.Component {
   }
 
 
+
+  // --------------------
+
+  // Sign out button function
+  
+  signOut = () => {
+    window.localStorage.clear();
+    window.location.replace("/");  
+  }
+  
+  
   
   // --------------------
 
@@ -26,9 +37,9 @@ class HamburgerMenu extends React.Component {
   // and it makes the Link INACTIVE if are ON the same page as the Link.
   // The string inside the parenthesis of for example className={this.getMenuItemClasses("/CalorieEntry")} is passed through the function,
   // so in this example /CalorieEntry is passed through (it is renamed to menuItemPage and passed through the getMenuItemClasses function):
-    getMenuItemClasses(menuItemPage) {
-      // baseClass is refering to the className. So we are saying the base className="menu-item"
-      const baseClass = "menu-item";
+  getMenuItemClasses(menuItemPage) {
+    // baseClass is refering to the className. So we are saying the base className="menu-item"
+    const baseClass = "menu-item";
 
     // Ternary operator version:
     // return this.props.match.path === menuItemPage ? `${baseClass} ${baseClass}--inactive` : baseClass;
@@ -81,7 +92,7 @@ class HamburgerMenu extends React.Component {
             <Link to="/HealthCard" className={this.getMenuItemClasses("/HealthCard")}>Digital Health Card</Link>
             <Link to="/Resources" className={this.getMenuItemClasses("/Resources")}>Resources</Link>
             <Link to="/Contact" className={this.getMenuItemClasses("/Contact")}>Contact</Link>
-            <Link to="/" className={this.getMenuItemClasses("/")}>Back To Home</Link>
+            <Link to="/" className={this.getMenuItemClasses("/")} onClick={this.signOut}>Sign Out</Link>
           </div>
 
         </div>
