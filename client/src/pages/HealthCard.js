@@ -204,6 +204,7 @@ class HealthCard extends React.Component {
                     />
                     <Br />
                     <Br />
+                    <Br />
                     <Container>
                         {/* <Row>
                             <Col> */}
@@ -218,6 +219,12 @@ class HealthCard extends React.Component {
                         {/* </Col>
                         </Row> */}
                     </Container>
+
+                    {/* Bottom of page line breaks for breathing room */}
+                    <Br />      
+                    <Br />
+                    <Br />
+
                     {/* <HamburgerMenu /> */}
 
                 </div>
