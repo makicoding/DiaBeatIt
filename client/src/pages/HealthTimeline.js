@@ -321,15 +321,19 @@ class HealthTimeline extends React.Component {
                                         <span id="error" className="mainContentTextRed"></span>
 
                                         <Br />
+                                        <Br />
                                         <span id="bmi">
-                                            <p> Your stats: <br />
+                                            <p className="mainContentTextBlack"> Your stats: <br />
                                                 <div className="barWrapper" style={{ position: 'relative', height: '200px', background: 'lightgray'}}>
-                                                    <div className="bar" style={{ position: 'absolute', bottom: '0', height: "5px", width: `${this.state.lifeExpectancy}%`, display: "block", background: "red" }}>
+                                                {/* <div className="barWrapper" style={{ position: 'relative', height: '200px', background: '#cbd3d9'}}> */}
+                                                    <div className="bar" style={{ position: 'absolute', bottom: '0', height: "20px", width: `${this.state.lifeExpectancy}%`, display: "block", background: "red" }}>
                                                         <p style={{ position: 'absolute', bottom: '0', left: '0' }}>0</p>
                                                         <p style={{ position: 'absolute', bottom: '0', right: '0' }}>{this.state.lifeExpectancy}</p>
                                                     </div>
                                                 </div>
-                                                BMI: {this.state.userBMI} ({this.state.messageBMI}) Life Expectancy: {this.state.lifeExpectancy}
+                                                Life Expectancy: {this.state.lifeExpectancy}
+                                                <br />
+                                                BMI: {this.state.userBMI} ({this.state.messageBMI}) 
                                                 <br />
                                                 Gender: {this.state.gender}, Age: {this.state.currentAge} years old,
                                                 Weight: {this.state.currentWeight} lbs, Height: {this.state.currentHeightFt}' {this.state.currentHeightIn}"<br />
