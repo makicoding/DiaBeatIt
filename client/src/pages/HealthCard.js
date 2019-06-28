@@ -210,7 +210,7 @@ class HealthCard extends React.Component {
                         <Row>
                             <Col size="col-md-3"></Col>
                             <Col size="col-md-6">
-                                <button className="button1" id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button>
+                                <button className={this.state.showPreview ? "button-preview" : "button1" } id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button>
                                 {/* <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div> */}
                             </Col>
                             <Col size="col-md-3"></Col>
