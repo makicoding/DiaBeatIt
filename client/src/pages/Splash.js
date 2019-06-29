@@ -7,7 +7,6 @@ import "../components/PageWrapper/pageWrapper.css";
 import "../components/MainContentContainer/mainContentContainer.css";
 import BackgroundImage from "../components/BackgroundImage";
 import SplashBanner from "../components/SplashBanner";
-import "../components/GoogleSignInButton/index.css";
 
 // Run "npm start" to start React app.
 // Run "npm i" or "npm i [specific component name]" in the command line if there are any dependencies missing in the node modules folder.
