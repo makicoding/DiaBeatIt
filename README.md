@@ -1,10 +1,12 @@
 # DiaBeatIt
 
-[Click here to view deployed app](https://dia-beat-it.herokuapp.com/)
+[Click here to view user authentication implemented deployed app](https://diabeatit-9.herokuapp.com/)
+
+[Click here to view single user deployed app](https://dia-beat-it.herokuapp.com/)
 <br>
 ***
 
-Technologies used: HTML, CSS, JavaScript, React, JSX, Bootstrap, Font Awesome, Datepicker, Moment, Node, Express, Mongoose, ORM (Object-Relational Mapping), MongoDB, NoSQL, RESTful API, Google Maps API, Yelp Fusion API, Edamam API, JSON, AXIOS, mLab, Heroku.
+Technologies used: HTML, CSS, JavaScript, React, JSX, Bootstrap, Font Awesome, Datepicker, Moment, Node, Express, Mongoose, ORM (Object-Relational Mapping), MongoDB, NoSQL, RESTful API, Google Maps API, Yelp Fusion API, Edamam API, JSON, AXIOS, Passport, Google OAuth, mLab, Heroku.
 <br></br>
 App is responsive and designed for a mobile screen and larger. 
 
@@ -25,7 +27,7 @@ https://raw.githubusercontent.com/makicoding/DiaBeatIt/master/screenshots/DiaBea
 
 #### Login:
 
-The user logs in with their google credientials and their email address is assigned as the username and saved to window localStorage. Whenever a user logs in, a data entry they make through the app will be saved together with their username, into MongoDB. If the user does not login with their google credentials and simply clicks the "Get started" button, localStorage will set the username to "Guest User".  When the user clicks any of the sign out buttons in the app, localStorage will be cleared out and the user will be taken back to the splash page.
+The user logs in with their google credientials and their email address is assigned as the username and saved to window localStorage. Whenever a user logs in, a data entry they make through the app will be saved together with their username, into MongoDB. If the user does not login with their google credentials and simply clicks the "Get started" button, localStorage will set the username to "Guest User".  When the user clicks any of the sign out buttons in the app, localStorage will be cleared out and the user will be taken back to the splash page. The page uses Passport and Google OAuth for user authentication.
 <br></br>
 
 #### Calorie Entry:

@@ -27,7 +27,8 @@ class MainMenu extends React.Component {
           <Link to="HealthCard" className="mainMenuAnchor">Digital Health Card</Link>
           <Link to="Resources" className="mainMenuAnchor">Resources</Link>
           <Link to="Contact" className="mainMenuAnchor">Contact</Link>
-          <span className="mainMenuAnchor" onClick={this.signOut}>Sign Out</span>
+          {/* <span className="mainMenuAnchor" onClick={this.signOut}>Sign Out</span> */}
+          <Link to="/" className="mainMenuAnchor">Back To Home</Link>
         </div>
 
       </div>
