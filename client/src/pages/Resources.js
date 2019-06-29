@@ -36,12 +36,6 @@ function Resources() {
           
             <div className="App">    
               <Resource/>
-
-              {/* /* Triple line break not necessary here, there is enough room underneath for this page */}
-              {/* <Br />
-              <Br />
-              <Br /> */}
-
             </div>
 
           </div>

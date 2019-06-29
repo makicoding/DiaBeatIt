@@ -16,13 +16,20 @@ module.exports = {
   update: function(req, res) {
     db.MedId
     .findOneAndUpdate({username: req.body.username}, req.body)
-    .then(dbModel => {return res.json(dbModel)})
+    .then(dbModel => res.json(dbModel))
     .catch(
-      err => {res.status(422).json(err);
       db.MedId
       .create(req.body)
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err))}
-    );
+      .catch(err => res.status(422).json(err))
+    );    //err => res.status(422).json(err)
   }
 };
+
+/* 
+
+      db.MedId
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err))
+      */

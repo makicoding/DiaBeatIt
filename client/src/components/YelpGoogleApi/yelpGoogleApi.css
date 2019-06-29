@@ -30,129 +30,21 @@ code {
   /* color: var(--mainDark) !important; */
   
 /* } */
-/* 
+
 .text-title{
     font-family: 'Merriweather', serif; 
     letter-spacing: 0.3rem;
     text-transform: uppercase;
   
 }
-
 .text-blue{
   color: var(--mainBlue);
 }
-
 .text-bright{
   color: var(--lightBlue);
 }
 
 .zindex{
   z-index: -5;
-} */
-
-.mapContainer {
-  border: 1px solid #cbd3d9;      /* This is the same color as the default input box border color */
-}
-
-.mapCard {
-  width: 300px;
-
-  margin: 10px 5px 0px 10px;
-}
-
-.mapCardImage {
-  width: 300px;
-
-  border: 1px solid #cbd3d9;      /* This is the same color as the default input box border color */
-}
-
-.mapButton {
-  width: 100%;
-
-  padding: 7px;
-  border: 1px solid #CECECE;
-  border-radius: 5px;
-  margin: 0px 0px 0px 0px;
-
-  background-color: #4569FF;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: italic;
-  font-size: 20px;
-  text-align: center;
-  text-decoration: none;
-
-  cursor: pointer;
-
-  position: relative;
-  left: 0px;
-}
-
-.mapButton:hover {
-  background-color: #2AC940;
-  color: white;
-}
-
-.mapButton:focus {
-  /* outline: 0;         This gets rid of the blue outline around the button when the button is clicked */
-}
-
-/* ---------------------------------------- */
-/* ---------------------------------------- */
-/* MEDIA QUERIES */
-
-/* When Screen Size Max-Width is 1030px */
-/* (1024px is viewport width of iPad Pro in vertical) */
-/* (1366px is viewport height of iPad Pro in vertical) */
-@media screen and (max-width: 1030px) {
-
-  .mapCard {
-    padding: 0px 0px 7px 0px;
-  }
-
-  .mapCardImage {
-    width: 100%;
-  }
-
-}
-
-/* -------------------- */
-
-/* When Screen Size Max-Width is 980px */
-/* (768px is viewport width of iPad in vertical) */
-/* (1024px is viewport height of iPad in vertical) */
-@media screen and (max-width: 980px) {
-
-}
-
-/* -------------------- */
-
-/* When Screen Size Max-Width is 750px */
-/* (375px is viewport width of iPhone X in vertical) */
-@media screen and (max-width: 750px) {
-
-  .mapCard {
-    width: 90%;
-
-    padding: 0px 0px 8px 4px;
-  }
-
-  .mapCardImage {
-    width: 100%;
-  }
-  
-}
-
-/* -------------------- */
-
-/* When Screen Size Max-Width is 340px */
-/* (320px is viewport width of iPhone 5S/SE in vertical) */
-@media screen and (max-width: 340px) {
-
-  .mapCard {
-    width: 90%;
-
-    padding: 0px 1px 8px 0px;
-  }
 
 }

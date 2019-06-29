@@ -11,8 +11,19 @@ import HealthTimeline from "./pages/HealthTimeline";
 import HealthCard from "./pages/HealthCard";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
+import queryString from "query-string";
 
-function App() {
+class App extends React.Component {
+
+ componentDidMount() {
+    var query = queryString.parse(this.props.location.search);
+    if (query.token) {
+      window.localStorage.setItem("jwt", query.token);
+      window.localStorage.setItem("username", query.username);
+      this.props.history.push("/");
+   }
+}
+render() {
   return (
     <Router>
       <div>
@@ -33,6 +44,7 @@ function App() {
       </div>
     </Router>
   );
+}
 }
 
 //  render={() => (<CalorieEntryEdit calorieData={"Hello There"}/>)}

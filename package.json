@@ -1,7 +1,7 @@
 {
   "name": "mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "[Click here to view deployed app](https://dia-beat-it.herokuapp.com/) <br> ***",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -21,12 +21,16 @@
   },
   "dependencies": {
     "axios": "^0.18.1",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
     "dotenv": "^8.0.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "mdbreact": "^4.16.0",
     "mongoose": "^5.3.16",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^2.0.0",
+    "query-string": "^6.8.1",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
@@ -34,5 +38,13 @@
     "react-router-dom": "^5.0.1",
     "reactstrap": "^8.0.0",
     "styled-components": "^4.3.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makicoding/DiaBeatIt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/makicoding/DiaBeatIt/issues"
+  },
+  "homepage": "https://github.com/makicoding/DiaBeatIt#readme"
 }
