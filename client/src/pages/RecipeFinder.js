@@ -61,19 +61,19 @@ class RecipeFinder extends Component {
     }
 
   }
-  //  componentDidMount = () => {
-  //   const json = localStorage.getItem("recipes");
-  //   const recipes = JSON.parse(json);
-  //   this.setState({ recipes });
-  //   // this.setState({
-  //   //   recipeName:'',
-  //   //   calorie:30
-  //   // })
-  // }
-  // componentDidUpdate = () => {
-  //   const recipes = JSON.stringify(this.state.recipes);
-  //   localStorage.setItem("recipes", recipes);
-  // }
+   componentDidMount = () => {
+    const json = localStorage.getItem("recipes");
+    const recipes = JSON.parse(json);
+    this.setState({ recipes });
+    // this.setState({
+    //   recipeName:'',
+    //   calorie:30
+    // })
+  }
+  componentDidUpdate = () => {
+    const recipes = JSON.stringify(this.state.recipes);
+    localStorage.setItem("recipes", recipes);
+  }
   render() {
     const { recipeName, calorie, recipes, message } = this.state
     console.log('search ', this.state.recipes)
