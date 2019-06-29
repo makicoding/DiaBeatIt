@@ -29,8 +29,7 @@ class Splash extends React.Component {
                 <a href="MainMenu"><button class="button1">Login</button></a> */}
                 <a href="MainMenu"><button class="button1">Get started</button></a>
 
-                <a href="http://localhost:3001/auth/google">
-                {/* <a href="http://localhost:3001/auth/google" class="button"> */}
+                {/* <a href="http://localhost:3001/auth/google">
                   <button class="googleButton">
                     <div>
                       <span class="svgIcon t-popup-svg">
@@ -63,7 +62,8 @@ class Splash extends React.Component {
                       <span class="button-label">Sign in with Google</span>
                     </div>
                   </button>
-                </a>
+                </a> */}
+                
             </div>   
 
         </div>

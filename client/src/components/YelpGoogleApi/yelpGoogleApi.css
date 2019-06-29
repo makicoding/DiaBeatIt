@@ -57,7 +57,7 @@ code {
 .mapCard {
   width: 300px;
 
-  margin: 10px 5px 0px 10px;
+  margin: 10px 5px 10px 10px;
 }
 
 .mapCardImage {
@@ -107,7 +107,7 @@ code {
 @media screen and (max-width: 1030px) {
 
   .mapCard {
-    padding: 0px 0px 7px 0px;
+    padding: 0px 0px 0px 0px;
   }
 
   .mapCardImage {
@@ -134,7 +134,7 @@ code {
   .mapCard {
     width: 90%;
 
-    padding: 0px 0px 8px 4px;
+    padding: 0px 0px 0px 4px;
   }
 
   .mapCardImage {
@@ -152,7 +152,7 @@ code {
   .mapCard {
     width: 90%;
 
-    padding: 0px 1px 8px 0px;
+    padding: 0px 1px 0px 0px;
   }
 
 }
