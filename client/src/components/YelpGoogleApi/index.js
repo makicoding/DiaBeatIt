@@ -11,7 +11,7 @@ import Br from "../CustomLineBreak";
 import Br2 from "../CustomLineBreak2";
 import { Link, withRouter } from "react-router-dom";
 
-var storetype = 'healthmarkets';
+let storetype = 'healthmarkets';
 function yelpApiCall(yelp_params, callback) {
 	const axios = require('axios');
 	axios
@@ -54,13 +54,10 @@ class Map extends Component {
 				city: this.state.yelp_params
 			});
 		});
+		
 	}
 
-	yelpStoreTypes = (event) => {
-		const value = event.target.value;
-		storetype = value;
-		this.setState({ value: value });
-	};
+
 
 	handleInputChange = (event) => {
 		event.cancelable = false;
@@ -69,6 +66,7 @@ class Map extends Component {
 		this.setState({
 			city: event.target.value
 		});
+		
 	};
 	handleFormSubmit = (event) => {
 		// Preventing the default behavior of the form submit (which is to refresh the page)
@@ -82,6 +80,14 @@ class Map extends Component {
 			});
 		});
 	};
+	yelpStoreTypes = (event) => {
+		console.log("here")
+
+		let value = event.target.value;
+		storetype = value;
+		this.setState({ value: storetype });
+	};
+	
 
 	static defaultProps = {
 		googleMapURL:
@@ -124,6 +130,7 @@ class Map extends Component {
 		))
 	);
 	render() {
+		console.log(this.state.value)
 		this.state.stores.map((restaurant, i) => 'do');
 		return (
 			<div>
@@ -146,15 +153,15 @@ class Map extends Component {
 					<Row>
 						<Col size="col-md-6 offset-md-3">
 							<p className="mainContentTextBlack">Please choose a store type:</p>
-							<select className="chosen-select dropDownMenu1" id="calorieEntryPage-mealCategory">
+							<select onChange={this.yelpStoreTypes}className="chosen-select dropDownMenu1" id="calorieEntryPage-mealCategory">
 								<option value="0"></option>
-								<option value="farmersmarket" onClick={this.yelpStoreTypes}>Farmers market</option>
-								<option value="markets" onClick={this.yelpStoreTypes}>Fruit and vegetable market</option>
-								{/* <option value="organic_stores" onClick={this.onClickHandler}>Organic store</option> */}
-								<option value="organic_stores" onClick={this.yelpStoreTypes}>Organic store</option>
-								<option value="cardioclasses" onClick={this.yelpStoreTypes}>Cardio class</option>
-								<option value="healthtrainers" onClick={this.yelpStoreTypes}>Health trainer</option>
-								<option value="yoga" onClick={this.yelpStoreTypes}>Yoga studio</option>
+								<option value="farmersmarket" >Farmers market</option>
+								<option value="markets" >Fruit and vegetable market</option>
+								<option value="organic_stores">Organic store</option>
+								<option value="organic_stores" >Organic store</option>
+								<option value="cardioclasses" >Cardio class</option>
+								<option value="healthtrainers" >Health trainer</option>
+								<option value="yoga" >Yoga studio</option>
 							</select>
 						</Col>
 					</Row> 
