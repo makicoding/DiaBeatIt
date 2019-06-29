@@ -6,6 +6,10 @@
 <br>
 ***
 
+[Click here to view app code with user authentication implemented](https://github.com/ignaciuk/DiaBeatIt-Passport-Auth)
+<br>
+***
+
 Technologies used: HTML, CSS, JavaScript, React, JSX, Bootstrap, Font Awesome, Datepicker, Moment, Node, Express, Mongoose, ORM (Object-Relational Mapping), MongoDB, NoSQL, RESTful API, Google Maps API, Yelp Fusion API, Edamam API, JSON, AXIOS, Passport, Google OAuth, mLab, Heroku.
 <br></br>
 App is responsive and designed for a mobile screen and larger. 
@@ -21,7 +25,7 @@ DiaBeatIt is a MERN Stack app (MongoDB, Express, React, Node).
 <br></br>
 
 <kbd>![Screenshot](
-https://raw.githubusercontent.com/makicoding/DiaBeatIt/master/screenshots/DiaBeatIt_Screenshot_04.png)</kbd>
+https://raw.githubusercontent.com/makicoding/DiaBeatIt/master/screenshots/DiaBeatIt_Screenshot_06.png)</kbd>
 ***
 ### Technical specification by page:
 
