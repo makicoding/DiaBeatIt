@@ -6,14 +6,24 @@ var userName = localStorage.getItem("username");
 class HelloUserAndSignOut extends React.Component {
 
   signOut = () => {
-    window.open("https://www.google.com");
+    window.localStorage.clear();
+    window.location.replace("/");  
   }
+
+  checkForUser = () => {
+    if (userName) {
+      return userName;
+    } else {
+      userName = "Sign in to save your information!";
+      return userName;
+    }
+  };
 
   render() {
     return(
       <div>             
-        <div className="helloUserTxt">Hello <span className="userFirstName">{userName}</span>!</div>
-        {/* <div className="signOutContainer"><span className="signOutAnchor" onClick={this.signOut}>Sign Out</span></div> */}
+        <div className="helloUserTxt">Hello <span className="userFirstName">{this.checkForUser}{userName}</span>!</div>
+        <div className="signOutContainer"><span className="signOutAnchor" onClick={this.signOut}>Sign Out</span></div>
       </div>   
     )
   }
