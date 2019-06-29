@@ -62,11 +62,11 @@ class HealthTimeline extends React.Component {
                 messageBMI = "Too thin"
                 // lifeExpectancy--;
             } 
-            if (userBMI > 18.5 && userBMI < 25) {
+            if (userBMI > 18.6 && userBMI < 25) {
                 messageBMI = "Healthy"
                 lifeExpectancy++
             } 
-            if (userBMI > 25 && userBMI < 60) {
+            if (userBMI > 26 && userBMI < 60) {
                 messageBMI = "Overweight"
                 lifeExpectancy--;
             } 
