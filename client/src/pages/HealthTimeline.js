@@ -109,7 +109,7 @@ class HealthTimeline extends React.Component {
 
             document.getElementById("bmi").style.display = "none";
             document.getElementById("error").style.display = "block";
-            document.getElementById("error").innerHTML = ("Please correct height.  Inches should not exceed 11.");
+            document.getElementById("error").innerHTML = ("Please correct height. Inches should not exceed 11.");
             return 
 
         }
