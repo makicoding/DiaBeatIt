@@ -25,7 +25,7 @@ DiaBeatIt is a MERN Stack app (MongoDB, Express, React, Node).
 <br></br>
 
 <kbd>![Screenshot](
-https://raw.githubusercontent.com/makicoding/DiaBeatIt/master/screenshots/DiaBeatIt_Screenshot_06.png)</kbd>
+https://raw.githubusercontent.com/makicoding/DiaBeatIt/master/screenshots/DiaBeatIt_Screenshot_08.png)</kbd>
 ***
 ### Technical specification by page:
 
