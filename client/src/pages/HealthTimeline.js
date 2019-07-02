@@ -99,7 +99,7 @@ class HealthTimeline extends React.Component {
         // console.log(errorMessage);
 
         if (isNaN(userHeight && userWeight) || (!userDiet || !userExercise)) {
-
+            
             document.getElementById("bmi").style.display = "none";
             document.getElementById("error").style.display = "block";
             document.getElementById("error").innerHTML = ("Please fill out all fields.");
@@ -109,9 +109,9 @@ class HealthTimeline extends React.Component {
 
             document.getElementById("bmi").style.display = "none";
             document.getElementById("error").style.display = "block";
-            document.getElementById("error").innerHTML = ("Please fill out all fields.");
+            document.getElementById("error").innerHTML = ("Please correct height.  Inches should not exceed 11.");
             return 
-            
+
         }
 
         event.preventDefault();
@@ -197,7 +197,7 @@ class HealthTimeline extends React.Component {
                                                     pattern="/d"
                                                     maxlength="2"
                                                     placeholder=""
-                                                    autocomplete="off"
+                                                    autoComplete="off"
                                                 >
                                                 </input>
                                             </Col>
@@ -221,7 +221,7 @@ class HealthTimeline extends React.Component {
                                                     pattern="\d"
                                                     maxlength="1"
                                                     placeholder="ft"
-                                                    autocomplete="off"
+                                                    autoComplete="off"
                                                 >
                                                 </input>
                                             </Col>
@@ -236,7 +236,7 @@ class HealthTimeline extends React.Component {
                                                     pattern="\d"
                                                     maxlength="2"
                                                     placeholder="in"
-                                                    autocomplete="off"
+                                                    autoComplete="off"
                                                 >
                                                 </input>
                                             </Col>
@@ -260,7 +260,7 @@ class HealthTimeline extends React.Component {
                                                     pattern="\d"
                                                     maxlength="3"
                                                     placeholder="lbs"
-                                                    autocomplete="off"
+                                                    autoComplete="off"
                                                 >
                                                 </input>
                                             </Col>
