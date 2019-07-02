@@ -31,7 +31,7 @@ https://raw.githubusercontent.com/makicoding/DiaBeatIt/master/screenshots/DiaBea
 
 #### Login:
 
-The user logs in with their google credientials and their email address is assigned as the username and saved to window localStorage. Whenever a user logs in, a data entry they make through the app will be saved together with their username, into MongoDB. If the user does not login with their google credentials and simply clicks the "Get started" button, localStorage will set the username to "Guest User".  When the user clicks any of the sign out buttons in the app, localStorage will be cleared out and the user will be taken back to the splash page. The page uses Passport and Google OAuth for user authentication.
+The user logs in with their google credientials and their email address is assigned as the username and saved to window localStorage. Whenever a user logs in, a data entry they make through the app will be saved together with their username as one of the data fields, into MongoDB. While signed in, out of all the data that is stored in MongoDB, only data that has their username saved together with it, will display to the app.  When the user clicks any of the sign out buttons on the app, localStorage will be cleared out and the user will be taken back to the splash page. The page uses Passport and Google OAuth for user authentication.
 <br></br>
 
 #### Calorie Entry:
