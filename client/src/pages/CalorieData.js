@@ -65,9 +65,18 @@ class CalorieData extends React.Component {
       var newTot = 0;
       for( let i=0; i<userInfo.length; i++){
         newTot = newTot + (parseFloat(userInfo[i].qty) * parseFloat(userInfo[i].unitcal))
-      }
-      this.setState({totalCal: newTot})
-    }
+      };
+      this.setState({totalCal: newTot});
+      this.totalWarning();
+    };
+
+    // Show warning if totalCal exceeds threshold
+    totalWarning = () => {
+        if (this.state.totalCal > 3500) {
+            document.getElementById("calorieDataPage-calorieGrandTotal").style.color = "red";
+            document.getElementById("calorieDataPage-warningMessage").innerText = "Please watch your calorie intake, you are over 3500 calories.";
+        };
+    };
 
     // deleting records from MongoDB
     handleInfoRemove = event => {
@@ -190,6 +199,7 @@ class CalorieData extends React.Component {
                                 <Row>
                                     <Col size="col-md-12">
                                         <p className="mainContentTextBlueMediumBold">Total: <span className="mainContentTextBlueMediumBold" id="calorieDataPage-calorieGrandTotal">{this.state.totalCal}</span> Calories</p>
+                                        <p><span className="mainContentTextRed" id="calorieDataPage-warningMessage"></span></p>
                                     </Col>
                                 </Row> 
 
