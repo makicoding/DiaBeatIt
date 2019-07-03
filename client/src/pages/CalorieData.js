@@ -74,7 +74,7 @@ class CalorieData extends React.Component {
     totalWarning = () => {
         if (this.state.totalCal > 3500) {
             document.getElementById("calorieDataPage-calorieGrandTotal").style.color = "red";
-            document.getElementById("calorieDataPage-warningMessage").innerText = "Please watch your calorie intake, you are over 3500 calories.";
+            document.getElementById("calorieDataPage-warningMessage").innerText = "Please watch your Calorie intake, you are over 3500 Calories.";
         };
     };
 
@@ -213,7 +213,7 @@ class CalorieData extends React.Component {
                                 {/* Subrow */}
                                 <Row>
                                     <Col size="col-md-12">
-                                        <p className="sectionTitle">Recommended daily calorie intake:</p>
+                                        <p className="sectionTitle">Recommended daily Calorie intake:</p>
                                         <Br />
                                         <p className="sectionTitle">Female:</p>
                                         <table className="calorieDataTable">
@@ -335,15 +335,15 @@ class CalorieData extends React.Component {
 
                                         <Br />
 
-                                        <p className="mainContentTextBlack">Lower calorie figure is for a sedentary lifestyle. 
+                                        <p className="mainContentTextBlack">Lower Calorie figure is for a sedentary lifestyle. 
                                         <Br2 />
-                                        Upper calorie figure is for an active lifestyle. 
+                                        Upper Calorie figure is for an active lifestyle. 
                                         <Br />
                                         <Br />
                                         <Br />
                                         For example in 
                                         <Br2 />
-                                        Female: 19~25 yrs: 2000~2400 cal, 
+                                        Female: 19~25 yrs: 2000~2400 Cal, 
                                         <Br2 />
                                         2000 is for a sedentary lifestyle and 
                                         <Br2 />
@@ -354,12 +354,18 @@ class CalorieData extends React.Component {
                                         Sedentary means a lifestyle that includes only light physical activity associated with typical day-to-day life.
                                         <Br />
                                         Active means a lifestyle that includes physical activity equivalent to walking more than 3 miles per day at 3 to 4 miles per hour, in addition to light physical activity associated with typical day-to-day life.
+                                        <Br />
+                                        <Br />
+                                        <Br />
+                                        1 US "Calories" (as labelled on the back of a food can with a capital C) is the same as 1 Cal (large calorie) or 1 Kcal (kilocalorie).
                                         </p>
                                         <Br />
                                         <Br />
-                                        <a className="anchor1" href="https://health.gov/dietaryguidelines/2015/guidelines/appendix-2/" target="_blank">Recommended daily calorie intake source for above table</a>
+                                        <a className="anchor1" href="https://health.gov/dietaryguidelines/2015/guidelines/appendix-2/" target="_blank">Recommended daily Calorie intake source for above table</a>
                                         <Br />
                                         <a className="anchor1" href="https://www.webmd.com/diet/features/estimated-calorie-requirement" target="_blank">Sedentary and active lifestyle definition source</a>
+                                        <Br />
+                                        <a className="anchor1" href="https://guild.beach.io/t/calories-versus-kcal-what-is-the-deal/41" target="_blank">Calories, Cal, KCal unit clarification source</a>
                                     </Col>
                                 </Row>
                                 
