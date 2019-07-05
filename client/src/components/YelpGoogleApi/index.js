@@ -74,14 +74,16 @@ class Map extends Component {
 		yelpApiCall(this.state.city, (yelp) => {
 			// Updating the input's state
 			// console.log(yelp.businesses);
+			// console.log(this.state.handleMarkerToggleWindowOpen)
 
 			this.setState({
-				stores: yelp.businesses
+				stores: yelp.businesses,
+				handleMarkerToggleWindowOpen: 1
 			});
 		});
 	};
 	yelpStoreTypes = (event) => {
-		console.log("here")
+		// console.log("here")
 
 		let value = event.target.value;
 		storetype = value;
@@ -107,14 +109,17 @@ class Map extends Component {
 	}
 
 	handleMarkerToggleWindowOpen = (markerId) => {
+		console.log(this.state.handleMarkerToggleWindowOpen)
+
 		this.setState({
 			handleMarkerToggleWindowOpen: markerId
 		});
+
 	};
 
 	handleMarkerToggleWindowClose = () => {
 		this.setState({
-			handleMarkerToggleWindowClose: ''
+			handleMarkerToggleWindowOpen: ''
 		});
 	};
 
@@ -130,7 +135,7 @@ class Map extends Component {
 		))
 	);
 	render() {
-		console.log(this.state.value)
+		// console.log(this.state.value)
 		this.state.stores.map((restaurant, i) => 'do');
 		return (
 			<div>
