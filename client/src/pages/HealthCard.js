@@ -34,6 +34,9 @@ class HealthCard extends React.Component {
     // }
 
     componentDidMount() {
+        // Scroll to top of page
+        window.scrollTo(0, 0);
+
         console.log("Component did mount " + userData.userName)
         this.loadMedId(userData.userName);
         // console.log(userInfo);
@@ -79,7 +82,7 @@ class HealthCard extends React.Component {
         this.setState({
             showPreview: false
         })
-        window.scrollTo(0,0);
+        // window.scrollTo(0,0);
     }
 
     saveHealthCard = () => {
@@ -181,6 +184,13 @@ class HealthCard extends React.Component {
 
     }
 
+    closePreviewHealthCard = () => {
+        this.setState({showPreview: false})
+
+        // Scroll to top of page
+        window.scrollTo(0, 0);
+    }
+
     render() {
         if (this.state.showPreview) {
             return (
@@ -223,7 +233,8 @@ class HealthCard extends React.Component {
 
                                 <Row>
                                     <Col size="col-md-4 offset-md-4">
-                                        <button className="button1" id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button>
+                                        <button className="button1" id="healthCardPage-preview" onClick={this.closePreviewHealthCard}>Close</button>
+                                        {/* <button className="button1" id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button> */}
                                         {/* <button className={this.state.showPreview ? "button-preview" : "button1" } id="healthCardPage-preview" onClick={() => this.setState({showPreview: false})}>Close</button> */}
                                         {/* <div className="mainContentTextRed" id="calorieEntryPage-errorMessage"></div> */}
                                     </Col>

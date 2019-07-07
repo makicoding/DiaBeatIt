@@ -31,7 +31,12 @@ class CalorieEntry extends React.Component {
         };
         this.handleChange = this.handleChange.bind(this);
     }
-     
+    
+    componentDidMount() {
+        // Scroll to top of page
+        window.scrollTo(0, 0);
+    }
+
     // For React Datepicker
     handleChange(date) {
         this.setState({
@@ -669,6 +674,7 @@ class CalorieEntry extends React.Component {
                                             <option value="Grouper (1.2 Cal/g)">Grouper (1.2 Cal/g)</option>
                                             <option value="Ham - pork (1.4 Cal/g)">Ham - pork (1.4 Cal/g)</option>
                                             <option value="Ham - turkey (1.9 Cal/g)">Ham - turkey (1.9 Cal/g)</option>
+                                            <option value="Heavy cream (3.4 Cal/g)">Heavy cream (3.4 Cal/g)</option>
                                             <option value="Herring (2 Cal/g)">Herring (2 Cal/g)</option>
                                             <option value="Honey (3 Cal/g)">Honey (3 Cal/g)</option>
                                             <option value="Jam - blackberry (3.8 Cal/g)">Jam - blackberry (3.8 Cal/g)</option>
@@ -686,9 +692,16 @@ class CalorieEntry extends React.Component {
                                             <option value="Mackerel (2.6 Cal/g)">Mackerel (2.6 Cal/g)</option>
                                             <option value="Mango (0.6 Cal/g)">Mango (0.6 Cal/g)</option>
                                             <option value="Maple Syrup (2.6 Cal/g)">Maple Syrup (2.6 Cal/g)</option>
+                                            <option value="Marmalade (2.5 Cal/g)">Marmalade (2.5 Cal/g)</option>
                                             <option value="Marmite (1.8 Cal/g)">Marmite (1.8 Cal/g)</option>
                                             <option value="Mayonnaise (6.8 Cal/g)">Mayonnaise (6.8 Cal/g)</option>
                                             <option value="Melon (0.3 Cal/g)">Melon (0.3 Cal/g)</option>
+                                            <option value="Mlk - lofat (0.5 Cal/g)">Mlk - lofat (0.5 Cal/g)</option>
+                                            <option value="Mlk - nonfat (0.5 Cal/g)">Mlk - nonfat (0.5 Cal/g)</option>
+                                            <option value="Mlk - whole (0.5 Cal/g)">Mlk - whole (0.5 Cal/g)</option>
+                                            <option value="Mlk - almond (0.2 Cal/g)">Mlk - almond (0.2 Cal/g)</option>
+                                            <option value="Mlk - rice (0.5 Cal/g)">Mlk - rice (0.5 Cal/g)</option>
+                                            <option value="Mlk - soy (0.5 Cal/g)">Mlk - soy (0.5 Cal/g)</option>
                                             <option value="Mustard (0.6 Cal/g)">Mustard (0.6 Cal/g)</option>
                                             <option value="Octopus (1.6 Cal/g)">Octopus (1.6 Cal/g)</option>
                                             <option value="Okra (0.2 Cal/g)">Okra (0.2 Cal/g)</option>
@@ -698,6 +711,8 @@ class CalorieEntry extends React.Component {
                                             <option value="Orange (0.5 Cal/g)">Orange (0.5 Cal/g)</option>
                                             <option value="Oyster (1.6 Cal/g)">Oyster (1.6 Cal/g)</option>
                                             <option value="Papaya (0.4 Cal/g)">Papaya (0.4 Cal/g)</option>
+                                            <option value="Pasta - cooked (1.3 Cal/g)">Pasta - cooked (1.3 Cal/g)</option>
+                                            <option value="Pasta - dry (3.7 Cal/g)">Pasta - dry (3.7 Cal/g)</option>
                                             <option value="Peach (0.4 Cal/g)">Peach (0.4 Cal/g)</option>
                                             <option value="Peanut (5.9 Cal/g)">Peanut (5.9 Cal/g)</option>
                                             <option value="Peanut butter (6.4 Cal/g)">Peanut butter (6.4 Cal/g)</option>
@@ -728,6 +743,9 @@ class CalorieEntry extends React.Component {
                                             <option value="Snap peas (0.8 Cal/g)">Snap peas (0.8 Cal/g)</option>
                                             <option value="Snapper (1.3 Cal/g)">Snapper (1.3 Cal/g)</option>
                                             <option value="Soy sauce (0.6 Cal/g)">Soy sauce (0.6 Cal/g)</option>
+                                            <option value="Sour cream (3.4 Cal/g)">Sour cream (3.4 Cal/g)</option>
+                                            <option value="Spaghetti - cooked (1.6 Cal/g)">Spaghetti - cooked (1.6 Cal/g)</option>
+                                            <option value="Spaghetti - dry (3.7 Cal/g)">Spaghetti - dry (3.7 Cal/g)</option>
                                             <option value="Spinach (0.2 Cal/g)">Spinach (0.2 Cal/g)</option>
                                             <option value="Squid (0.9 Cal/g)">Squid (0.9 Cal/g)</option>
                                             <option value="Strawberry (0.3 Cal/g)">Strawberry (0.3 Cal/g)</option>
@@ -747,6 +765,8 @@ class CalorieEntry extends React.Component {
                                             <option value="Vinegar (0.2 Cal/g)">Vinegar (0.2 Cal/g)</option>
                                             <option value="Walnut (6.4 Cal/g)">Walnut (6.4 Cal/g)</option>
                                             <option value="Watermelon (0.3 Cal/g)">Watermelon (0.3 Cal/g)</option>
+                                            <option value="Whipped cream (2.5 Cal/g)">Whipped cream (2.5 Cal/g)</option>
+                                            <option value="Whipping cream (3.4 Cal/g)">Whipping cream (3.4 Cal/g)</option>
                                             <option value="Worcestrshre sauce (0.8 Cal/g)">Worcestrshre sauce (0.8 Cal/g)</option>
                                             <option value="Yellowtail (1.5 Cal/g)">Yellowtail (1.5 Cal/g)</option>
                                             <option value="Yogurt - lofat (0.6 Cal/g)">Yogurt - lofat (0.6 Cal/g)</option>
