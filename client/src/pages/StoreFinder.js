@@ -16,6 +16,11 @@ import YelpGoogleApi from "../components/YelpGoogleApi";
 
 class StoreFinder extends React.Component {
     
+    componentDidMount() {
+        // Scroll to top of page
+        window.scrollTo(0, 0);
+    }
+
     render() {
         return(
         <div>

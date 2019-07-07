@@ -30,6 +30,12 @@ class RecipeFinder extends Component {
       message: ''
     }
   }
+
+  componentDidMount() {
+    // Scroll to top of page
+    window.scrollTo(0, 0);
+  }
+
   handleChange = (event) => {
     const { name, value } = event.target
     this.setState({ [name]: value.trim() })

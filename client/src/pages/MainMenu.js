@@ -7,6 +7,11 @@ import { Link, withRouter } from "react-router-dom";
 
 class MainMenu extends React.Component {
 
+  componentDidMount() {
+    // Scroll to top of page
+    window.scrollTo(0, 0);
+  }
+
   signOut = () => {
     window.localStorage.clear();
     window.location.replace("/");  

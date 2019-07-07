@@ -47,6 +47,9 @@ class CalorieData extends React.Component {
 
     // loading user information as soon as the component is loaded
     componentDidMount() {
+      // Scroll to top of page
+      window.scrollTo(0, 0);
+
       this.loadInfo(userData);
     }
 
@@ -164,6 +167,7 @@ class CalorieData extends React.Component {
                                                     <Br2 />
                                                     {result.mealtype.substring(3, 20)}<br />
                                                     {result.mealname}<br />
+                                                    Quantity: {result.qty}<br />
                                                     Calories: {result.unitcal * result.qty}<br />
                                                     Comments: {result.comments}<br />
                                                     {/* <Link

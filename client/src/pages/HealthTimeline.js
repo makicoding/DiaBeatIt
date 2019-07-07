@@ -29,6 +29,9 @@ class HealthTimeline extends React.Component {
     };
 
     componentDidMount() {
+        // Scroll to top of page
+        window.scrollTo(0, 0);
+
         document.getElementById("bmi").style.display = "none";
     }
 
