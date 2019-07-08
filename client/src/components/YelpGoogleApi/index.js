@@ -160,13 +160,12 @@ class Map extends Component {
 							<p className="mainContentTextBlack">Please choose a store type:</p>
 							<select onChange={this.yelpStoreTypes}className="chosen-select dropDownMenu1" id="calorieEntryPage-mealCategory">
 								<option value="0"></option>
-								<option value="farmersmarket" >Farmers market</option>
-								<option value="markets" >Fruit and vegetable market</option>
+								<option value="farmersmarket">Farmers market</option>
+								<option value="markets">Fruit and vegetable market</option>
 								<option value="organic_stores">Organic store</option>
-								<option value="organic_stores" >Organic store</option>
-								<option value="cardioclasses" >Cardio class</option>
-								<option value="healthtrainers" >Health trainer</option>
-								<option value="yoga" >Yoga studio</option>
+								<option value="cardioclasses">Cardio class</option>
+								<option value="healthtrainers">Health trainer</option>
+								<option value="yoga">Yoga studio</option>
 							</select>
 						</Col>
 					</Row> 
