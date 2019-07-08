@@ -44,10 +44,9 @@ class Resources extends React.Component {
               <div className="App">    
                 <Resource/>
 
-                {/* /* Triple line break not necessary here, there is enough room underneath for this page */}
-                {/* <Br />
                 <Br />
-                <Br /> */}
+                {/* <Br /> */}
+                {/* <Br /> */}
 
               </div>
 

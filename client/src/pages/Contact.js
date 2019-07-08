@@ -68,7 +68,7 @@ class Contact extends React.Component {
                                 <Row>
                                     <Col size="col-md-12">                               
                                         {/* Datepicker */}
-                                        <p className="mainContentTextBlack">Please note that whilte this app aims to HELP prevent diabetes, the app itself does not prevent diabetes.
+                                        <p className="mainContentTextBlack">Please note that while this app aims to HELP prevent diabetes, the app itself does not prevent diabetes.
                                         </p>
                                     </Col>
                                 </Row> 
