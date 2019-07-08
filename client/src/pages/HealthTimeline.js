@@ -357,7 +357,7 @@ class HealthTimeline extends React.Component {
                                 {/* Bottom of page line breaks for breathing room */}
                                 <Br />      
                                 <Br />
-                                <Br />
+                                {/* <Br /> */}
 
                             </Col>
                         </Row>

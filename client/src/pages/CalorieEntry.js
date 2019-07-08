@@ -403,12 +403,16 @@ class CalorieEntry extends React.Component {
                                             <option value="Apple pie (296 Cal)">Apple pie (296 Cal)</option>
                                             <option value="Bagel - plain (277 Cal)">Bagel - plain (277 Cal)</option>
                                             <option value="Bagel w cream cheese (277 Cal)">Bagel w cream cheese (277 Cal)</option>
+                                            <option value="Baguette - mini (413 Cal)">Baguette - mini (413 Cal)</option>
                                             <option value="Biryani - beef (311 Cal)">Biryani - beef (311 Cal)</option>
                                             <option value="Biryani - chicken (292 Cal)">Biryani - chicken (292 Cal)</option>
                                             <option value="Blueberry pie (360 Cal)">Blueberry pie (360 Cal)</option>
                                             <option value="Bratwurst (283 Cal)">Bratwurst (283 Cal)</option>
+                                            <option value="Bread - rye (83 Cal)">Bread - rye (83 Cal)</option>
+                                            <option value="Bread - sourdgh (174 Cal)">Bread - sourdgh (174 Cal)</option>
                                             <option value="Bread - whole wheat (81 Cal)">Bread - whole wheat (81 Cal)</option>
                                             <option value="Bread - white (98 Cal)">Bread - white (98 Cal)</option>
+                                            <option value="Brioche (260 Cal)">Brioche (260 Cal)</option>
                                             <option value="Burrito (434 Cal)">Burrito (434 Cal)</option>
                                             <option value="Burrito bowl (702 Cal)">Burrito bowl (702 Cal)</option>
                                             <option value="Cake - carrot (577 Cal)">Cake - carrot (577 Cal)</option>
@@ -425,6 +429,7 @@ class CalorieEntry extends React.Component {
                                             <option value="Chkn teriyaki bowl (616 Cal)">Chkn teriyaki bowl (616 Cal)</option>
                                             <option value="Chips (149 Cal)">Chips (149 Cal)</option>
                                             <option value="Chocolate one pc (37 Cal)">Chocolate one pc (37 Cal)</option>
+                                            <option value="Cinnamon bun (294 Cal)">Cinnamon bun (294 Cal)</option>
                                             <option value="Clam chowder (201 Cal)">Clam chowder (201 Cal)</option>
                                             <option value="Corned beef hash (387 Cal)">Corned beef hash (387 Cal)</option>
                                             <option value="Cookie (148 Cal)">Cookie (148 Cal)</option>
@@ -432,27 +437,37 @@ class CalorieEntry extends React.Component {
                                             <option value="Cream puff (374 Cal)">Cream puff (374 Cal)</option>
                                             <option value="Creme brulee (687 Cal)">Creme brulee (687 Cal)</option>
                                             <option value="Creme caramel (222 Cal)">Creme caramel (222 Cal)</option>
+                                            <option value="Croissant - almnd (377 Cal)">Croissant - almnd (377 Cal)</option>
+                                            <option value="Croissant - butr (272 Cal)">Croissant - butr (272 Cal)</option>
+                                            <option value="Croissant - choc (297 Cal)">Croissant - choc (297 Cal)</option>
                                             <option value="Croque madame (721 Cal)">Croque madame (721 Cal)</option>
                                             <option value="Croque monsieur (650 Cal)">Croque monsieur (650 Cal)</option>
                                             <option value="Cupcake (292 Cal)">Cupcake (292 Cal)</option>
                                             <option value="Curry - chicken (243 Cal)">Curry - chicken (243 Cal)</option>
                                             <option value="Curry - lamb (381 Cal)">Curry - lamb (381 Cal)</option>
                                             <option value="Curry - chickpea (363 Cal)">Curry - chickpea (363 Cal)</option>
+                                            <option value="Danish (263 Cal)">Danish (263 Cal)</option>
                                             <option value="Dumpling - pork (67 Cal)">Dumpling - pork (67 Cal)</option>
                                             <option value="Dumpling - prawn (36 Cal)">Dumpling - prawn (36 Cal)</option>
                                             <option value="Dumpling - vegetable (50 Cal)">Dumpling - vegetable (50 Cal)</option>
+                                            <option value="Egg (72 Cal)">Egg (72 Cal)</option>
                                             <option value="Eggs and bacon (251 Cal)">Eggs and bacon (251 Cal)</option>
                                             <option value="Eggplant parmigiana (309 Cal)">Eggplant parmigiana (309 Cal)</option>
+                                            <option value="Energy Bar (235 Cal)">Energy Bar (235 Cal)</option>
                                             <option value="English muffin (134 Cal)">English muffin (134 Cal)</option>
                                             <option value="Fajita platter (1401 Cal)">Fajita platter (1401 Cal)</option>
                                             <option value="Falafel (57 Cal)">Falafel (57 Cal)</option>
                                             <option value="Falafel sandwich (595 Cal)">Falafel (595 Cal)</option>
                                             <option value="Fetuccini alfredo (1186 Cal)">Fetuccini alfredo (1186 Cal)</option>
                                             <option value="Fish and chips (688 Cal)">Fish and chips (688 Cal)</option>
+                                            <option value="Foccacia (142 Cal)">Foccacia (142 Cal)</option>
                                             <option value="French fries (365 Cal)">French fries (365 Cal)</option>
                                             <option value="Frnch tst w mpl syrp (271 Cal)">Frnch tst w mpl syrp (271 Cal)</option>
                                             <option value="Fried chicken (377 Cal)">Fried chicken (377 Cal)</option>
                                             <option value="Fried rice (238 Cal)">Fried rice (238 Cal)</option>
+                                            <option value="Gelato - coffee (222 Cal)">Gelato - coffee (222 Cal)</option>
+                                            <option value="Gelato - coconut (222 Cal)">Gelato - coconut (222 Cal)</option>
+                                            <option value="Gelato - sltd crmel (222 Cal)">Gelato - sltd crmel (222 Cal)</option>
                                             <option value="Granola bar (117 Cal)">Granola bar (117 Cal)</option>
                                             <option value="Guacamole (45 Cal)">Guacamole (45 Cal)</option>
                                             <option value="Gyro sandwich (723 Cal)">Gyro sandwich (723 Cal)</option>
@@ -518,7 +533,7 @@ class CalorieEntry extends React.Component {
                                             <option value="Turkey burger (554 Cal)">Turkey burger (554 Cal)</option>
                                             <option value="Veggie burger (365 Cal)">Veggie burger (365 Cal)</option>
                                             <option value="Waffle w mpl syrp (270 Cal)">Waffle w mpl syrp (270 Cal)</option>
-                                            <option value="Wienerschnitzel (560 Cal)">Wienerschnitzel (560 Cal)</option>                                 
+                                            <option value="Wienerschnitzel (560 Cal)">Wienerschnitzel (560 Cal)</option>                              
                                         </select>
                                         <Br />
                                         <input type="number" className="form-control" id="calorieEntryPage-mealQuantity" placeholder="Quantity" autoComplete="off"></input>  
@@ -623,6 +638,7 @@ class CalorieEntry extends React.Component {
                                             <option value="Bacon (1.7 Cal/g)">Bacon (1.7 Cal/g)</option>
                                             <option value="Baking powder (0.5 Cal/g)">Baking powder (0.5 Cal/g)</option>
                                             <option value="Baking soda (0.4 Cal/g)">Baking soda (0.4 Cal/g)</option>
+                                            <option value="Balsamic vingr (0.2 Cal/g)">Balsamic vingr (0.2 Cal/g)</option>
                                             <option value="Banana (0.9 Cal/g)">Banana (0.9 Cal/g)</option>
                                             <option value="Beef - minced (2.9 Cal/g)">Beef - minced (2.9 Cal/g)</option>
                                             <option value="Beef - steak (2.7 Cal/g)">Beef - steak (2.7 Cal/g)</option>
@@ -705,6 +721,8 @@ class CalorieEntry extends React.Component {
                                             <option value="Mustard (0.6 Cal/g)">Mustard (0.6 Cal/g)</option>
                                             <option value="Octopus (1.6 Cal/g)">Octopus (1.6 Cal/g)</option>
                                             <option value="Okra (0.2 Cal/g)">Okra (0.2 Cal/g)</option>
+                                            <option value="Olive - blk (1.2 Cal/g)">Olive - blk (1.2 Cal/g)</option>
+                                            <option value="Olive - grn (1.4 Cal/g)">Olive - grn (1.4 Cal/g)</option>
                                             <option value="Olive oil (8 Cal/g)">Olive oil (8 Cal/g)</option>
                                             <option value="Onion - red (0.4 Cal/g)">Onion - red (0.4 Cal/g)</option>
                                             <option value="Onion - yellow (0.4 Cal/g)">Onion - yellow (0.4 Cal/g)</option>

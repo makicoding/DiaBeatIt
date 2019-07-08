@@ -116,10 +116,10 @@ class RecipeFinder extends Component {
               (<Recipes className="container" recipes={recipes} />)
             }
 
-            {/* /* Only single break needed hear, there is enough room underneath */}
+            {/* /* Only single break needed here, there is enough room underneath */}
             <Br />
-            {/* <Br />
-            <Br /> */}
+            {/* <Br /> */}
+            {/* <Br /> */}
 
           </div>
 
