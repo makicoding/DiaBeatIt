@@ -307,11 +307,11 @@ class HealthCard extends React.Component {
                                             <Br />
                                             <Br />
 
-                                            <p className="mainContentTextBlack">DOB:</p>
+                                            <p className="mainContentTextBlack">Date of birth:</p>
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="DOB" value={this.state.DOB} className="form-control" id="healthCardPage-DOB" placeholder="MM/DD/YYYY" autoComplete="off" maxlength="10" onChange={this.localState}></input>
+                                            <input type="date" name="DOB" value={this.state.DOB} className="form-control" id="healthCardPage-DOB" placeholder="MM/DD/YYYY" autoComplete="off" maxlength="10" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
@@ -338,12 +338,12 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="emergencyContactPhone" value={this.state.emergencyContactPhone} pattern="/d" className="form-control" id="healthCardPage-emergencyContactPhone" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
+                                            <input type="number" name="emergencyContactPhone" value={this.state.emergencyContactPhone} pattern="/d" className="form-control" id="healthCardPage-emergencyContactPhone" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
 
-                                            <p className="mainContentTextBlack">Health Insurance Provider:</p>
+                                            <p className="mainContentTextBlack">Health insurance provider:</p>
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
@@ -352,16 +352,16 @@ class HealthCard extends React.Component {
                                             <Br />
                                             <Br />
 
-                                            <p className="mainContentTextBlack">Phone:</p>
+                                            <p className="mainContentTextBlack">Health insurance phone number:</p>
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="healthInsuranceProviderPhone" value={this.state.healthInsuranceProviderPhone} className="form-control" id="healthCardPage-healthInsuranceProviderPhone" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
+                                            <input type="number" name="healthInsuranceProviderPhone" value={this.state.healthInsuranceProviderPhone} className="form-control" id="healthCardPage-healthInsuranceProviderPhone" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
 
-                                            <p className="mainContentTextBlack">Policy No:</p>
+                                            <p className="mainContentTextBlack">Health insurance policy number:</p>
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
@@ -383,7 +383,7 @@ class HealthCard extends React.Component {
                                             <Br2 />
                                             <Br2 />
                                             <Br2 />
-                                            <input type="text" name="primaryCarePhysicianPhone" value={this.state.primaryCarePhysicianPhone} pattern="/d" className="form-control" id="healthCardPage-primaryCarePhysicianPhoneNumber" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
+                                            <input type="number" name="primaryCarePhysicianPhone" value={this.state.primaryCarePhysicianPhone} pattern="/d" className="form-control" id="healthCardPage-primaryCarePhysicianPhoneNumber" placeholder="" autoComplete="off" maxlength="20" onChange={this.localState}></input>
                                             {/* autoComplete="off" is used to turn off the autoComplete of input field */}
                                             <Br />
                                             <Br />
