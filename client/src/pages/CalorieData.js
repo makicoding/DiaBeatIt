@@ -168,7 +168,7 @@ class CalorieData extends React.Component {
                                                     {result.mealtype.substring(3, 20)}<br />
                                                     {result.mealname}<br />
                                                     Quantity: {result.qty}<br />
-                                                    Calories: {result.unitcal * result.qty}<br />
+                                                    Calories: {(result.unitcal * result.qty).toFixed(0)}<br />
                                                     Comments: {result.comments}<br />
                                                     {/* <Link
                                                       to="/CalorieEntryEdit"
@@ -202,7 +202,7 @@ class CalorieData extends React.Component {
                                 {/* Subrow (Calories grand total goes here) */}
                                 <Row>
                                     <Col size="col-md-12">
-                                        <p className="mainContentTextBlueMediumBold">Total: <span className="mainContentTextBlueMediumBold" id="calorieDataPage-calorieGrandTotal">{this.state.totalCal}</span> Calories</p>
+                                        <p className="mainContentTextBlueMediumBold">Total: <span className="mainContentTextBlueMediumBold" id="calorieDataPage-calorieGrandTotal">{(this.state.totalCal).toFixed(0)}</span> Calories</p>
                                         <p><span className="mainContentTextRed" id="calorieDataPage-warningMessage"></span></p>
                                     </Col>
                                 </Row> 
