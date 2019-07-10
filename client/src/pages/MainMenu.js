@@ -29,7 +29,7 @@ class MainMenu extends React.Component {
           <Link to="StoreFinder" className="mainMenuAnchor">Store Finder</Link>
           <Link to="RecipeFinder" className="mainMenuAnchor">Recipe Finder</Link>
           <Link to="HealthTimeline" className="mainMenuAnchor">Health Timeline</Link>
-          <Link to="HealthCard" className="mainMenuAnchor">Digital Health Card</Link>
+          {/* <Link to="HealthCard" className="mainMenuAnchor">Digital Health Card</Link> */}
           <Link to="Resources" className="mainMenuAnchor">Resources</Link>
           <Link to="Contact" className="mainMenuAnchor">Contact</Link>
           {/* <span className="mainMenuAnchor" onClick={this.signOut}>Sign Out</span> */}
